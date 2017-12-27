@@ -12,11 +12,19 @@ class Home extends Component {
     this.props.handleCoinFetch();
   }
 
+
   render() {
+    // const coinsToDisplay = coins.map( coin => { 
+    //       return <Card 
+    //         key={`Card: ${coin.short}`}
+    //         name={coin.long}
+    //       />
+    //     })
+    console.log(this.props.coin)
     return (
       <div className='home-page'>
         <h1 className='home-title'>Home</h1>
-        <Card />
+
       </div>
     )
   }
