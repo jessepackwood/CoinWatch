@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import { fetchCoinFront } from '../../services/coinCapServices'
+import { fetchCoins } from '../../actions'
+import { connect } from 'react-redux'
+import propTypes from 'prop-types'
 import './Home.css'
+
 import Card from '../Card/Card'
 
 class Home extends Component {
-  constructor(){
-    super()
-  }
 
-  componentDidMount() {
-    fetchCoinFront()
+  async componentDidMount() {
+    this.props.handleCoinFetch();
   }
 
   render() {
@@ -30,10 +30,15 @@ const mapStateToProps = (state) => {
 
 const mapDispatchProps = (dispatch) => {
   return {
-    fetchCoinFront: () => {
-      dispatch(fetchCoinFront)
+    handleCoinFetch: () => {
+      dispatch(fetchCoins())
     }
   }
 }
 
-export default Home;
+Home.propTypes = {
+  handleCoinFetch: propTypes.func,
+  coins: propTypes.array
+}
+
+export default connect(mapStateToProps, mapDispatchProps)(Home)

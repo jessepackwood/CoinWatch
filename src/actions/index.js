@@ -1,5 +1,5 @@
 import { auth } from '../services/firebase'
-import fetchCoinFront from '../services/coinCapServices'
+import { fetchCoinFront } from '../services/coinCapServices'
 
 export const signUpSuccess = (user) => {
   return {
@@ -53,6 +53,11 @@ export const loginUser = (email, password) => async (dispatch ) => {
   }).catch((err) => {
     dispatch(loginError())
   })
+}
+
+export const fetchCoins = () => async (dispatch) => {
+  const coins = await fetchCoinFront();
+  dispatch(setCoins(coins))
 }
 
 export const setCoins = (coins) => {
