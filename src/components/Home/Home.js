@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { fetchCoinFront } from '../services/coinCapServices'
-import Card from './Card'
+import { fetchCoinFront } from '../../services/coinCapServices'
+import './Home.css'
+import Card from '../Card/Card'
 
 class Home extends Component {
   constructor(){
@@ -13,8 +14,9 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Home</h1>
+      <div className='home-page'>
+        <h1 className='home-title'>Home</h1>
+        <Card />
       </div>
     )
   }
@@ -33,4 +35,5 @@ const mapDispatchProps = (dispatch) => {
     }
   }
 }
+
 export default Home;

@@ -1,0 +1,14 @@
+.app-title {
+  text-align: center; }
+
+ul {
+  display: flex; }
+
+li {
+  margin: 10px;
+  list-style: none; }
+  li:hover {
+    cursor: pointer; }
+
+.home-link {
+  margin-left: auto; }
