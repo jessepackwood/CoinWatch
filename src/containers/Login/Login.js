@@ -1,22 +1,26 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
-import * as actions from '../actions'
+import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
+import * as actions from '../../actions'
+import { googleSignIn } from '../../services/firebase'
 import './Login.css'
-import Form from '../components/Form'
+import Form from '../../components/Form/Form'
 
 class Login extends Component {
   constructor() {
-    super();
+    super()
   }
 
   handleInputChange = (event) => {
-    const {name, value} = event.target;
-    this.props.inputChange(name, value);
+    const {name, value} = event.target
+    this.props.inputChange(name, value)
   }
 
-  handleSubmit = (event) => {
-    this.props.loginUser(this.props.email, this.props.password)
+  handleSubmit = () => {
+    // this.props.loginUser(this.props.email, this.props.password)
+    googleSignIn().then( (data)=> {
+      debugger
+    })
   }
 
   render() {
@@ -57,4 +61,4 @@ export const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

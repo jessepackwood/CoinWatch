@@ -1,4 +1,4 @@
-import firebase, { auth } from '../services/firebase'
+import { auth } from '../services/firebase'
 import fetchCoinFront from '../services/coinCapServices'
 
 export const signUpSuccess = (user) => {
