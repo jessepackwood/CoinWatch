@@ -1,39 +1,36 @@
 import React, { Component } from 'react'
-import { fetchCoinFront } from '../../services/coinCapServices'
+import { connect } from 'react-redux'
 import './Home.css'
+
 import Card from '../Card/Card'
 
-class Home extends Component {
-  constructor(){
-    super()
-  }
+const Home = ({coins}) => {
 
-  componentDidMount() {
-    fetchCoinFront()
-  }
+  const hundredCoins = coins.slice(0, 100)
+    console.log(hundredCoins)
 
-  render() {
-    return (
-      <div className='home-page'>
-        <h1 className='home-title'>Home</h1>
-        <Card />
-      </div>
-    )
-  }
+  const coinsToDisplay = hundredCoins.map( coin => { 
+        return <Card 
+          key={`Card: ${coin.short}`}
+          name={coin.long}
+          short={coin.short}
+          dayChange={coin.cap24hrChange}
+          price={coin.price}
+        />
+      })
+  // console.log(coins)
+  return (
+    <div className='home-page'>
+      {coinsToDisplay}
+    </div>
+  )
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     coins: state.coins
   }
 }
 
-const mapDispatchProps = (dispatch) => {
-  return {
-    fetchCoinFront: () => {
-      dispatch(fetchCoinFront)
-    }
-  }
-}
 
-export default Home;
+export default connect(mapStateToProps, null)(Home)
