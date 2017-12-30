@@ -1,0 +1,11 @@
+@import '../../variable.scss';
+
+.card {
+	border: 1px solid red;
+	margin: 10px auto;
+}
+
+.coin-name {
+	color: $title-color;
+	font-family: $title-font;
+}

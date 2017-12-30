@@ -1,52 +1,36 @@
 import React, { Component } from 'react'
-import { fetchCoins } from '../../actions'
 import { connect } from 'react-redux'
-import propTypes from 'prop-types'
 import './Home.css'
 
 import Card from '../Card/Card'
 
-class Home extends Component {
+const Home = ({coins}) => {
 
-  async componentDidMount() {
-    this.props.handleCoinFetch();
-  }
+  const hundredCoins = coins.slice(0, 100)
+    console.log(hundredCoins)
 
-
-  render() {
-    // const coinsToDisplay = coins.map( coin => { 
-    //       return <Card 
-    //         key={`Card: ${coin.short}`}
-    //         name={coin.long}
-    //       />
-    //     })
-    console.log(this.props.coin)
-    return (
-      <div className='home-page'>
-        <h1 className='home-title'>Home</h1>
-
-      </div>
-    )
-  }
+  const coinsToDisplay = hundredCoins.map( coin => { 
+        return <Card 
+          key={`Card: ${coin.short}`}
+          name={coin.long}
+          short={coin.short}
+          dayChange={coin.cap24hrChange}
+          price={coin.price}
+        />
+      })
+  // console.log(coins)
+  return (
+    <div className='home-page'>
+      {coinsToDisplay}
+    </div>
+  )
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     coins: state.coins
   }
 }
 
-const mapDispatchProps = (dispatch) => {
-  return {
-    handleCoinFetch: () => {
-      dispatch(fetchCoins())
-    }
-  }
-}
 
-Home.propTypes = {
-  handleCoinFetch: propTypes.func,
-  coins: propTypes.array
-}
-
-export default connect(mapStateToProps, mapDispatchProps)(Home)
+export default connect(mapStateToProps, null)(Home)

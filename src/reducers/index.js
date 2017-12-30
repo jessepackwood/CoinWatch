@@ -5,7 +5,7 @@ import coinReducer from './coinReducer'
 
 const rootReducer = combineReducers({
   login: loginReducer,
-  coin: coinReducer
+  coins: coinReducer
 })
 
 export default rootReducer;

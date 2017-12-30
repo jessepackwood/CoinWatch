@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Abel");
+.card {
+  border: 1px solid red;
+  margin: 10px auto; }
+
+.coin-name {
+  color: orange;
+  font-family: "Abel", sans-serif; }
