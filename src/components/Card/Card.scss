@@ -1,11 +1,54 @@
 @import '../../variable.scss';
 
 .card {
-	border: 1px solid red;
-	margin: 10px auto;
+	// border: 1px solid red;
+	margin: 15px auto;
+	display: flex;
+	padding: 10px;
+	border-radius: 15px;
+	background: grey;
 }
-
+.number {
+	margin-right: 5px;
+	color: #fff;
+}
 .coin-name {
+	font-size: 24pt;
 	color: $title-color;
 	font-family: $title-font;
+	// display: inline-block;
+	margin: 0 10px;
+	width: 350px;
+}
+
+.short {
+	margin-left: 5px;
+	color: black;
+}
+
+.price {
+	color: white;
+	font-size: 20pt;
+	margin-left: auto;
+}
+
+.dayChange {
+	text-align: center;
+	margin-left: auto;
+	font-size: 20pt;
+	width: 100px;
+}
+
+.positive {
+	background-color: green;
+}
+
+.negative {
+	background-color: red;
+}
+
+.btn-fav {
+	width: 50px;
+	height: 50px;
+	border-radius: 100px;
 }

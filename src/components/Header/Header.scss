@@ -1,10 +1,14 @@
+@import '../../variable.scss';
+
 .header {
-	background: grey;
+	background: #274156;
 	height: 110px;
 }
 
 .app-title {
-  text-align: center;
+  margin: 0 20px;
+  color: #fff;
+  font-family: $title-font;
 }
 
 ul {
@@ -17,9 +21,13 @@ li {
   }
   margin: 10px;
   list-style: none;
-
 }
 
 .home-link {
   margin-left: auto;
+}
+
+.header-link,
+.home-link {
+  color: #fff;
 }

@@ -5,6 +5,7 @@ import Header from '../Header/Header'
 import Login from '../../containers/Login/Login'
 import Home from '../Home/Home'
 import WatchList from '../../containers/WatchList/WatchList'
+import Portfolio from '../../components/Portfolio/Portfolio'
 import { auth, db, isAuthenticated } from '../../services/firebase'
 
 class App extends Component {
@@ -16,12 +17,11 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <BrowserRouter>
           <Switch>
             <Route exact path='/' component={Home} />
             <RouteWhenAuthorized path="/watchlist" component={WatchList} />
+            <Route path='/portfolio' component={Portfolio} />
           </Switch>
-        </BrowserRouter>
       </div>
     );
   }
@@ -32,7 +32,7 @@ const RouteWhenAuthorized = ({component: Component, ...rest}) => (
     isAuthenticated() ? (
       <Component {...renderProps} />
       ) : (
-      <Redirect to='/home' />
+      <Redirect to='/' />
       )
     ) }/>
   )

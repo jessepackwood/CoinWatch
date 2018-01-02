@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Abel");
 .header {
-  background: grey;
+  background: #274156;
   height: 110px; }
 
 .app-title {
-  text-align: center; }
+  margin: 0 20px;
+  color: #fff;
+  font-family: "Abel", sans-serif; }
 
 ul {
   display: flex; }
@@ -16,3 +19,7 @@ li {
 
 .home-link {
   margin-left: auto; }
+
+.header-link,
+.home-link {
+  color: #fff; }

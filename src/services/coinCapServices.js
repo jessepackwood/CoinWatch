@@ -7,3 +7,11 @@ export const fetchCoinFront = async () => {
     return error
   }
 }
+
+export const addToWatchList = (coin) => {
+	return Object.assign({}, coin)
+}
+
+// export const removeFromWatchList = (coin) => {
+// 	return Object.assign({}, coin, { watched: false })
+// }

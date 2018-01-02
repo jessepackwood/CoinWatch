@@ -1,5 +1,5 @@
 import { auth } from '../services/firebase'
-import { fetchCoinFront } from '../services/coinCapServices'
+import { fetchCoinFront, fetchCoinMap } from '../services/coinCapServices'
 
 export const signUpSuccess = (user) => {
   return {
@@ -67,3 +67,23 @@ export const setCoins = (coins) => {
     coins
   }
 }
+
+//add to watch
+export const addWatch = (coin) => {
+  console.log('addWatch')
+  return {
+    type: 'ADD_WATCH',
+    coin
+  }
+}
+
+//remove from watch
+export const removeWatch = (coin) => {
+  return {
+    type: 'REMOVE_WATCH',
+  }
+}
+
+
+
+
