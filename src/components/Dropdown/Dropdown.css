@@ -1,0 +1,9 @@
+.dropdown {
+  height: 35px;
+  overflow: hidden;
+  display: inline-block;
+  width: 180px; }
+
+select {
+  font-size: 18pt;
+  background: #fff; }

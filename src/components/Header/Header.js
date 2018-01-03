@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import './Header.css'
 import { connect } from 'react-redux'
-import { fetchCoins } from '../../actions'
+import { Link } from 'react-router-dom'
+import { fetchCoins, fetchWatchedCoins } from '../../actions'
+import { googleSignIn } from '../../services/firebase'
 import propTypes from 'prop-types'
-
 
 export class Header extends Component {
   async componentDidMount() {
@@ -15,31 +16,40 @@ export class Header extends Component {
       <div className='header'>
         <nav>
           <ul>
-            <li className='home-link'>Home</li>
-            <li>Login</li>
-            <li>Sign Up</li>
+            <li className='login header-link' onClick={googleSignIn}>Login</li>
+            <li className='header-link'>Sign Up</li>
           </ul>
         </nav>
-        <h1 className='app-title'>Coin Watch</h1>
+        <Link to='/'>
+          <h1 className='app-title'>Coin Watch</h1>
+        </Link>
+        <Link to='/portfolio'>
+          <span className='header-link portfolio-link'>Portfolio</span>
+        </Link>
+        <Link to='/watchlist'>
+          <span className='header-link'>WatchList</span>
+        </Link>
+
       </div>
     )   
   }
 }
 
 
-
 const mapDispatchToProps = (dispatch) => {
   return {
     handleCoinFetch: () => {
       dispatch(fetchCoins())
+    },
+    handleWatchedCoins: () => {
+      dispatch(fetchWatchedCoins())
     }
   }
 }
 
 
 Header.propTypes = {
-  handleCoinFetch: propTypes.func,
-  coins: propTypes.array
+  handleCoinFetch: propTypes.func
 }
 
 export default connect(null, mapDispatchToProps)(Header);

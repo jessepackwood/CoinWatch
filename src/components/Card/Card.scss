@@ -1,11 +1,62 @@
 @import '../../variable.scss';
 
 .card {
-	border: 1px solid red;
-	margin: 10px auto;
+	// border: 1px solid red;
+	margin: 15px auto;
+	display: flex;
+	padding: 10px;
+	border-radius: 15px;
+	background: #274156;
+}
+.number {
+	margin-right: 5px;
+	color: #f2bb30;
+}
+.coin-name {
+	font-size: 24pt;
+	color: #fff;
+	font-family: $title-font;
+	// display: inline-block;
+	margin: 0 10px;
+	width: 350px;
 }
 
-.coin-name {
-	color: $title-color;
-	font-family: $title-font;
+.short {
+	margin-left: 5px;
+	color: #fff;
+}
+
+.price {
+	color: white;
+	font-size: 20pt;
+	margin-left: auto;
+}
+
+.dayChange {
+	text-align: center;
+	margin-left: auto;
+	font-size: 20pt;
+	width: 200px;
+}
+
+.positive {
+	color: #9af765;
+}
+
+.negative {
+	color: rgb(245, 84, 70);
+}
+
+.hour {
+	margin-left: 10px;
+	color: white;
+}
+
+.btn-fav {
+	width: 35px;
+	height: 35px;
+	border-radius: 100px;
+	background-image: url('../../assets/rounded-add-button.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
 }

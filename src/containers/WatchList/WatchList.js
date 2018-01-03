@@ -1,20 +1,25 @@
 import React, { Component } from 'react'
 import Card from '../../components/Card/Card'
+import { connect } from 'react-redux'
 
-class WatchList extends Component {
-  constructor() {
-    super()
-  }
+const WatchList = ({watchList}) => {
 
+	const watchedCoins = watchList.map( (coin, index) => {
+		return <Card 
+			coin={coin}
+			key={`Card: ${coin.short}`}
+    	number={`${index + 1}`}
+			/>
+	})
 
-render() {
-  //render watched coin cards
   return (
     <div>
-
+    	{watchedCoins}
     </div>
     )
   }
-}
 
-export default WatchList
+export const mapStateToProps = state => ({watchList: state.watchList})
+
+
+export default connect(mapStateToProps, null)(WatchList)

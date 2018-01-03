@@ -17,10 +17,10 @@ class Login extends Component {
   }
 
   handleSubmit = () => {
-    // this.props.loginUser(this.props.email, this.props.password)
-    googleSignIn().then( (data)=> {
-      debugger
-    })
+    this.props.loginUser(this.props.email, this.props.password)
+    // googleSignIn().then( (data)=> {
+    //   console.log(data)
+    // })
   }
 
   render() {

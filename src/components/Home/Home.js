@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import './Home.css'
 
 import Card from '../Card/Card'
@@ -7,30 +8,24 @@ import Card from '../Card/Card'
 const Home = ({coins}) => {
 
   const hundredCoins = coins.slice(0, 100)
-    console.log(hundredCoins)
 
-  const coinsToDisplay = hundredCoins.map( coin => { 
+  const coinsToDisplay = hundredCoins.map( (coin, index) => { 
         return <Card 
+          coin={coin}
           key={`Card: ${coin.short}`}
-          name={coin.long}
-          short={coin.short}
-          dayChange={coin.cap24hrChange}
-          price={coin.price}
+          number={`${index + 1}`}
         />
       })
-  // console.log(coins)
+
   return (
     <div className='home-page'>
+      <h3>Top 100 Currencies by market cap</h3>
       {coinsToDisplay}
     </div>
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    coins: state.coins
-  }
-}
+const mapStateToProps = state => ({coins: state.coins})
 
 
 export default connect(mapStateToProps, null)(Home)

@@ -22,8 +22,10 @@ export const isAuthenticated = () => {
 export const provider = new firebase.auth.GoogleAuthProvider();
 
 export const googleSignIn = () => {
-return firebase.auth().signInWithPopup(provider)
+	return firebase.auth().signInWithPopup(provider).then(user => console.log(user))
 }
+
+
 
 export default firebase;
 

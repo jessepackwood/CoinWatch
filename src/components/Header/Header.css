@@ -1,18 +1,33 @@
+@import url("https://fonts.googleapis.com/css?family=Abel");
 .header {
-  background: grey;
-  height: 110px; }
+  background: #274156;
+  height: 110px;
+  padding: 20px; }
 
 .app-title {
-  text-align: center; }
+  color: #fff;
+  font-family: "Abel", sans-serif;
+  font-size: 30pt;
+  position: absolute;
+  top: 0px; }
 
 ul {
   display: flex; }
 
 li {
-  margin: 10px;
   list-style: none; }
   li:hover {
     cursor: pointer; }
 
+.portfolio-link {
+  margin-right: 10px; }
+
+.login {
+  margin-left: auto;
+  margin-right: 10px;
+  text-decoration: none; }
+
+.header-link,
 .home-link {
-  margin-left: auto; }
+  margin-bottom: 10px;
+  color: #fff; }
