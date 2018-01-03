@@ -19,6 +19,7 @@ class App extends Component {
         <Header />
           <Switch>
             <Route exact path='/' component={Home} />
+            <RouteWhenAuthorized path ='/home' component={Home} />
             <RouteWhenAuthorized path="/watchlist" component={WatchList} />
             <Route path='/portfolio' component={Portfolio} />
           </Switch>

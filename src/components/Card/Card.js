@@ -1,31 +1,39 @@
 import React from 'react'
 import './Card.css'
 import { connect } from 'react-redux'
-// import { addToWatchList } from '../../services/coinCapServices.js'
 import * as actions from '../../actions'
 
-const Card = ({ name, short, dayChange, price, number, addCoinToWatch, removeCoinFromWatch, coin }) => {
+const Card = ({ coin, dayChange, number, watchList, addCoinToWatch, removeCoinFromWatch}) => {
 
-	const addColor =  dayChange > 0 ? 'positive' : 'negative'
+	const {long, short, price, name, cap24hrChange } = coin;
+	const addColor =  cap24hrChange > 0 ? 'positive' : 'negative'
+
+	const handleWatchList = (watchList, coin) => {
+		if( watchList && watchList.includes(coin)) {
+			removeCoinFromWatch(coin)
+		} else {
+			addCoinToWatch(coin)
+		}
+	}
 
   return(
-    <div className={`${addColor} card`}>
-    	
+    <div className='card'>
       <h3 className='coin-name'>
       	<span className='number'>{number}.</span>
-      {name}
+      	{long}
       	<span className='short'>({short})</span>
       </h3>
-      <span className='price'>${price}</span>
-      <span className={`${addColor} dayChange`}>{dayChange}%</span>
-      <button className='btn-fav' onClick={() => addCoinToWatch(coin)}>Watch</button>
+      <span className='price'>USD ${price}</span>
+      <span className={`${addColor} dayChange`}>{cap24hrChange}% <span className='hour'>(24H)</span></span>
+
+      <span className='btn-fav' onClick={() => handleWatchList(watchList, coin)}></span>
     </div>
   )
 }
 
-export const mapStateToProps = state => ({
-	coin: state.coins[0]
-})
+export const mapStateToProps = state => {
+	watchList: state.watchList || []
+}
 
 export const mapDispatchToProps = dispatch => {
 	return {

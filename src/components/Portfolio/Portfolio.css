@@ -1,6 +1,39 @@
-.portfolio-title {
-  text-align: center;
-  margin: 20px; }
+.portfolio-title-wrapper {
+  display: flex;
+  background: #FDFFFC;
+  padding: 20px; }
 
-.user-add-coin {
-  height: 25px; }
+.portfolio-title {
+  font-size: 24pt;
+  text-align: center;
+  color: #274156; }
+
+.portfolio-input-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 400px; }
+
+.portfolio-list-wrapper {
+  padding: 20px; }
+
+.portfolio-add-coin {
+  margin-right: 20px;
+  height: 35px;
+  width: 130px;
+  font-size: 18pt; }
+
+.portfolio-add-btn {
+  margin: 0 0 10px 20px;
+  width: 40px;
+  height: 40px;
+  background-image: url("../../assets/rounded-add-blue.svg");
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+.coin-title {
+  font-size: 18pt; }
+
+.portfolio-coin {
+  display: block;
+  border-bottom: 1px solid black; }

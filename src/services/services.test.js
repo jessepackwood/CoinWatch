@@ -1,5 +1,5 @@
 import React from 'react'
-import * as apiCalls from './coinCapServices'
+import * as apiCalls from './services'
 
 describe('API Calls tests', () => {
   beforeAll(() => {

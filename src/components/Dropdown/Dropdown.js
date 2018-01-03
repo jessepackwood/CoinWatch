@@ -5,20 +5,13 @@ import './Dropdown.css'
 const Dropdown = ({coins}) => {
 
 	const coinNames = coins.map( coin => {
-		return <div> {coin.long} </div>
+		return <option> {coin.long} </option>
 	})
 
-	const expand = () => {
-
-	}
-
 	return (
-		<div className='dropdown-container'>
-			<div className='dropdown' onClick={expand}>
+			<select className='dropdown' >
 			{coinNames}
-			</div>
-			<button className='dropdown-button'>Arrow down</button>
-		</div>
+			</select>
 		)
 	}
 

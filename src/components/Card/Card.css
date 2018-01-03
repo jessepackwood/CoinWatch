@@ -4,22 +4,22 @@
   display: flex;
   padding: 10px;
   border-radius: 15px;
-  background: grey; }
+  background: #274156; }
 
 .number {
   margin-right: 5px;
-  color: #fff; }
+  color: #f2bb30; }
 
 .coin-name {
   font-size: 24pt;
-  color: orange;
+  color: #fff;
   font-family: "Abel", sans-serif;
   margin: 0 10px;
   width: 350px; }
 
 .short {
   margin-left: 5px;
-  color: black; }
+  color: #fff; }
 
 .price {
   color: white;
@@ -30,15 +30,22 @@
   text-align: center;
   margin-left: auto;
   font-size: 20pt;
-  width: 100px; }
+  width: 200px; }
 
 .positive {
-  background-color: green; }
+  color: #9af765; }
 
 .negative {
-  background-color: red; }
+  color: #f55446; }
+
+.hour {
+  margin-left: 10px;
+  color: white; }
 
 .btn-fav {
-  width: 50px;
-  height: 50px;
-  border-radius: 100px; }
+  width: 35px;
+  height: 35px;
+  border-radius: 100px;
+  background-image: url("../../assets/rounded-add-button.svg");
+  background-size: contain;
+  background-repeat: no-repeat; }
