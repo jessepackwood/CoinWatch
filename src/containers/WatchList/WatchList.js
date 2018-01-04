@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Card from '../../components/Card/Card'
 import { connect } from 'react-redux'
+import Header from '../../components/Header/Header'
+import './WatchList.css'
 
 const WatchList = ({watchList}) => {
 
@@ -14,7 +16,11 @@ const WatchList = ({watchList}) => {
 
   return (
     <div>
+    <Header />
+    <div className='watch-list'>
+    <h3>Watch List</h3>
     	{watchedCoins}
+    </div>
     </div>
     )
   }

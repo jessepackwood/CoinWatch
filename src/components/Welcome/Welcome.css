@@ -1,2 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Abel");
 .welcome {
-  background: blue; }
+  background: #274156;
+  height: 100vh;
+  width: 100vw;
+  display: flex; }
+
+.welcome-text {
+  display: flex;
+  color: #fff;
+  position: absolute;
+  top: 23%;
+  left: 15%;
+  align-items: center; }
+
+.welcome-title {
+  font-family: "Abel", sans-serif;
+  font-size: 42pt; }
+
+.line-graph {
+  padding-top: 400px;
+  padding-bottom: 20px;
+  width: 100%;
+  max-height: 100%; }
+
+.start-button {
+  background: none;
+  color: #fff;
+  width: 200px;
+  height: 200px;
+  margin-left: 200px;
+  border: 12px solid white;
+  border-radius: 100px;
+  font-size: 23pt;
+  outline: none; }
+  .start-button:hover {
+    border: 12px solid #9af765;
+    cursor: pointer; }
