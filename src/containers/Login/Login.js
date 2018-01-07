@@ -43,10 +43,10 @@ class Login extends Component {
 
 export const mapStateToProps = state => {
   return {
-    email: state.login.email,
-    password: state.login.password,
-    error: state.login.error,
-    loggedIn: state.login.loggedIn
+    email: state.user.email,
+    password: state.user.password,
+    error: state.user.error,
+    loggedIn: state.user.loggedIn
   }
 }
 

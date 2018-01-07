@@ -3,18 +3,22 @@ import './Card.css'
 import { connect } from 'react-redux'
 import * as actions from '../../actions'
 
-const Card = ({ coin, dayChange, number, watchList, addCoinToWatch, removeCoinFromWatch}) => {
+const Card = ({ coin, dayChange, number, watchList, addCoinToWatch, removeCoinFromWatch, user}) => {
 
-	const {long, short, price, name, cap24hrChange } = coin;
+	const {long, short, price, name, cap24hrChange } = coin
 	const addColor =  cap24hrChange > 0 ? 'positive' : 'negative'
+	const changeSign = watchList && watchList.some( element => element.short === coin.short) ? 'minus' : ''
 
 	const handleWatchList = (watchList, coin) => {
-		if( watchList && watchList.includes(coin)) {
-			removeCoinFromWatch(coin)
+
+		if( watchList.length && watchList.find((element) => element.short === coin.short)) {
+			removeCoinFromWatch(watchList, coin, user)
 		} else {
-			addCoinToWatch(coin)
+			addCoinToWatch(watchList, coin, user)
 		}
 	}
+
+	// console.log(watchList)
 
   return(
     <div className='card'>
@@ -26,22 +30,23 @@ const Card = ({ coin, dayChange, number, watchList, addCoinToWatch, removeCoinFr
       <span className='price'>USD ${price}</span>
       <span className={`${addColor} dayChange`}>{cap24hrChange}% <span className='hour'>(24H)</span></span>
 
-      <span className='btn-fav' onClick={() => handleWatchList(watchList, coin)}></span>
+      <span className={`${changeSign} btn-fav`} onClick={() => handleWatchList(watchList, coin)}></span>
     </div>
   )
 }
 
-export const mapStateToProps = state => {
-	watchList: state.watchList || []
-}
+export const mapStateToProps = state => ({
+	watchList: state.watchList,
+	user: state.user
+})
 
 export const mapDispatchToProps = dispatch => {
 	return {
-		addCoinToWatch: (coin) => {
-			dispatch(actions.addWatch(coin))
+		addCoinToWatch: (watchList, coin, user) => {
+			dispatch(actions.addWatch(watchList, coin, user))
 		},
-		removeCoinFromWatch: (coin) => {
-			dispatch(actions.removeWatch(coin))
+		removeCoinFromWatch: (watchList, coin, user) => {
+			dispatch(actions.removeWatch(watchList, coin, user))
 		}
 	}
 }

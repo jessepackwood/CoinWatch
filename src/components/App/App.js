@@ -1,41 +1,32 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Redirect, Switch, BrowserRouter } from 'react-router-dom';
-// import Header from '../Header/Header'
-import Login from '../../containers/Login/Login'
-import Home from '../Home/Home'
-import Welcome from '../Welcome/Welcome'
-import WatchList from '../../containers/WatchList/WatchList'
-import Portfolio from '../../components/Portfolio/Portfolio'
-import { auth, db, isAuthenticated } from '../../services/firebase'
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux'
+import Routes from '../Routes/Routes'
+import * as actions from '../../actions'
 
 class App extends Component {
-  constructor() {
-    super()
+
+  componentDidMount() {
+    this.props.checkUser()
   }
 
   render() {
     return (
       <div>
-          <Switch>
-            <Route exact path='/' component={Welcome} />
-            <Route path ='/home' component={Home} />
-            <RouteWhenAuthorized path="/watchlist" component={WatchList} />
-            <Route path='/portfolio' component={Portfolio} />
-          </Switch>
+          <Routes />
       </div>
     );
   }
 }
 
-const RouteWhenAuthorized = ({component: Component, ...rest}) => (
-  <Route {...rest} render={renderProps => (
-    isAuthenticated() ? (
-      <Component {...renderProps} />
-      ) : (
-      <Redirect to='/' />
-      )
-    ) }/>
-  )
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return {
+    checkUser: () => {
+      dispatch(actions.checkUser())
+    }
+  }
+}
+
+export default withRouter(connect(null, mapDispatchToProps)(App));

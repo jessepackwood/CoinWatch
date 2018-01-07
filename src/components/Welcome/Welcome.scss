@@ -1,7 +1,7 @@
 @import '../../variable.scss';
 
 .welcome {
-	background: #274156;
+	background: $blue;
 	height: 100vh;
 	width: 100vw;
 	display: flex;
@@ -39,7 +39,7 @@
 	font-size: 23pt;
 	outline: none;
 	&:hover {
-		border: 12px solid #9af765;
+		border: 12px solid $green;
 		cursor: pointer;
 	}
 }
