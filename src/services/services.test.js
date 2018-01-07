@@ -15,5 +15,10 @@ describe('API Calls tests', () => {
   	expect(coinFront).toEqual(['array', 'of', 'coins'])
   })
 
+  it('should fetch a coin price', async () => {
+    const coinPrice = await apiCalls.fetchCoinPrice();
+    expect(coinPrice).toEqual(['array', 'of', 'coins'])
+  })
 
+  
 })

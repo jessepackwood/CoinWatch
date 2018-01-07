@@ -1,16 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Abel");
 .login {
+  background: #274156;
+  border-radius: 20px;
   display: flex;
+  height: auto;
+  width: 400px;
+  position: fixed;
+  top: calc(50% - 150px);
+  left: calc(50% - 200px);
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #434343; }
+  z-index: 1; }
 
-.email-input, .password-input {
-  height: 25px;
-  width: 400px;
-  margin: 10px; }
+.input-field,
+.btn-submit {
+  margin-top: 20px;
+  height: 30px;
+  width: 75%;
+  font-size: 14pt; }
 
 .btn-submit {
-  width: 400px;
-  height: 50px;
-  margin: 10px; }
+  margin-bottom: 30px;
+  color: #fff;
+  background-color: #274156;
+  border: none; }
+
+.modal-title {
+  margin-top: 20px;
+  font-size: 16pt; }

@@ -1,7 +1,6 @@
 @import '../../variable.scss';
 
 .card {
-	// border: 1px solid red;
 	margin: 15px auto;
 	display: flex;
 	padding: 10px;
@@ -16,7 +15,6 @@
 	font-size: 24pt;
 	color: #fff;
 	font-family: $title-font;
-	// display: inline-block;
 	margin: 0 10px;
 	width: 350px;
 }
@@ -55,8 +53,13 @@
 .btn-fav {
 	width: 35px;
 	height: 35px;
-	border-radius: 100px;
 	background-image: url('../../assets/rounded-add-button.svg');
 	background-size: contain;
 	background-repeat: no-repeat;
+	&.minus {
+		background-image: url('../../assets/round-minus.svg');
+	background-repeat: no-repeat;
+
+	}
 }
+

@@ -25,6 +25,10 @@ export const googleSignIn = () => {
 	return firebase.auth().signInWithPopup(provider).then(user => console.log(user))
 }
 
+export const fetchWatchList = async (user) => {
+	return db.ref('watchlists/' + user.uid ).once('value')
+}
+
 
 
 export default firebase;

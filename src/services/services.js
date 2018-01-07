@@ -8,18 +8,11 @@ export const fetchCoinFront = async () => {
   }
 }
 
-export const fetchCoinHistory = async () => {
+export const fetchCoinPrice = async (symbol) => {
 	try {
-		const coinHistoryResponse = await fetch('http://coincap.io/')
-		const history = await coinHistoryResponse.json()
-		return history
-	} catch (error) {
-		return error
-	}
-}
-
-export const fetchWatchList = async () => {
-	try {
+		const singleCoinResponse = await fetch(`http://coincap.io/page/${symbol}`)
+		const singleCoin = await singleCoinResponse.json()
+		return singleCoin.price_usd
 	} catch (error) {
 		return error
 	}

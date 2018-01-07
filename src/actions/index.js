@@ -1,5 +1,20 @@
-import { auth, db } from '../services/firebase'
-import { fetchCoinFront, fetchCoinHistory, fetchWatchList } from '../services/services'
+import firebase from 'firebase'
+import { auth, db, fetchWatchList } from '../services/firebase'
+import { fetchCoinFront } from '../services/services'
+
+
+export const checkUser = () => (dispatch) => {
+  auth.onAuthStateChanged( (user) => {
+    if (user) {
+      console.log('user loggedIn')
+      dispatch(loginSuccess(user))
+      dispatch(fetchWatchedCoins(user))
+      // dispatch(listenToWatchLists(user))
+    } 
+  })
+}
+
+//----------------------------- Login Actions ------------------------//
 
 export const signUpSuccess = (user) => {
   return {
@@ -13,7 +28,7 @@ export const signUpError = () => {
   }
 }
 
-export const signInUser = (email, password) => async (dispatch) => {
+export const signUpUser = (email, password) => async (dispatch) => {
   auth.createUserWithEmailandPassword(email, password).then((user) => {
     dispatch(signUpSuccess(user))
   }).catch((error) => {
@@ -29,6 +44,14 @@ export const amountInputChange = (amount) => {
   }
 }
 
+export const searchInputChange = (searchInput) => {
+  console.log(searchInput)
+  return {
+    type: 'SEARCH_CHANGE',
+    searchInput
+  }
+}
+
 
 export const inputChange = (name, value) => {
   return {
@@ -39,7 +62,8 @@ export const inputChange = (name, value) => {
 
 export const loginSuccess = (user) => {
   return {
-    type: 'LOGIN_SUCCESS'
+    type: 'LOGIN_SUCCESS',
+    user
   }
 }
 
@@ -49,27 +73,37 @@ export const loginError = () => {
   }
 }
 
-export const loginUser = (email, password) => async (dispatch ) => {
-  // try {
-  //   let user = await auth.signInWithEmailAndPassword(email, password)
-    
-  // } catch(error) {
-  //   console.log('Error:', error)
-  // }
-  auth.signInWithEmailAndPassword(email, password).then((user) => {
-    dispatch(loginSuccess(user))
-  }).catch((err) => {
-    dispatch(loginError())
+export const loginUser = (email, password) => (dispatch ) => {
+  auth.setPersistence(firebase.auth.Auth.Persistence.SESSION)
+  .then(function() {
+    auth.signInWithEmailAndPassword(email, password).then((user) => {
+      dispatch(loginSuccess(user))
+      dispatch(fetchWatchedCoins(user))
+      // dispatch(listenToWatchLists(user))
+    }).catch((err) => {
+      dispatch(loginError())
+    })
   })
 }
 
-// export const postWatchedCoin = (coin, user) => {
-//   db.ref('users/' + userID).push(coin)
-// }
-
-export const removeWatchedCoin = (coin) => {
-  
+export const signOutUser = (user) => (dispatch) => {
+  auth.signOut().then(()=> {
+    dispatch(signOutSuccess())
+    dispatch(clearWatchList())
+    removeWatchListListener(user)
+  })
 }
+
+export const signOutSuccess = () => {
+  return {
+    type: 'SIGN_OUT_SUCCESS'
+  }
+}
+
+
+//----------------------------- Coin Actions ------------------------//
+
+
 
 export const fetchCoins = () => async (dispatch) => {
   const coins = await fetchCoinFront();
@@ -77,16 +111,19 @@ export const fetchCoins = () => async (dispatch) => {
 }
 
 export const setCoins = (coins) => {
-  console.log(coins)
   return {
     type: 'SET_COINS',
     coins
   }
 }
 
-export const fetchWatchedCoins = () => async (dispatch) => {
-  const watchList = await fetchWatchList();
-  dispatch(setWatchedCoins(watchList))
+
+//----------------------------- WatchList Actions ------------------------//
+
+export const fetchWatchedCoins = (user) => async (dispatch) => {
+  fetchWatchList(user).then((snap)=> {
+    dispatch(setWatchedCoins(snap.val()))
+  });
 }
 
 export const setWatchedCoins = (watchList) => {
@@ -96,32 +133,71 @@ export const setWatchedCoins = (watchList) => {
   }
 }
 
-export const fetchHistory = () => async (dispatch) => {
-  const coinHistory = await fetchCoinHistory();
-  dispatch(setCoinHistory(coinHistory))
+export const postWatchedCoin = (watchList, coin, user) => {
+  db.ref('watchlists/' + user.uid).set([...watchList, coin])
 }
 
-export const setCoinHistory = (coinHistory) => {
-  return {
-    type: 'SET_COIN_HISTORY',
-    coinHistory
-  }
+export const removeWatchedCoin = (watchList, coin, user) => {
+  db.ref('watchlists/' + user.uid).set(watchList.filter((element) => element.short !== coin.short))
 }
 
-//add to watch
-export const addWatch = (coin) => {
+// export const listenToWatchLists = (user) => (dispatch) => {
+//   db.ref('watchlists/' + user.uid).on('value', (snap) => {
+//     dispatch(setWatchedCoins(snap.val()))
+//   })
+// }
+
+export const addWatch = (watchList, coin, user) => {
   console.log('addWatch')
+  postWatchedCoin(watchList, coin, user)
   return {
     type: 'ADD_WATCH',
     coin
   }
 }
 
-//remove from watch
-export const removeWatch = (coin) => {
+export const removeWatch = (watchList, coin, user) => {
+  removeWatchedCoin(watchList, coin, user)
   return {
     type: 'REMOVE_WATCH',
+    coin
   }
+}
+
+export const clearWatchList = () => {
+  return {
+    type: 'CLEAR_WATCHLIST'
+  }
+}
+
+export const removeWatchListListener = (user) => {
+  db.ref('watchlists/' + user.uid).off()
+}
+
+//----------------------------- Portfolio Actions ------------------------//
+
+export const addPortCoin = (portfolio, coin, amountOfCoin, user) => {
+  postPortCoin()
+  return {
+    type: 'ADD_PORT_COIN',
+    addedPortCoin: Object.assign({}, coin, {amount: amountOfCoin})
+  }
+}
+
+export const postPortCoin = (portfolio, addedPortCoin, user) => {
+  db.ref('portfolios/' + user.uid).set([...portfolio, addedPortCoin])
+}
+
+export const removePortCoin = (portfolio, addedPortCoin, user) => {
+  postRemovePortCoin(portfolio, addedPortCoin, user)
+  return {
+    type: 'REMOVE_PORT_COIN',
+    removePortCoin: addedPortCoin
+  }
+}
+
+export const postRemovePortCoin = (portfolio, addedPortCoin, user) => {
+  db.ref('portfolio/' + user.uid).set(portfolio.filter((element) => element.short !== addedPortCoin.short))
 }
 
 

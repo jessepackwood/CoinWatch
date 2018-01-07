@@ -10,8 +10,7 @@
   color: #fff;
   font-family: $title-font;
   font-size: 30pt;
-  position: absolute;
-  top: 0px;
+  margin: none;
 }
 
 ul {
@@ -30,13 +29,26 @@ li {
 }
 
 .login {
-  margin-left: auto;
+  position: absolute;
+  right: 100px;
   margin-right: 10px;
-  text-decoration: none;
+  background: none;
 }
-
+.sign-out, .sign-up {
+  position: absolute;
+  right: 40px;
+}
 .header-link,
 .home-link {
   margin-bottom: 10px;
   color: #fff;
 }
+
+// .line-graph-header {
+
+//   height: 75px;
+//   position: fixed;
+//   top: 25px;
+//   left: 40%;
+//   // margin-bottom: 100px;
+// }

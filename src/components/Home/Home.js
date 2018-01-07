@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import Header from '../Header/Header'
+import Search from '../Search/Search'
 import './Home.css'
 
 import Card from '../Card/Card'
@@ -18,14 +19,17 @@ const Home = ({coins}) => {
       })
 
   return (
-    <div className='home-page'>
-      <h3>Top 100 Currencies by market cap</h3>
-      {coinsToDisplay}
+    <div>
+      <Header />
+      <Search coins={coins} />
+      <div className='home-page'>
+        <h3>Top 100 Currencies by market cap</h3>
+        {coinsToDisplay}
+      </div>
     </div>
   )
 }
 
 const mapStateToProps = state => ({coins: state.coins})
-
 
 export default connect(mapStateToProps, null)(Home)
