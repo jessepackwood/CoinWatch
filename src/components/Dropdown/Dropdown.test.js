@@ -1,9 +1,8 @@
-import React from 'react'
 import Dropdown from './Dropdown'
 
 describe('Dropdown tests', () => {
 
-	it('should be defined', () => {
-		expect(Dropdown).toBeDefined()
-	})
+  it('should be defined', () => {
+    expect(Dropdown).toBeDefined()
+  })
 })

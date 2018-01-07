@@ -20,7 +20,7 @@
 //   margin: 10px;
 // }
 
-.login {
+.login-form {
   background: $blue;
   border-radius: 20px;
   // color: white;
@@ -33,7 +33,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  // z-index: 1;
 }
 
 .input-field,

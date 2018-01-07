@@ -2,14 +2,13 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import * as actions from '../../actions'
-import { googleSignIn } from '../../services/firebase'
-import './Login.css'
+// import { googleSignIn } from '../../services/firebase'
 import Form from '../../components/Form/Form'
+import PropTypes from 'prop-types'
+import './Login.css'
+
 
 class Login extends Component {
-  constructor() {
-    super()
-  }
 
   handleInputChange = (event) => {
     const {name, value} = event.target
@@ -35,7 +34,7 @@ class Login extends Component {
           inputChange={this.handleInputChange}
           submit={this.handleSubmit}
           error={this.props.error}
-          />
+        />
       </div>
     )
   }
@@ -60,5 +59,14 @@ export const mapDispatchToProps = dispatch => {
     }
   };
 };
+
+Login.propTypes = {
+  email: PropTypes.string,
+  password: PropTypes.string,
+  error: PropTypes.string,
+  loggedIn: PropTypes.string,
+  inputChange: PropTypes.func,
+  loginUser: PropTypes.func
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)

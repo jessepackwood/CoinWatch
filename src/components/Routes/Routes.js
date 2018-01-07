@@ -9,27 +9,27 @@ import { isAuthenticated } from '../../services/firebase'
 
 
 const Routes = () => {
-	return (
-		<div>
-     <Switch>
+  return (
+    <div>
+      <Switch>
         <Route exact path='/' component={Welcome} />
         <Route path='/login' component={Login} />
         <Route path ='/home' component={Home} />
         <RouteWhenAuthorized path="/watchlist" component={WatchList} />
         <RouteWhenAuthorized path='/portfolio' component={Portfolio} />
       </Switch>
-		</div>
-		)
+    </div>
+  )
 }
 
 const RouteWhenAuthorized = ({component: Component, ...rest}) => (
   <Route {...rest} render={renderProps => (
     isAuthenticated() ? (
       <Component {...renderProps} />
-      ) : (
+    ) : (
       <Redirect to='/login' />
-      )
-    ) }/>
-  )
+    )
+  ) }/>
+)
 
 export default Routes
