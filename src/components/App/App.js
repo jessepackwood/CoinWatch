@@ -6,7 +6,7 @@ import Routes from '../Routes/Routes'
 import PropTypes from 'prop-types';
 import * as actions from '../../actions'
 
-class App extends Component {
+export class App extends Component {
 
   componentDidMount() {
     this.props.checkUser()

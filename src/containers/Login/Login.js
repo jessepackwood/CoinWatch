@@ -69,7 +69,7 @@ Login.propTypes = {
   email: PropTypes.string,
   password: PropTypes.string,
   error: PropTypes.string,
-  loggedIn: PropTypes.string,
+  loggedIn: PropTypes.bool,
   inputChange: PropTypes.func,
   loginUser: PropTypes.func,
   createUser: PropTypes.func

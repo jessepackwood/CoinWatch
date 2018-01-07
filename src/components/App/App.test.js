@@ -1,12 +1,17 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import App from './App'
+import { App, mapDispatchToProps } from './App'
 
 describe('App tests', () => {
-  const app = shallow(<App />)
+  let checkUser
+  let app 
+
+  beforeEach( () => {
+    checkUser = jest.fn()
+    app = shallow(<App checkUser={checkUser}/>)
+  });
 
   it('should be defined', () => {
-    const app = shallow(<App />)
     expect(app).toBeDefined()
   })
 
@@ -14,5 +19,9 @@ describe('App tests', () => {
     expect(app).toMatchSnapshot()
   })
 
-  
+  it('should dispatch checkUser', async () => {
+    await app.instance().componentDidMount()
+    expect(checkUser).toHaveBeenCalled()
+  })
+
 })
