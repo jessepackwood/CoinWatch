@@ -8,6 +8,7 @@ const Form = ({email, password, inputChange, submit, error}) => {
         type='text'
         name='email'
         className='input-field'
+        placeholder='Email'
         value={email || ''}
         onChange={inputChange} 
       />
@@ -15,6 +16,7 @@ const Form = ({email, password, inputChange, submit, error}) => {
         type='password'
         name='password'
         className='input-field'
+        placeholder='Password'
         value={password || ''} 
         onChange={inputChange} 
       />

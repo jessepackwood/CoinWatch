@@ -56,6 +56,9 @@ export const mapDispatchToProps = dispatch => {
     },
     loginUser: (email, password) => {
       dispatch(actions.loginUser(email, password));
+    },
+    createUser: (email, password) => {
+      dispatch(actions.createUser(email, password))
     }
   };
 };
@@ -66,7 +69,8 @@ Login.propTypes = {
   error: PropTypes.string,
   loggedIn: PropTypes.string,
   inputChange: PropTypes.func,
-  loginUser: PropTypes.func
+  loginUser: PropTypes.func,
+  createUser: PropTypes.func
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
