@@ -12,7 +12,7 @@ export const checkUser = () => (dispatch) => {
   })
 }
 
-//----------------------------- Create User Actions ------------------------//
+//----------------------------- Create User Actions ---------------------//
 
 export const createUser = (email, password) => async (dispatch) => {
   auth.createUserWithEmailandPassword(email, password).then((user) => {
