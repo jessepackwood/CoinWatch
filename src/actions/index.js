@@ -1,5 +1,5 @@
 import firebase from 'firebase'
-import { auth, db, fetchWatchList } from '../services/firebase'
+import { auth, db, fetchWatchList, isAuthenticated } from '../services/firebase'
 import { fetchCoinFront } from '../services/services'
 
 
@@ -128,7 +128,11 @@ export const listenToWatchLists = (user) => (dispatch) => {
   })
 }
 
-export const addWatch = (watchList, coin, user) => {
+export const addWatch = (watchList, coin, user) => (dispatch) => {
+  if (!isAuthenticated()) {
+    return dispatch(forbidden())
+  }
+
   postWatchedCoin(watchList, coin, user)
   return {
     type: 'ADD_WATCH',
@@ -152,6 +156,12 @@ export const clearWatchList = () => {
 
 export const removeWatchListListener = (user) => {
   db.ref('watchlists/' + user.uid).off()
+}
+
+export const forbidden = () => {
+  return {
+    type: 'FORBIDDEN'
+  }
 }
 
 //----------------------------- Portfolio Actions ------------------------//
