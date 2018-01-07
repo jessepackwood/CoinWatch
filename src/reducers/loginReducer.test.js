@@ -18,4 +18,9 @@ describe('loginReducer tests', () => {
     expect(loginReducer(state, actions.loginSuccess(user))).toEqual(expected)
   })
 
+  it('should reset state when a user signs out', () => {
+    const user = {email: 'email', password: null, loggedIn: true, uid: 'uid' }
+    const expected = {"email": null, "loggedIn": false, "password": null, "uid": null}
+    expect(loginReducer(state, actions.signOutSuccess())).toEqual(expected)
+  })
 })

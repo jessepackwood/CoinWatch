@@ -8,9 +8,11 @@ describe('Card tests', () => {
   const mockRemoveWatch = jest.fn()
 
   let card;
+  let coin;
 
   beforeEach( () => {
-    card = shallow(<Card />)
+    coin = {long: 'Bitcoin'}
+    card = shallow(<Card coin={coin}/>)
   });
 
   it('should be defined', () => {
@@ -21,12 +23,12 @@ describe('Card tests', () => {
     expect(card).toMatchSnapshot();
   });
 
-  it('should call addFav on click', () => {
+  it('should call addWatch on click', () => {
     card.find('.btn-fav').first().simulate('click');
     expect(mockAddWatch).toHaveBeenCalled();
   });
 
-  it('should call removeFav on click', () => {
+  it('should call removeWatch on click', () => {
 
     card.find('.btn-fav').first().simulate('click');
     expect(mockRemoveWatch).toHaveBeenCalled();
