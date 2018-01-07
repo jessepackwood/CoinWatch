@@ -5,7 +5,7 @@ const watchListReducer = (state = [], action) => {
   case 'REMOVE_WATCH' :
     return state.filter( coin => coin.short !== action.coin.short)
   case 'SET_WATCHED_COINS':
-    return action.watchList
+    return action.watchList || []
   case 'CLEAR_WATCHLIST':
     return []
   default:

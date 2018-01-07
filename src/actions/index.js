@@ -8,7 +8,6 @@ export const checkUser = () => (dispatch) => {
     if (user) {
       dispatch(loginSuccess(user))
       dispatch(fetchWatchedCoins(user))
-      // dispatch(listenToWatchLists(user))
     } 
   })
 }
@@ -64,7 +63,6 @@ export const loginUser = (email, password) => (dispatch ) => {
       auth.signInWithEmailAndPassword(email, password).then((user) => {
         dispatch(loginSuccess(user))
         dispatch(fetchWatchedCoins(user))
-      // dispatch(listenToWatchLists(user))
       }).catch(() => {
         dispatch(loginError())
       })
