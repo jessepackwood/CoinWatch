@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import './Dropdown.css'
 
-const Dropdown = ({coins}) => {
-  console.log(coins)
+export const Dropdown = ({coins}) => {
   const coinNames = coins.map( (coin, index) => {
     return <option key={`Dropdown - ${index}`}> {coin.long} </option>
   })
@@ -16,7 +15,7 @@ const Dropdown = ({coins}) => {
   )
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   coins: state.coins
 })
 

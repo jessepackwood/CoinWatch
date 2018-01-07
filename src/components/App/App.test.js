@@ -2,7 +2,17 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import App from './App'
 
-it('should be defined', () => {
+describe('App tests', () => {
   const app = shallow(<App />)
-  expect(app).toBeDefined()
-});
+
+  it('should be defined', () => {
+    const app = shallow(<App />)
+    expect(app).toBeDefined()
+  })
+
+  it('should match the snapshot', () => {
+    expect(app).toMatchSnapshot()
+  })
+
+  
+})
