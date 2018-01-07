@@ -6,7 +6,6 @@ import { fetchCoinFront } from '../services/services'
 export const checkUser = () => (dispatch) => {
   auth.onAuthStateChanged( (user) => {
     if (user) {
-      console.log('user loggedIn')
       dispatch(loginSuccess(user))
       dispatch(fetchWatchedCoins(user))
       // dispatch(listenToWatchLists(user))
@@ -172,14 +171,14 @@ export const postPortCoin = (portfolio, addedPortCoin, user) => {
 }
 
 export const removePortCoin = (portfolio, addedPortCoin, user) => {
-  postRemovePortCoin(portfolio, addedPortCoin, user)
+  removePostedPortCoin(portfolio, addedPortCoin, user)
   return {
     type: 'REMOVE_PORT_COIN',
     removePortCoin: addedPortCoin
   }
 }
 
-export const postRemovePortCoin = (portfolio, addedPortCoin, user) => {
+export const removePostedPortCoin = (portfolio, addedPortCoin, user) => {
   db.ref('portfolio/' + user.uid).set(portfolio.filter(
     (element) => element.short !== addedPortCoin.short))
 }

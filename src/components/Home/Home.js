@@ -7,8 +7,8 @@ import './Home.css'
 
 import Card from '../Card/Card'
 
-const Home = ({coins}) => {
-
+const Home = ({coins, searchInput}) => {
+  console.log(searchInput)
   const hundredCoins = coins.slice(0, 100)
 
   const coinsToDisplay = hundredCoins.map( (coin, index) => { 
@@ -19,19 +19,32 @@ const Home = ({coins}) => {
     />
   })
 
+  const searchedCoinsToDisplay = (coins, searchInput) => {
+    console.log(coins)
+    if (searchInput) {
+      return coins.filter( coin => coin.long.includes(searchInput))
+    }
+  }
+  // console.log(searchedCoinsToDisplay())
+
   return (
     <div>
       <Header />
-      <Search coins={coins} />
+      <Search />
+      { searchedCoinsToDisplay.length && 
       <div className='home-page'>
         <h3>Top 100 Currencies by market cap</h3>
         {coinsToDisplay}
       </div>
+    }
     </div>
   )
 }
 
-const mapStateToProps = state => ({coins: state.coins})
+const mapStateToProps = state => ({
+  coins: state.coins,
+  searchInput: state.searchInput.value
+})
 
 Home.propTypes = {
   coins: PropTypes.array

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
 import * as actions from '../../actions'
 
-const Card = ({ 
+export const Card = ({ 
   coin, number, watchList, addCoinToWatch, removeCoinFromWatch, user
 }) => {
 
@@ -60,7 +60,7 @@ export const mapDispatchToProps = dispatch => {
 
 Card.propTypes = {
   coin: PropTypes.object,
-  number: PropTypes.number, 
+  number: PropTypes.string, 
   watchList: PropTypes.array,
   user: PropTypes.object,
   addCoinToWatch: PropTypes.func,

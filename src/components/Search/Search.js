@@ -1,36 +1,35 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import * as actions from '../../actions'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import './Search.css'
 
-export const Search = () => {
-
-  const handleInputChange = (event) => {
-    // let matchingCoins = this.props.coins.filter((coin)=> coin.long.includes(event.target.value))
-    this.props.searchInputChange(event.target.value)
-  }
+const Search = ({coins, searchInput, inputChange}) => {
 
   return (
     <div className='search-wrapper'>
-      <input className='search-bar' type='text' placeholder='Search' onChange={this.handleInputChange} />
+      <input className='search-bar' type='text' placeholder='Search'  onChange={event => inputChange(event.target.value)} />
     </div>
   )
 }
 
-const mapStateToProps = state => ({
-  searchedCoins: state.searchedCoins
+export const mapStateToProps = state => ({
+  coins: state.coins,
+  searchInput: state.searchInput.value
 })
 
-const mapDispatchToProps = dispatch => {
+export const mapDispatchToProps = dispatch => {
   return {
-    searchInputChange: (searchInput) => {
+    inputChange: (searchInput) => {
     	dispatch(actions.searchInputChange(searchInput))
     }
   }
 }
 
 Search.propTypes = {
-  
+  coins: PropTypes.array,
+  searchInput: PropTypes.string,
+  inputChange: PropTypes.func
 }
 
-export default Search
+export default connect(mapStateToProps, mapDispatchToProps)(Search)
