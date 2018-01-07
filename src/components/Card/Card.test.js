@@ -1,10 +1,9 @@
-import React from 'react'
 import Card from './Card'
 
 describe('Card tests', () => {
 
-	it('should be defined', () => {
-		expect(Card).toBeDefined()
-	})
+  it('should be defined', () => {
+    expect(Card).toBeDefined()
+  })
 	
 })

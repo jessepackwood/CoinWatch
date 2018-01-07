@@ -1,23 +1,24 @@
 import React from 'react'
 import * as actions from '../../actions'
+import PropTypes from 'prop-types';
 import './Search.css'
 
 export const Search = () => {
 
-	const handleInputChange = (event) => {
-		// let matchingCoins = this.props.coins.filter((coin)=> coin.long.includes(event.target.value))
-		this.props.searchInputChange(event.target.value)
-	}
+  const handleInputChange = (event) => {
+    // let matchingCoins = this.props.coins.filter((coin)=> coin.long.includes(event.target.value))
+    this.props.searchInputChange(event.target.value)
+  }
 
-	return (
-		<div className='search-wrapper'>
-			<input className='search-bar' type='text' placeholder='Search' onChange={this.handleInputChange} />
-		</div>
-	)
+  return (
+    <div className='search-wrapper'>
+      <input className='search-bar' type='text' placeholder='Search' onChange={this.handleInputChange} />
+    </div>
+  )
 }
 
 const mapStateToProps = state => ({
-	searchedCoins: state.searchedCoins
+  searchedCoins: state.searchedCoins
 })
 
 const mapDispatchToProps = dispatch => {
@@ -26,6 +27,10 @@ const mapDispatchToProps = dispatch => {
     	dispatch(actions.searchInputChange(searchInput))
     }
   }
+}
+
+Search.propTypes = {
+  
 }
 
 export default Search

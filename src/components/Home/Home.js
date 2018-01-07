@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Header from '../Header/Header'
 import Search from '../Search/Search'
+import PropTypes from 'prop-types';
 import './Home.css'
 
 import Card from '../Card/Card'
@@ -11,12 +12,12 @@ const Home = ({coins}) => {
   const hundredCoins = coins.slice(0, 100)
 
   const coinsToDisplay = hundredCoins.map( (coin, index) => { 
-        return <Card 
-          coin={coin}
-          key={`Card: ${coin.short}`}
-          number={`${index + 1}`}
-        />
-      })
+    return <Card 
+      coin={coin}
+      key={`Card: ${coin.short}`}
+      number={`${index + 1}`}
+    />
+  })
 
   return (
     <div>
@@ -31,5 +32,9 @@ const Home = ({coins}) => {
 }
 
 const mapStateToProps = state => ({coins: state.coins})
+
+Home.propTypes = {
+  coins: PropTypes.array
+}
 
 export default connect(mapStateToProps, null)(Home)

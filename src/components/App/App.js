@@ -3,6 +3,7 @@ import './App.css';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'
 import Routes from '../Routes/Routes'
+import PropTypes from 'prop-types';
 import * as actions from '../../actions'
 
 class App extends Component {
@@ -14,7 +15,7 @@ class App extends Component {
   render() {
     return (
       <div>
-          <Routes />
+        <Routes />
       </div>
     );
   }
@@ -27,6 +28,10 @@ const mapDispatchToProps = dispatch => {
       dispatch(actions.checkUser())
     }
   }
+}
+
+App.propTypes = {
+  checkUser: PropTypes.func
 }
 
 export default withRouter(connect(null, mapDispatchToProps)(App));

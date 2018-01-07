@@ -22,11 +22,11 @@ export const isAuthenticated = () => {
 export const provider = new firebase.auth.GoogleAuthProvider();
 
 export const googleSignIn = () => {
-	return firebase.auth().signInWithPopup(provider).then(user => console.log(user))
+  return firebase.auth().signInWithPopup(provider)
 }
 
 export const fetchWatchList = async (user) => {
-	return db.ref('watchlists/' + user.uid ).once('value')
+  return db.ref('watchlists/' + user.uid ).once('value')
 }
 
 
