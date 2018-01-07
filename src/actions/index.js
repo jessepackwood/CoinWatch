@@ -6,7 +6,6 @@ import { fetchCoinFront } from '../services/services'
 export const checkUser = () => (dispatch) => {
   auth.onAuthStateChanged( (user) => {
     if (user) {
-      console.log('user loggedIn')
       dispatch(loginSuccess(user))
       dispatch(fetchWatchedCoins(user))
       // dispatch(listenToWatchLists(user))
@@ -14,44 +13,30 @@ export const checkUser = () => (dispatch) => {
   })
 }
 
-//----------------------------- Login Actions ------------------------//
+//----------------------------- Create User Actions ------------------------//
 
-export const signUpSuccess = () => {
+export const createUser = (email, password) => async (dispatch) => {
+  auth.createUserWithEmailandPassword(email, password).then((user) => {
+    dispatch(createUserSuccess(user))
+  }).catch((error) => {
+    dispatch(createUserError(error))
+  })
+}
+
+export const createUserSuccess = () => {
   return {
     type: 'SIGN_UP_SUCCESS'
   }
 }
 
-export const signUpError = () => {
+export const createUserError = (error) => {
   return {
-    type: 'SIGN_UP_ERROR'
+    type: 'SIGN_UP_ERROR',
+    error
   }
 }
 
-export const signUpUser = (email, password) => async (dispatch) => {
-  auth.createUserWithEmailandPassword(email, password).then((user) => {
-    dispatch(signUpSuccess(user))
-  }).catch(() => {
-    dispatch(signUpError())
-  })
-}
-
-export const amountInputChange = (amount) => {
-  console.log('amountInputChange')
-  return {
-    type: 'AMOUNT_CHANGE',
-    amount
-  }
-}
-
-export const searchInputChange = (searchInput) => {
-  console.log(searchInput)
-  return {
-    type: 'SEARCH_CHANGE',
-    searchInput
-  }
-}
-
+//----------------------------- Login Actions ------------------------//
 
 export const inputChange = (name, value) => {
   return {
@@ -100,10 +85,7 @@ export const signOutSuccess = () => {
   }
 }
 
-
 //----------------------------- Coin Actions ------------------------//
-
-
 
 export const fetchCoins = () => async (dispatch) => {
   const coins = await fetchCoinFront();
@@ -189,18 +171,34 @@ export const postPortCoin = (portfolio, addedPortCoin, user) => {
 }
 
 export const removePortCoin = (portfolio, addedPortCoin, user) => {
-  postRemovePortCoin(portfolio, addedPortCoin, user)
+  removePostedPortCoin(portfolio, addedPortCoin, user)
   return {
     type: 'REMOVE_PORT_COIN',
     removePortCoin: addedPortCoin
   }
 }
 
-export const postRemovePortCoin = (portfolio, addedPortCoin, user) => {
+export const removePostedPortCoin = (portfolio, addedPortCoin, user) => {
   db.ref('portfolio/' + user.uid).set(portfolio.filter(
     (element) => element.short !== addedPortCoin.short))
 }
 
+export const amountInputChange = (amount) => {
+  console.log('amountInputChange')
+  return {
+    type: 'AMOUNT_CHANGE',
+    amount
+  }
+}
 
+//----------------------------- Search Actions ------------------------//
+
+export const searchInputChange = (searchInput) => {
+  console.log(searchInput)
+  return {
+    type: 'SEARCH_CHANGE',
+    searchInput
+  }
+}
 
 

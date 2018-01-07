@@ -5,10 +5,12 @@ import * as actions from '../../actions'
 // import { googleSignIn } from '../../services/firebase'
 import Form from '../../components/Form/Form'
 import PropTypes from 'prop-types'
+import { Provider } from 'react-redux';
+
 import './Login.css'
 
 
-class Login extends Component {
+export class Login extends Component {
 
   handleInputChange = (event) => {
     const {name, value} = event.target
@@ -56,6 +58,9 @@ export const mapDispatchToProps = dispatch => {
     },
     loginUser: (email, password) => {
       dispatch(actions.loginUser(email, password));
+    },
+    createUser: (email, password) => {
+      dispatch(actions.createUser(email, password))
     }
   };
 };
@@ -66,7 +71,12 @@ Login.propTypes = {
   error: PropTypes.string,
   loggedIn: PropTypes.string,
   inputChange: PropTypes.func,
-  loginUser: PropTypes.func
+  loginUser: PropTypes.func,
+  createUser: PropTypes.func
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
+
+
+
+

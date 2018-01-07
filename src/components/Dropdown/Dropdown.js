@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import './Dropdown.css'
 
 const Dropdown = ({coins}) => {
-
+  console.log(coins)
   const coinNames = coins.map( (coin, index) => {
     return <option key={`Dropdown - ${index}`}> {coin.long} </option>
   })

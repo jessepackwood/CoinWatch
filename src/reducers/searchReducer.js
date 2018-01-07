@@ -1,7 +1,7 @@
-const searchReducer = (state={}, action) => {
+const searchReducer = (state={value: ''}, action) => {
   switch (action.type) {
   case 'SEARCH_CHANGE':
-    return {...state, searchValue: action.searchInput}
+    return {...state, value: action.searchInput}
   default:
     return state
   }

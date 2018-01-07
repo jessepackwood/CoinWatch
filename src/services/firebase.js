@@ -26,10 +26,9 @@ export const googleSignIn = () => {
 }
 
 export const fetchWatchList = async (user) => {
-  return db.ref('watchlists/' + user.uid ).once('value')
+  const watchList = db.ref('watchlists/' + user.uid ).once('value')
+  return watchList
 }
 
 
-
 export default firebase;
-
