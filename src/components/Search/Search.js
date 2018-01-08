@@ -4,7 +4,7 @@ import * as actions from '../../actions'
 import PropTypes from 'prop-types'
 import './Search.css'
 
-const Search = ({coins, searchInput, inputChange}) => {
+export const Search = ({coins, searchInput, inputChange}) => {
 
   return (
     <div className='search-wrapper'>

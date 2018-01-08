@@ -19,6 +19,19 @@ describe('All actions', () => {
       expect(actions.createUserSuccess(user)).toEqual(expected)
     })
 
+    it('createUserError returns an object with type of SIGN_UP_ERROR', () => {
+      const user = {
+        email: 'jhun',
+        password: 'password',
+        error: 'nah bro'
+      }
+      const expected = {
+        type: 'SIGN_UP_ERROR',
+        error: user
+      }
+      expect(actions.createUserError(user)).toEqual(expected)
+    })
+
     it('loginSuccess returns an object with a logged in user', () => {
       const expected = {
         type: 'LOGIN_SUCCESS',
@@ -57,7 +70,7 @@ describe('All actions', () => {
       expect(actions.setWatchedCoins(watchList)).toEqual(expected)
     })
 
-    it('addWatch should return an object with the type of ADD_WATCH', () => {
+    it.skip('addWatch should return an object with the type of ADD_WATCH', () => {
       const coin = {coin:'IOT'}
       const watchList = []
       const user = {uid: 'id'}
@@ -69,9 +82,9 @@ describe('All actions', () => {
 
     })    
 
-    it('removeWatch should return an object with the type of ADD_WATCH', () => {
+    it('removeWatch should return an object with the type of REMOVE_WATCH', () => {
       const coin = {coin:'IOT'}
-      const watchList = []
+      const watchList = [coin]
       const user = {uid: 'id'}
       const expected = {
         type: 'REMOVE_WATCH',
@@ -86,7 +99,18 @@ describe('All actions', () => {
       }
       expect(actions.clearWatchList()).toEqual(expected)
     })
+  })
 
+  describe('Portfolio actions', () => {
+
+    it('setUserPortfolio returns an object with the type of setCoins', () => {
+      const portfolio = ['BIT', 'ETH', 'IOT']
+      const expected = {
+        type: 'SET_USER_PORTFOLIO',
+        portfolio: portfolio
+      }
+      expect(actions.setUserPortfolio(portfolio)).toEqual(expected)
+    })
   })
   
   describe('Search actions', () => {

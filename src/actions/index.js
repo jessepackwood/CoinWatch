@@ -130,7 +130,7 @@ export const listenToWatchLists = (user) => (dispatch) => {
   })
 }
 
-export const addWatch = (watchList, coin, user) => (dispatch) => {
+export const addWatch = (watchList, coin, user)  => {
   if (!isAuthenticated()) {
     return NotificationManager.warning('Login to watch coins', null, 2500)
   }
