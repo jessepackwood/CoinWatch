@@ -1,5 +1,11 @@
 import firebase from 'firebase'
-import { auth, db, fetchWatchList, isAuthenticated, fetchPortfolio} from '../services/firebase'
+import { 
+  auth,
+  db, 
+  fetchWatchList, 
+  isAuthenticated, 
+  fetchPortfolio
+} from '../services/firebase'
 import { fetchCoinFront } from '../services/services'
 import { NotificationManager } from 'react-notifications'
 
@@ -130,7 +136,7 @@ export const listenToWatchLists = (user) => (dispatch) => {
   })
 }
 
-export const addWatch = (watchList, coin, user) => (dispatch) => {
+export const addWatch = (watchList, coin, user)  => {
   if (!isAuthenticated()) {
     return NotificationManager.warning('Login to watch coins', null, 2500)
   }
@@ -180,7 +186,9 @@ export const setUserPortfolio = (portfolio) => {
   }
 }
 
-export const addPortCoin = (portfolio, coinName, amountOfCoin, user) => dispatch => {
+export const addPortCoin = (
+  portfolio, coinName, amountOfCoin, user
+) => dispatch => {
   let filteredPortfolio = portfolio.slice(0)
 
   const matchedCoin = portfolio.find((coin) => {
@@ -190,7 +198,8 @@ export const addPortCoin = (portfolio, coinName, amountOfCoin, user) => dispatch
     filteredPortfolio.push({name: coinName, amount: amountOfCoin})
   } else {
     matchedCoin.amount += amountOfCoin
-    filteredPortfolio = portfolio.filter( coin => matchedCoin.name !== coin.name)
+    filteredPortfolio = 
+      portfolio.filter( coin => matchedCoin.name !== coin.name)
     filteredPortfolio.push(matchedCoin)
   }
   postPortfolio(filteredPortfolio, user)

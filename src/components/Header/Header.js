@@ -20,7 +20,7 @@ export class Header extends Component {
                 <li className='login-btn header-link'>Login</li>
               </Link>
               <Link to='/Signup'>
-              <li className='sign-up header-link'>Sign Up</li>
+                <li className='sign-up header-link'>Sign Up</li>
               </Link>
             </ul>
           }

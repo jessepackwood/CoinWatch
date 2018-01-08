@@ -9,7 +9,10 @@ export const Dropdown = ({coins, onNameChange}) => {
   })
 
   return (
-    <select className='dropdown' onChange={event => onNameChange(event.target.value)}>
+    <select 
+      className='dropdown' 
+      onChange={event => onNameChange(event.target.value)}
+    >
       {coinNames}
     </select>
   )
@@ -20,7 +23,8 @@ export const mapStateToProps = state => ({
 })
 
 Dropdown.propTypes = {
-  coins: PropTypes.array
+  coins: PropTypes.array,
+  onNameChange: PropTypes.func
 }
 
 export default connect(mapStateToProps, null)(Dropdown)

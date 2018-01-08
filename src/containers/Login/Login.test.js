@@ -27,7 +27,7 @@ describe('Login Container', () => {
     });
 
     it('should call loginUser on form submit', () => {
-      login.instance().handleSubmit();
+      login.instance().handleLoginSubmit();
       expect(mockLoginUser).toHaveBeenCalled();
     });
 

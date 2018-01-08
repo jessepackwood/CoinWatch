@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import Card from '../Card/Card'
+import '../Card/Card.css'
 import * as actions from '../../actions'
 
 export const MarketCapCard = ({ 
@@ -23,7 +23,7 @@ export const MarketCapCard = ({
   }
 
   return (
-    <Card>
+    <div className='card'>
       <h3 className='coin-name'>
         <span className='number'>{number}.</span>
         {long}
@@ -38,7 +38,7 @@ export const MarketCapCard = ({
         onClick={() => handleWatchList(watchList, coin)}
       >
       </span>
-    </Card>
+    </div>
   )
 }
 

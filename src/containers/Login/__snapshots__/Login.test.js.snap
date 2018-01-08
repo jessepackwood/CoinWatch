@@ -26,6 +26,16 @@ ShallowWrapper {
         <div
           className="login-form"
 >
+          <Link
+                    replace={false}
+                    to="/home"
+          >
+                    <h1
+                              className="app-title login-title"
+                    >
+                              Coin Watch
+                    </h1>
+          </Link>
           <input
                     className="input-field"
                     name="email"
@@ -60,6 +70,16 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
+            <Link
+              replace={false}
+              to="/home"
+>
+              <h1
+                            className="app-title login-title"
+              >
+                            Coin Watch
+              </h1>
+</Link>,
             <input
               className="input-field"
               name="email"
@@ -89,6 +109,34 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <h1
+                className="app-title login-title"
+>
+                Coin Watch
+</h1>,
+              "replace": false,
+              "to": "/home",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Coin Watch",
+                "className": "app-title login-title",
+              },
+              "ref": null,
+              "rendered": "Coin Watch",
+              "type": "h1",
+            },
+            "type": [Function],
+          },
           Object {
             "instance": null,
             "key": undefined,
@@ -154,6 +202,16 @@ ShallowWrapper {
           <div
             className="login-form"
 >
+            <Link
+                        replace={false}
+                        to="/home"
+            >
+                        <h1
+                                    className="app-title login-title"
+                        >
+                                    Coin Watch
+                        </h1>
+            </Link>
             <input
                         className="input-field"
                         name="email"
@@ -188,6 +246,16 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
+              <Link
+                replace={false}
+                to="/home"
+>
+                <h1
+                                className="app-title login-title"
+                >
+                                Coin Watch
+                </h1>
+</Link>,
               <input
                 className="input-field"
                 name="email"
@@ -217,6 +285,34 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <h1
+                  className="app-title login-title"
+>
+                  Coin Watch
+</h1>,
+                "replace": false,
+                "to": "/home",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Coin Watch",
+                  "className": "app-title login-title",
+                },
+                "ref": null,
+                "rendered": "Coin Watch",
+                "type": "h1",
+              },
+              "type": [Function],
+            },
             Object {
               "instance": null,
               "key": undefined,
