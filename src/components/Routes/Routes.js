@@ -51,7 +51,7 @@ const RouteWhenAuthorized = ({component: Component, ...rest}) => (
 )
 
 Route.propTypes = {
-  component: PropTypes.object
+  component: PropTypes.func
 }
 
 export default Routes

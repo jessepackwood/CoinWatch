@@ -18,7 +18,7 @@ class Home extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.searchInput !== '') {
-      return this.setState({coinsToDisplay: this.searchedCoinsToDisplay() })
+      return this.setState({coinsToDisplay: this.searchedCoinsToDisplay(nextProps.searchInput) })
     }
     this.setState({coinsToDisplay: nextProps.coins.slice(0, 100)})
   }
@@ -57,10 +57,10 @@ class Home extends Component {
     })
   }
 
-  searchedCoinsToDisplay = () => {
+  searchedCoinsToDisplay = (searchInput) => {
     return this.props.coins.filter( 
       coin => coin.long.toLowerCase()
-        .includes(this.props.searchInput.toLowerCase())
+        .includes(searchInput.toLowerCase())
     )
   }
 
@@ -117,7 +117,7 @@ const mapStateToProps = state => ({
 
 Home.propTypes = {
   coins: PropTypes.array,
-  searchInput: PropTypes.object
+  searchInput: PropTypes.string
 }
 
 export default connect(mapStateToProps, null)(Home)
