@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import * as actions from '../../actions'
-// import { googleSignIn } from '../../services/firebase'
 import Form from '../../components/Form/Form'
 import PropTypes from 'prop-types'
 import { Provider } from 'react-redux';
@@ -17,26 +16,48 @@ export class Login extends Component {
     this.props.inputChange(name, value)
   }
 
-  handleSubmit = () => {
+  handleLoginSubmit = () => {
     this.props.loginUser(this.props.email, this.props.password)
-    // googleSignIn().then( (data)=> {
-    //   console.log(data)
-    // })
+  }
+
+  handleSignUpSubmit = () => {
+    this.props.createUser(this.props.email, this.props.password)
   }
 
   render() {
+    // console.log(showRegister)
     return (
       <div>
         { this.props.loggedIn && 
           <Redirect to='/home' />
         }
-        <Form 
-          email={this.props.email}
-          password={this.props.password}
-          inputChange={this.handleInputChange}
-          submit={this.handleSubmit}
-          error={this.props.error}
-        />
+        <div className='login-form'>
+          <input 
+            type='text'
+            name='email'
+            className='input-field'
+            placeholder='Email'
+            value={this.props.email || ''}
+            onChange={this.handleInputChange} 
+          />
+          <input 
+            type='password'
+            name='password'
+            className='input-field'
+            placeholder='Password'
+            value={this.props.password || ''} 
+            onChange={this.handleInputChange} 
+          />
+          {!!this.props.error && 
+            <p>{this.props.error}</p>
+          }
+          { !this.props.showRegister && 
+          <input type='submit' value='Login' className='btn-submit' onClick={this.handleLoginSubmit} />
+          }
+          { this.props.showRegister &&
+          <input type='submit' value='Sign Up' className='btn-submit' onClick={this.handleSignUpSubmit} />
+          }
+        </div>
       </div>
     )
   }
@@ -72,7 +93,8 @@ Login.propTypes = {
   loggedIn: PropTypes.bool,
   inputChange: PropTypes.func,
   loginUser: PropTypes.func,
-  createUser: PropTypes.func
+  createUser: PropTypes.func,
+  showRegister: PropTypes.bool
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)

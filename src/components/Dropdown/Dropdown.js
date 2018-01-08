@@ -3,13 +3,13 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import './Dropdown.css'
 
-export const Dropdown = ({coins}) => {
+export const Dropdown = ({coins, onNameChange}) => {
   const coinNames = coins.map( (coin, index) => {
-    return <option key={`Dropdown - ${index}`}> {coin.long} </option>
+    return <option key={`Dropdown - ${index}`} > {coin.long} </option>
   })
 
   return (
-    <select className='dropdown' >
+    <select className='dropdown' onChange={event => onNameChange(event.target.value)}>
       {coinNames}
     </select>
   )

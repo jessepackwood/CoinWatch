@@ -4,8 +4,7 @@ import Header from '../Header/Header'
 import Search from '../Search/Search'
 import PropTypes from 'prop-types';
 import './Home.css'
-
-import Card from '../Card/Card'
+import MarketCapCard from '../MarketCapCard/MarketCapCard'
 
 class Home extends Component {
   constructor(props) {
@@ -18,56 +17,45 @@ class Home extends Component {
     }
   }
 
+
+
   componentWillReceiveProps(nextProps) {
-    this.setState({coinsToDisplay: nextProps.coins.slice(0,100)})
+    if (nextProps.searchInput !== '') {
+      return this.setState({coinsToDisplay: this.searchedCoinsToDisplay() })
+    }
+    this.setState({coinsToDisplay: nextProps.coins.slice(0, 100)})
+
   }
 
   handleView = () => {
-    if(!this.state.viewAll) {
+    if (!this.state.viewAll) {
       this.setState({viewAll: true, coinsToDisplay: this.props.coins})
     } else {
-      this.setState({viewAll: false, coinsToDisplay: this.props.coins.slice(0,100)})
+      this.setState({viewAll: false, coinsToDisplay: this.props.coins.slice(0, 100)})
     }
   }
 
   handleSortClick = () => {
     if (this.state.sortOrder === 'ascending') {
       this.setState({sortOrder: 'descending', coinsToDisplay: this.props.coins.sort((a, b) => {
-          return b.cap24hrChange - a.cap24hrChange
-        }).slice(0, 100)
+        return b.cap24hrChange - a.cap24hrChange
+      }).slice(0, 100)
       })
     } else {
       this.setState({sortOrder: 'ascending', coinsToDisplay: this.props.coins.sort((a, b) => {
-          return a.cap24hrChange - b.cap24hrChange
-        }).slice(0, 100)
+        return a.cap24hrChange - b.cap24hrChange
+      }).slice(0, 100)
       })
     }
   }
-
 
   searchedCoinsToDisplay = () => {
-    if (this.searchInput) {
-      return this.state.coins.filter( coin => coin.long.toLowerCase().includes(this.searchInput.toLowerCase())).map( (coin, index) => { 
-        return <Card 
-          coin={coin}
-          key={`Card: ${index}`}
-          number={`${index + 1}`}
-        />
-    })
-    } else {
-      return this.state.coins.map( (coin, index) => { 
-        return <Card 
-          coin={coin}
-          key={`Card: ${index}`}
-          number={`${index + 1}`}
-        />
-      })
-    }
+    return this.props.coins.filter( coin => coin.long.toLowerCase().includes(this.props.searchInput.toLowerCase()))
   }
-  // console.log(searchedCoinsToDisplay())
+
   render() {
     const mappedCoins = this.state.coinsToDisplay.map( (coin, index) => { 
-      return <Card 
+      return <MarketCapCard
         coin={coin}
         key={`Card: ${index}`}
         number={`${index + 1}`}

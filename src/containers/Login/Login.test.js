@@ -43,8 +43,8 @@ describe('Login Container', () => {
           email: 'email',
           password: 'password',
           uid: 'uid'
-          }
         }
+      }
       result = mapStateToProps(mockStore);
     });
 

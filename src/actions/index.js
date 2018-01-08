@@ -1,5 +1,5 @@
 import firebase from 'firebase'
-import { auth, db, fetchWatchList, isAuthenticated } from '../services/firebase'
+import { auth, db, fetchWatchList, isAuthenticated, fetchPortfolio} from '../services/firebase'
 import { fetchCoinFront } from '../services/services'
 import { NotificationManager } from 'react-notifications'
 
@@ -9,6 +9,7 @@ export const checkUser = () => (dispatch) => {
     if (user) {
       dispatch(loginSuccess(user))
       dispatch(fetchWatchedCoins(user))
+      dispatch(listenToWatchLists(user))
     } 
   })
 }
@@ -16,7 +17,7 @@ export const checkUser = () => (dispatch) => {
 //----------------------------- Create User Actions ---------------------//
 
 export const createUser = (email, password) => async (dispatch) => {
-  auth.createUserWithEmailandPassword(email, password).then((user) => {
+  auth.createUserWithEmailAndPassword(email, password).then((user) => {
     dispatch(createUserSuccess(user))
   }).catch((error) => {
     dispatch(createUserError(error))
@@ -166,43 +167,50 @@ export const forbidden = () => {
 
 //----------------------------- Portfolio Actions ------------------------//
 
-export const addPortCoin = (portfolio, coin, amountOfCoin, user) => {
-  postPortCoin(user)
+export const fetchUserPortfolio = (user) => dispatch => {
+  fetchPortfolio(user).then((snap)=> {
+    dispatch(setUserPortfolio(snap.val()))
+  });
+}
+
+export const setUserPortfolio = (portfolio) => {
   return {
-    type: 'ADD_PORT_COIN',
-    addedPortCoin: Object.assign({}, coin, {amount: amountOfCoin})
+    type: 'SET_USER_PORTFOLIO',
+    portfolio
   }
 }
 
-export const postPortCoin = (portfolio, addedPortCoin, user) => {
-  db.ref('portfolios/' + user.uid).set([...portfolio, addedPortCoin])
-}
+export const addPortCoin = (portfolio, coinName, amountOfCoin, user) => dispatch => {
+  let filteredPortfolio = portfolio.slice(0)
 
-export const removePortCoin = (portfolio, addedPortCoin, user) => {
-  removePostedPortCoin(portfolio, addedPortCoin, user)
-  return {
-    type: 'REMOVE_PORT_COIN',
-    removePortCoin: addedPortCoin
+  const matchedCoin = portfolio.find((coin) => {
+    return coin.name === coinName
+  })
+  if (!matchedCoin) {
+    filteredPortfolio.push({name: coinName, amount: amountOfCoin})
+  } else {
+    matchedCoin.amount += amountOfCoin
+    filteredPortfolio = portfolio.filter( coin => matchedCoin.name !== coin.name)
+    filteredPortfolio.push(matchedCoin)
   }
+  postPortfolio(filteredPortfolio, user)
+  dispatch(setUserPortfolio(filteredPortfolio))
 }
 
-export const removePostedPortCoin = (portfolio, addedPortCoin, user) => {
-  db.ref('portfolio/' + user.uid).set(portfolio.filter(
-    (element) => element.short !== addedPortCoin.short))
+export const postPortfolio = (portfolio, user) => {
+  db.ref('portfolios/' + user.uid).set(portfolio)
 }
 
-export const amountInputChange = (amount) => {
-  console.log('amountInputChange')
-  return {
-    type: 'AMOUNT_CHANGE',
-    amount
-  }
+export const removePortCoin = (portfolio, portCoinName, user) => dispatch => {
+  let filteredPortfolio = portfolio.slice(0)
+  filteredPortfolio = portfolio.filter( coin => coin.name !== portCoinName)
+  postPortfolio(filteredPortfolio, user)
+  dispatch(setUserPortfolio(filteredPortfolio))
 }
 
 //----------------------------- Search Actions ------------------------//
 
 export const searchInputChange = (searchInput) => {
-  console.log(searchInput)
   return {
     type: 'SEARCH_CHANGE',
     searchInput

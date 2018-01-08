@@ -13,8 +13,9 @@ const Routes = () => {
     <div>
       <Switch>
         <Route exact path='/' component={Welcome} />
-        <Route path='/login' component={Login} />
-        <Route path ='/home' component={Home} />
+        <Route exact path='/login' render={props => <Login {...props} />} />
+        <Route exact path='/Signup' render={props => <Login {...props} showRegister /> } />
+        <Route exact path ='/home' component={Home} />
         <RouteWhenAuthorized path="/watchlist" component={WatchList} />
         <RouteWhenAuthorized path='/portfolio' component={Portfolio} />
       </Switch>
