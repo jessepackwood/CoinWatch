@@ -34,7 +34,7 @@ ShallowWrapper {
           <div>
                     <Link
                               replace={false}
-                              to="/login"
+                              to="/home"
                     >
                               <button
                                         className="start-button"
@@ -73,7 +73,7 @@ ShallowWrapper {
             <div>
               <Link
                             replace={false}
-                            to="/login"
+                            to="/home"
               >
                             <button
                                           className="start-button"
@@ -138,7 +138,7 @@ ShallowWrapper {
             "props": Object {
               "children": <Link
                 replace={false}
-                to="/login"
+                to="/home"
 >
                 <button
                                 className="start-button"
@@ -159,7 +159,7 @@ ShallowWrapper {
                   Get started
 </button>,
                 "replace": false,
-                "to": "/login",
+                "to": "/home",
               },
               "ref": null,
               "rendered": Object {
@@ -220,7 +220,7 @@ ShallowWrapper {
             <div>
                         <Link
                                     replace={false}
-                                    to="/login"
+                                    to="/home"
                         >
                                     <button
                                                 className="start-button"
@@ -259,7 +259,7 @@ ShallowWrapper {
               <div>
                 <Link
                                 replace={false}
-                                to="/login"
+                                to="/home"
                 >
                                 <button
                                                 className="start-button"
@@ -324,7 +324,7 @@ ShallowWrapper {
               "props": Object {
                 "children": <Link
                   replace={false}
-                  to="/login"
+                  to="/home"
 >
                   <button
                                     className="start-button"
@@ -345,7 +345,7 @@ ShallowWrapper {
                     Get started
 </button>,
                   "replace": false,
-                  "to": "/login",
+                  "to": "/home",
                 },
                 "ref": null,
                 "rendered": Object {

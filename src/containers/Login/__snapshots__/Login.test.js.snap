@@ -23,13 +23,32 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         undefined,
-        <Form
-          email={undefined}
-          error={undefined}
-          inputChange={[Function]}
-          password={undefined}
-          submit={[Function]}
-/>,
+        <div
+          className="login-form"
+>
+          <input
+                    className="input-field"
+                    name="email"
+                    onChange={[Function]}
+                    placeholder="Email"
+                    type="text"
+                    value=""
+          />
+          <input
+                    className="input-field"
+                    name="password"
+                    onChange={[Function]}
+                    placeholder="Password"
+                    type="password"
+                    value=""
+          />
+          <input
+                    className="btn-submit"
+                    onClick={[Function]}
+                    type="submit"
+                    value="Login"
+          />
+</div>,
       ],
     },
     "ref": null,
@@ -38,17 +57,88 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "host",
         "props": Object {
-          "email": undefined,
-          "error": undefined,
-          "inputChange": [Function],
-          "password": undefined,
-          "submit": [Function],
+          "children": Array [
+            <input
+              className="input-field"
+              name="email"
+              onChange={[Function]}
+              placeholder="Email"
+              type="text"
+              value=""
+/>,
+            <input
+              className="input-field"
+              name="password"
+              onChange={[Function]}
+              placeholder="Password"
+              type="password"
+              value=""
+/>,
+            false,
+            <input
+              className="btn-submit"
+              onClick={[Function]}
+              type="submit"
+              value="Login"
+/>,
+            undefined,
+          ],
+          "className": "login-form",
         },
         "ref": null,
-        "rendered": null,
-        "type": [Function],
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "input-field",
+              "name": "email",
+              "onChange": [Function],
+              "placeholder": "Email",
+              "type": "text",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "input-field",
+              "name": "password",
+              "onChange": [Function],
+              "placeholder": "Password",
+              "type": "password",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "btn-submit",
+              "onClick": [Function],
+              "type": "submit",
+              "value": "Login",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          undefined,
+        ],
+        "type": "div",
       },
     ],
     "type": "div",
@@ -61,13 +151,32 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           undefined,
-          <Form
-            email={undefined}
-            error={undefined}
-            inputChange={[Function]}
-            password={undefined}
-            submit={[Function]}
-/>,
+          <div
+            className="login-form"
+>
+            <input
+                        className="input-field"
+                        name="email"
+                        onChange={[Function]}
+                        placeholder="Email"
+                        type="text"
+                        value=""
+            />
+            <input
+                        className="input-field"
+                        name="password"
+                        onChange={[Function]}
+                        placeholder="Password"
+                        type="password"
+                        value=""
+            />
+            <input
+                        className="btn-submit"
+                        onClick={[Function]}
+                        type="submit"
+                        value="Login"
+            />
+</div>,
         ],
       },
       "ref": null,
@@ -76,17 +185,88 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "host",
           "props": Object {
-            "email": undefined,
-            "error": undefined,
-            "inputChange": [Function],
-            "password": undefined,
-            "submit": [Function],
+            "children": Array [
+              <input
+                className="input-field"
+                name="email"
+                onChange={[Function]}
+                placeholder="Email"
+                type="text"
+                value=""
+/>,
+              <input
+                className="input-field"
+                name="password"
+                onChange={[Function]}
+                placeholder="Password"
+                type="password"
+                value=""
+/>,
+              false,
+              <input
+                className="btn-submit"
+                onClick={[Function]}
+                type="submit"
+                value="Login"
+/>,
+              undefined,
+            ],
+            "className": "login-form",
           },
           "ref": null,
-          "rendered": null,
-          "type": [Function],
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "input-field",
+                "name": "email",
+                "onChange": [Function],
+                "placeholder": "Email",
+                "type": "text",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "input-field",
+                "name": "password",
+                "onChange": [Function],
+                "placeholder": "Password",
+                "type": "password",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            false,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "btn-submit",
+                "onClick": [Function],
+                "type": "submit",
+                "value": "Login",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            undefined,
+          ],
+          "type": "div",
         },
       ],
       "type": "div",

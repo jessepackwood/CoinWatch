@@ -7,18 +7,18 @@ import * as actions from '../../actions'
 export const PortfolioCard = ({ portfolioCoin, coin, portfolio, removeCoinFromPortfolio, user }) => {
   console.log(coin)
   return (
-    <div className='card'>
-      <h3 className='coin-name'>
+    <Card>
+      <h3 className='coin-name port-coin-name'>
         {portfolioCoin.name}
       </h3>
-      <p>{portfolioCoin.amount} </p>
-      <p>{portfolioCoin.amount * coin.price}</p>
+      <p className='amount'>Amount: {portfolioCoin.amount} </p>
+      <p className='port-price price'>${Math.round(portfolioCoin.amount * coin.price)}</p>
       <span 
-        className={'btn-fav minus'} 
+        className={'port-btn btn-fav minus'} 
         onClick={() => removeCoinFromPortfolio(portfolio, portfolioCoin.name, user)}
       >
       </span>
-    </div>
+    </Card>
   )
 }
 
@@ -37,7 +37,8 @@ export const mapDispatchToProps = dispatch => {
 }
 
 PortfolioCard.propTypes = {
-
+  portfolio: PropTypes.array,
+  user: PropTypes.object
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PortfolioCard);

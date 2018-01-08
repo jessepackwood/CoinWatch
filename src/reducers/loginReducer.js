@@ -37,6 +37,11 @@ const loginReducer = (state = { email: '', password: '', loggedIn: false },
       ...state, 
       error: 'Failed to login'
     }
+  case 'SIGN_UP_ERROR':
+    return {
+      ...state,
+      error: 'Invalid email'
+    }
   case 'SIGN_OUT_SUCCESS':
     return {
       ...state, 

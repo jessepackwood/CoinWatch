@@ -7,8 +7,6 @@ import PortfolioCard from '../PortfolioCard/PortfolioCard'
 import './Portfolio.css'
 
 class Portfolio extends Component {
-  //need to map over portfolio array and reuse card component to display coins
-  // <button className='portfolio-add-btn'>Add</button>
   constructor() {
   	super()
   	this.state = {
@@ -22,12 +20,10 @@ class Portfolio extends Component {
   }
 
   handleAmountChange = (value) => {
-  	console.log(value)
   	this.setState({amount: parseFloat(value)})
   }
 
   handleCoinNameChange = (coinName) => {
-  	console.log(coinName)
   	this.setState({coinName})
   }
 
@@ -65,12 +61,20 @@ class Portfolio extends Component {
 	            <span className='portfolio-add-btn' onClick={this.handleSubmit} ></span>
 	          </div>
 	        </div>
+          { !!this.props.portfolio.length && 
 	        <div className='portfolio-list-wrapper'>
-	          <h4 className='coin-title'>Holdings</h4>
+	          <h4 className='coin-title'>Current Holdings</h4>
 	          <div className='portfolio-list'>
 	            {portfolioItems}
 	          </div>
 	        </div>
+          }
+          {
+            !this.props.portfolio.length &&
+            <div>
+            <h4 className='empty-portfolio-title'>Choose a coin and an amount to add coins to your portfolio.</h4>
+            </div>
+          }
 	      </div>
 	    </div>
 	  )
@@ -93,14 +97,8 @@ export const mapDispatchToProps = dispatch => {
     },
     createPortfolioCoin: (portfolio, coinName, amount, user) => {
     	dispatch(addPortCoin(portfolio, coinName, amount, user))
-    },
-    removePortfolioCoin: (coin) => {
-
     }
   }
 }
-
-// store coins under (portfolio/ + user.uid/ + coin.short)
-// 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Portfolio)

@@ -26,6 +26,9 @@ export class Header extends Component {
           }
           { !!this.props.user.loggedIn && 
             <ul>
+              <li className='login-btn email'>
+                {this.props.user.email}
+              </li>
               <li 
                 className='sign-out header-link'
                 onClick={()=> this.props.signOut(this.props.user)}
