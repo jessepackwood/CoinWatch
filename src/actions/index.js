@@ -9,6 +9,7 @@ export const checkUser = () => (dispatch) => {
     if (user) {
       dispatch(loginSuccess(user))
       dispatch(fetchWatchedCoins(user))
+      dispatch(listenToWatchLists(user))
     } 
   })
 }
