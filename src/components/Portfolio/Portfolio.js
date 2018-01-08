@@ -19,7 +19,7 @@ const Portfolio = ({coins, amount}) => {
           <div className='portfolio-input-wrapper'>
             <input className='portfolio-add-coin' type='number' label='Number of coins' placeholder='Amount' onChange={event => amountInputChange(event.target.value)}/>
             <Dropdown />
-            <span className='portfolio-add-btn'></span>
+            <span className='portfolio-add-btn' ></span>
           </div>
         </div>
         <div className='portfolio-list-wrapper'>
@@ -51,6 +51,8 @@ export const mapDispatchToProps = dispatch => {
   return {	
     amountInputChange: (amount) => {
       dispatch(amountInputChange(amount))
+    },
+    createPortfolioCoin: (coin) => {
     }
   }
 }

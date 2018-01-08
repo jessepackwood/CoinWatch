@@ -18,8 +18,14 @@ class Home extends Component {
     }
   }
 
+
+
   componentWillReceiveProps(nextProps) {
+    if(nextProps.searchInput !== '') {
+      return this.setState({coinsToDisplay: this.searchedCoinsToDisplay() })
+    }
     this.setState({coinsToDisplay: nextProps.coins.slice(0,100)})
+
   }
 
   handleView = () => {
@@ -46,23 +52,8 @@ class Home extends Component {
 
 
   searchedCoinsToDisplay = () => {
-    if (this.searchInput) {
-      return this.state.coins.filter( coin => coin.long.toLowerCase().includes(this.searchInput.toLowerCase())).map( (coin, index) => { 
-        return <Card 
-          coin={coin}
-          key={`Card: ${index}`}
-          number={`${index + 1}`}
-        />
-    })
-    } else {
-      return this.state.coins.map( (coin, index) => { 
-        return <Card 
-          coin={coin}
-          key={`Card: ${index}`}
-          number={`${index + 1}`}
-        />
-      })
-    }
+    // debugger
+      return this.props.coins.filter( coin => coin.long.toLowerCase().includes(this.props.searchInput.toLowerCase()))
   }
   // console.log(searchedCoinsToDisplay())
   render() {
