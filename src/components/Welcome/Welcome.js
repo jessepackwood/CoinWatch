@@ -12,7 +12,7 @@ const Welcome = () => {
           <p>Track your profits and only watch the coins you care about.</p>
         </div>
         <div>
-          <Link to='/login'>
+          <Link to='/home'>
             <button className='start-button'>Get started</button>
           </Link>
         </div>

@@ -3,7 +3,6 @@ import './Header.css'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { fetchCoins, fetchWatchedCoins, signOutUser} from '../../actions'
-// import { googleSignIn } from '../../services/firebase'
 import PropTypes from 'prop-types'
 
 export class Header extends Component {
@@ -20,7 +19,9 @@ export class Header extends Component {
               <Link to='/login'>
                 <li className='login-btn header-link'>Login</li>
               </Link>
+              <Link to='/Signup'>
               <li className='sign-up header-link'>Sign Up</li>
+              </Link>
             </ul>
           }
           { !!this.props.user.loggedIn && 

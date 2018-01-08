@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Form = ({email, password, inputChange, submit, error}) => {
+const Form = ({email, password, inputChange, submit, error }) => {
   return (
     <div className='login-form'>
       <input 

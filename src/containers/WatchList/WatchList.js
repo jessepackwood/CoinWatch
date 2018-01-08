@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from '../../components/Card/Card'
+import MarketCapCard from '../../components/MarketCapCard/MarketCapCard'
 import { connect } from 'react-redux'
 import Header from '../../components/Header/Header'
 import plus  from '../../assets/rounded-add-blue.svg'
@@ -9,7 +9,7 @@ import './WatchList.css'
 const WatchList = ({watchList}) => {
 
   const watchedCoins = watchList && watchList.map( (coin, index) => {
-    return <Card 
+    return <MarketCapCard 
       coin={coin}
       key={`Card: ${coin.short}`}
       number={`${index + 1}`}
@@ -31,7 +31,7 @@ const WatchList = ({watchList}) => {
           <h3 className='empty-watch-title'>
           Your watch list is empty. Click the
             <img src={plus} alt='plus sign' className='watch-list-add'/> 
-          on the coin you'd like to add to your list.
+          on the coin you&apos;d like to add to your list.
           </h3>
         </div>
       }

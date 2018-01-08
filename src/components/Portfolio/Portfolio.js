@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import Dropdown from '../Dropdown/Dropdown'
 import { connect } from 'react-redux'
-import { amountInputChange, setUserPortfolio, addPortCoin } from '../../actions'
+import { amountInputChange, fetchUserPortfolio, addPortCoin } from '../../actions'
 import Header from '../Header/Header'
-import Card from '../Card/Card'
+import PortfolioCard from '../PortfolioCard/PortfolioCard'
 import './Portfolio.css'
 
 class Portfolio extends Component {
@@ -36,12 +36,23 @@ class Portfolio extends Component {
   }
 
   render() {
+  	const portfolioTotal = this.props.portfolio.reduce((total, portCoin) => {
+  		return total += portCoin.amount * this.props.coins.find((coin) => coin.long === portCoin.name).price
+  	}, 0)
+
+  	const portfolioItems = this.props.portfolio.map((portfolioCoin, index) => {
+  		return <PortfolioCard
+  			key={index}
+  			portfolioCoin={portfolioCoin}
+  			coin={this.props.coins.find( coin => coin.long === portfolioCoin.name )}
+  		/>
+  	})
 	  return (
 	    <div>
 	      <Header />
 	      <div className='portfolio'>
 	        <div className='portfolio-title-wrapper'>
-	          <h3 className='portfolio-title'>Portfolio Total: $10,000</h3>
+	          <h3 className='portfolio-title'>Portfolio Total: ${Math.round(portfolioTotal)}</h3>
 	          <div className='portfolio-input-wrapper'>
 	            <input 
 	            	className='portfolio-add-coin' 
@@ -57,19 +68,13 @@ class Portfolio extends Component {
 	        <div className='portfolio-list-wrapper'>
 	          <h4 className='coin-title'>Holdings</h4>
 	          <div className='portfolio-list'>
-	            <div className='portfolio-coin'>
-	              <h4 className='portfolio-coin-title'>Bitcoin</h4>
-	              <span>Amount</span>
-	              <span>$ worth</span>
-	            </div>
-	            <div className='portfolio-coin'>Ethereum: $2000</div>
-	            <div className='portfolio-coin'>IOTA: $6000</div>
+	            {portfolioItems}
 	          </div>
 	        </div>
 	      </div>
 	    </div>
 	  )
-	}
+  }
 }
 
 export const mapStateToProps = state => {
@@ -84,7 +89,7 @@ export const mapStateToProps = state => {
 export const mapDispatchToProps = dispatch => {
   return {	
     fetchPortfolio: (user) => {
-    	dispatch(setUserPortfolio(user))
+    	dispatch(fetchUserPortfolio(user))
     },
     createPortfolioCoin: (portfolio, coinName, amount, user) => {
     	dispatch(addPortCoin(portfolio, coinName, amount, user))

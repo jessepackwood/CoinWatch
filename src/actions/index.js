@@ -16,7 +16,7 @@ export const checkUser = () => (dispatch) => {
 //----------------------------- Create User Actions ---------------------//
 
 export const createUser = (email, password) => async (dispatch) => {
-  auth.createUserWithEmailandPassword(email, password).then((user) => {
+  auth.createUserWithEmailAndPassword(email, password).then((user) => {
     dispatch(createUserSuccess(user))
   }).catch((error) => {
     dispatch(createUserError(error))
@@ -180,47 +180,36 @@ export const setUserPortfolio = (portfolio) => {
 }
 
 export const addPortCoin = (portfolio, coinName, amountOfCoin, user) => dispatch => {
-  // postPortCoin(portfolio, user, )
+  let filteredPortfolio = portfolio.slice(0)
+
   const matchedCoin = portfolio.find((coin) => {
-    coin.name === coinName
+    return coin.name === coinName
   })
-  if(!matchedCoin) {
-    portfolio.push({name: coinName, amount: amountOfCoin})
+  if (!matchedCoin) {
+    filteredPortfolio.push({name: coinName, amount: amountOfCoin})
   } else {
     matchedCoin.amount += amountOfCoin
-    portfolio = portfolio.filter((coin) => matchedCoin.name !== coin.name).push(matchedCoin)
+    filteredPortfolio = portfolio.filter( coin => matchedCoin.name !== coin.name)
+    filteredPortfolio.push(matchedCoin)
   }
-  dispatch(setUserPortfolio(portfolio))
+  postPortfolio(filteredPortfolio, user)
+  dispatch(setUserPortfolio(filteredPortfolio))
 }
 
-export const postPortCoin = (portfolio, addedPortCoin, user) => {
-  db.ref('portfolios/' + user.uid).set([...portfolio, addedPortCoin])
+export const postPortfolio = (portfolio, user) => {
+  db.ref('portfolios/' + user.uid).set(portfolio)
 }
 
-export const removePortCoin = (portfolio, addedPortCoin, user) => {
-  // removePostedPortCoin(portfolio, addedPortCoin, user)
-  return {
-    type: 'REMOVE_PORT_COIN'
-  }
-}
-
-export const removePostedPortCoin = (portfolio, addedPortCoin, user) => {
-  db.ref('portfolio/' + user.uid).set(portfolio.filter(
-    (element) => element.short !== addedPortCoin.short))
-}
-
-export const amountInputChange = (amount) => {
-  console.log('amountInputChange')
-  return {
-    type: 'AMOUNT_CHANGE',
-    amount
-  }
+export const removePortCoin = (portfolio, portCoinName, user) => dispatch => {
+  let filteredPortfolio = portfolio.slice(0)
+  filteredPortfolio = portfolio.filter( coin => coin.name !== portCoinName)
+  postPortfolio(filteredPortfolio, user)
+  dispatch(setUserPortfolio(filteredPortfolio))
 }
 
 //----------------------------- Search Actions ------------------------//
 
 export const searchInputChange = (searchInput) => {
-  console.log(searchInput)
   return {
     type: 'SEARCH_CHANGE',
     searchInput
