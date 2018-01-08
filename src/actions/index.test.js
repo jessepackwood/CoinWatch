@@ -40,7 +40,7 @@ describe('All actions', () => {
       expect(actions.loginSuccess(user)).toEqual(expected)
     })
 
-    it('signOutSuccess returns an object with a type of SIGN_OUT_SUCCESS', () => {
+    it('should return an obj with a type of SIGN_OUT_SUCCESS', () => {
       const expected = {
         type: 'SIGN_OUT_SUCCESS'
       }
@@ -70,7 +70,7 @@ describe('All actions', () => {
       expect(actions.setWatchedCoins(watchList)).toEqual(expected)
     })
 
-    it.skip('addWatch should return an object with the type of ADD_WATCH', () => {
+    it.skip('should return an obj with the type of ADD_WATCH', () => {
       const coin = {coin:'IOT'}
       const watchList = []
       const user = {uid: 'id'}
@@ -82,7 +82,7 @@ describe('All actions', () => {
 
     })    
 
-    it('removeWatch should return an object with the type of REMOVE_WATCH', () => {
+    it('should return an obj with the type of REMOVE_WATCH', () => {
       const coin = {coin:'IOT'}
       const watchList = [coin]
       const user = {uid: 'id'}
@@ -93,7 +93,7 @@ describe('All actions', () => {
       expect(actions.removeWatch(watchList, coin, user)).toEqual(expected)
     })
 
-    it('clearWatchList should return an object with the type of CLEAR_WATCHLIST', () => {
+    it('should return an obj with the type of CLEAR_WATCHLIST', () => {
       const expected = {
         type: 'CLEAR_WATCHLIST'
       }

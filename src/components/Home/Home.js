@@ -7,7 +7,7 @@ import './Home.css'
 import MarketCapCard from '../MarketCapCard/MarketCapCard'
 
 class Home extends Component {
-  constructor(props) {
+  constructor() {
     super()
     this.state = {
       coinsToDisplay: [],
@@ -27,34 +27,41 @@ class Home extends Component {
     if (!this.state.viewAll) {
       this.setState({viewAll: true, coinsToDisplay: this.props.coins})
     } else {
-      this.setState({viewAll: false, coinsToDisplay: this.props.coins.slice(0, 100)})
+      this.setState({
+        viewAll: false, coinsToDisplay: this.props.coins.slice(0, 100)
+      })
     }
   }
 
   handleSortClick = () => {
     if (this.state.sortOrder === 'Highest') {
-      this.setState({sortOrder: 'Lowest', coinsToDisplay: this.props.coins.sort((a, b) => {
-        return b.cap24hrChange - a.cap24hrChange
-      }).slice(0, 100)
+      this.setState({
+        sortOrder: 'Lowest', 
+        coinsToDisplay: this.props.coins.sort((first, second) => {
+          return second.cap24hrChange - first.cap24hrChange
+        }).slice(0, 100)
       })
     } else {
-      this.setState({sortOrder: 'Highest', coinsToDisplay: this.props.coins.sort((a, b) => {
-        return a.cap24hrChange - b.cap24hrChange
-      }).slice(0, 100)
+      this.setState({sortOrder: 'Highest', 
+        coinsToDisplay: this.props.coins.sort((first, second) => {
+          return first.cap24hrChange - second.cap24hrChange
+        }).slice(0, 100)
       })
     }
   }
 
   setToMarketCap = () => {
-    console.log('set to market cap')
-    this.setState({coinsToDisplay: this.props.coins.sort((a, b) => {
-      return b.mktcap - a.mktcap
-      })
+    this.setState({coinsToDisplay: this.props.coins.sort((first, second) => {
+      return second.mktcap - first.mktcap
+    })
     })
   }
 
   searchedCoinsToDisplay = () => {
-    return this.props.coins.filter( coin => coin.long.toLowerCase().includes(this.props.searchInput.toLowerCase()))
+    return this.props.coins.filter( 
+      coin => coin.long.toLowerCase()
+        .includes(this.props.searchInput.toLowerCase())
+    )
   }
 
   render() {
@@ -72,11 +79,28 @@ class Home extends Component {
         <Search />
         <div className='home-page'>
           <div className='subtitle-wrapper'>
-            <h3 className='home-page-subtitle'>Top 100 Currencies by market cap</h3>
+            <h3 className='home-page-subtitle'>
+            Top 100 Currencies by market cap
+            </h3>
             <div className='filter-btn-wrapper'>
-              <button className='filter-btn' onClick={this.handleView} > {this.state.viewAll ? 'Top 100' : 'View All'} </button>
-              <button className='filter-btn' onClick={this.handleSortClick} >{`Sort: ${this.state.sortOrder}`}</button>
-              <button className='filter-btn' onClick={this.setToMarketCap} >Market Cap</button>
+              <button 
+                className='filter-btn' 
+                onClick={this.handleView} 
+              > 
+                {this.state.viewAll ? 'Top 100' : 'View All'} 
+              </button>
+              <button 
+                className='filter-btn' 
+                onClick={this.handleSortClick} 
+              >
+                {`Sort: ${this.state.sortOrder}`}
+              </button>
+              <button 
+                className='filter-btn' 
+                onClick={this.setToMarketCap} 
+              >
+              Market Cap
+              </button>
             </div>
           </div>
           {mappedCoins}
@@ -92,7 +116,8 @@ const mapStateToProps = state => ({
 })
 
 Home.propTypes = {
-  coins: PropTypes.array
+  coins: PropTypes.array,
+  searchInput: PropTypes.object
 }
 
 export default connect(mapStateToProps, null)(Home)

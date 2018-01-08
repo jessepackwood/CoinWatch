@@ -3,7 +3,6 @@ import { Link, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import * as actions from '../../actions'
 import PropTypes from 'prop-types'
-import { Provider } from 'react-redux';
 
 import './Login.css'
 
@@ -54,10 +53,20 @@ export class Login extends Component {
             <p className='error-message'>{this.props.error}</p>
           }
           { !this.props.showRegister && 
-          <input type='submit' value='Login' className='btn-submit' onClick={this.handleLoginSubmit} />
+          <input 
+            type='submit' 
+            value='Login' 
+            className='btn-submit' 
+            onClick={this.handleLoginSubmit} 
+          />
           }
           { this.props.showRegister &&
-          <input type='submit' value='Sign Up' className='btn-submit' onClick={this.handleSignUpSubmit} />
+          <input 
+            type='submit'
+            value='Sign Up' 
+            className='btn-submit' 
+            onClick={this.handleSignUpSubmit} 
+          />
           }
         </div>
       </div>

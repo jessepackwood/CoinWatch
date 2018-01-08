@@ -1,20 +1,26 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import Card from '../Card/Card'
+import '../Card/Card.css'
 import * as actions from '../../actions'
 
-export const PortfolioCard = ({ portfolioCoin, coin, portfolio, removeCoinFromPortfolio, user }) => {
+export const PortfolioCard = ({ 
+  portfolioCoin, coin, portfolio, removeCoinFromPortfolio, user 
+}) => {
   return (
     <div className='card'>
       <h3 className='coin-name port-coin-name'>
         {portfolioCoin.name}
       </h3>
       <p className='amount'>Amount: {portfolioCoin.amount} </p>
-      <p className='port-price price'>${Math.round(portfolioCoin.amount * coin.price)}</p>
+      <p className='port-price price'>
+        ${Math.round(portfolioCoin.amount * coin.price)}
+      </p>
       <span 
         className={'port-btn btn-fav minus'} 
-        onClick={() => removeCoinFromPortfolio(portfolio, portfolioCoin.name, user)}
+        onClick={
+          () => removeCoinFromPortfolio(portfolio, portfolioCoin.name, user)
+        }
       >
       </span>
     </div>
@@ -36,7 +42,10 @@ export const mapDispatchToProps = dispatch => {
 
 PortfolioCard.propTypes = {
   portfolio: PropTypes.array,
-  user: PropTypes.object
+  portfolioCoin: PropTypes.object,
+  coin: PropTypes.object,
+  user: PropTypes.object,
+  removeCoinFromPortfolio: PropTypes.func
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PortfolioCard);

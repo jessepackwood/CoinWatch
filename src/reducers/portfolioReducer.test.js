@@ -2,14 +2,9 @@ import portfolioReducer from './portfolioReducer'
 import * as actions from '../actions'
 
 describe('portfolioReducer tests', () => {
-  let state;
-  beforeEach( () => {
-    state = [];
-  })
 
   it('should return a default state', () => {
     const expected = []
-    const user ={email: 'email'}
     expect(portfolioReducer(undefined, actions)).toEqual(expected)
   })
 
@@ -19,7 +14,9 @@ describe('portfolioReducer tests', () => {
     const amount = '3'
     const user ={email: 'email'}
     const expected = [...portfolio]
-    expect(portfolioReducer(undefined, actions.addPortCoin(portfolio, coinName, amount, user))).toEqual(expected)
+    expect(portfolioReducer(
+      undefined, actions.addPortCoin(portfolio, coinName, amount, user))
+    ).toEqual(expected)
   })
 
   it('should remove a coin from the portfolio', () => {
@@ -28,6 +25,8 @@ describe('portfolioReducer tests', () => {
     const amount = '3'
     const user ={email: 'email'}
     const expected = []
-    expect(portfolioReducer(undefined, actions.removePortCoin(portfolio, coinName, amount, user))).toEqual(expected)
+    expect(portfolioReducer(
+      undefined, actions.removePortCoin(portfolio, coinName, amount, user))
+    ).toEqual(expected)
   })
 })
