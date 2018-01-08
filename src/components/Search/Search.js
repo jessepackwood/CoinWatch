@@ -8,7 +8,7 @@ const Search = ({coins, searchInput, inputChange}) => {
 
   return (
     <div className='search-wrapper'>
-      <input className='search-bar' type='text' placeholder='Search'  onChange={event => inputChange(event.target.value)} />
+      <input className='search-bar' type='text' placeholder='Search by coin name'  onChange={event => inputChange(event.target.value)} />
     </div>
   )
 }

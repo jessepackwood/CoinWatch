@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './Card.css'
 
 export const Card = (props) => {
@@ -7,6 +8,10 @@ export const Card = (props) => {
       {props.children}
     </div>
   )
+}
+
+Card.propTypes = {
+  children: PropTypes.object
 }
 
 

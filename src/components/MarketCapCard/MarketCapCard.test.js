@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme';
-import { Card, mapStateToProps, mapDispatchToProps } from './Card';
+import { MarketCapCard, mapStateToProps, mapDispatchToProps } from './MarketCapCard';
 
-describe('Card tests', () => {
+describe('MarketCapCard tests', () => {
 
   const mockAddWatch = jest.fn()
   const mockRemoveWatch = jest.fn()
@@ -12,7 +12,7 @@ describe('Card tests', () => {
 
   beforeEach( () => {
     coin = {long: 'Bitcoin'}
-    card = shallow(<Card coin={coin}/>)
+    card = shallow(<MarketCapCard coin={coin}/>)
   });
 
   it('should be defined', () => {

@@ -5,9 +5,8 @@ import Card from '../Card/Card'
 import * as actions from '../../actions'
 
 export const PortfolioCard = ({ portfolioCoin, coin, portfolio, removeCoinFromPortfolio, user }) => {
-  console.log(coin)
   return (
-    <Card>
+    <div className='card'>
       <h3 className='coin-name port-coin-name'>
         {portfolioCoin.name}
       </h3>
@@ -18,7 +17,7 @@ export const PortfolioCard = ({ portfolioCoin, coin, portfolio, removeCoinFromPo
         onClick={() => removeCoinFromPortfolio(portfolio, portfolioCoin.name, user)}
       >
       </span>
-    </Card>
+    </div>
   )
 }
 
@@ -30,7 +29,6 @@ export const mapStateToProps = state => ({
 export const mapDispatchToProps = dispatch => {
   return {
     removeCoinFromPortfolio: (portfolio, portCoinName, user) => {
-      console.log('remove coin from portfolio')
       dispatch(actions.removePortCoin(portfolio, portCoinName, user))
     }
   }
