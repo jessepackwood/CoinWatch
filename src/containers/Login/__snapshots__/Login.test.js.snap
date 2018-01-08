@@ -5,10 +5,10 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Login
-    createUser={[MockFunction]}
-    inputChange={[MockFunction]}
-    loginUser={[MockFunction]}
-  />,
+    createUser={[Function]}
+    inputChange={[Function]}
+    loginUser={[Function]}
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -29,7 +29,7 @@ ShallowWrapper {
           inputChange={[Function]}
           password={undefined}
           submit={[Function]}
-        />,
+/>,
       ],
     },
     "ref": null,
@@ -67,7 +67,7 @@ ShallowWrapper {
             inputChange={[Function]}
             password={undefined}
             submit={[Function]}
-          />,
+/>,
         ],
       },
       "ref": null,

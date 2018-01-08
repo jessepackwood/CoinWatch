@@ -1,6 +1,7 @@
 import firebase from 'firebase'
-import { auth, db, fetchWatchList } from '../services/firebase'
+import { auth, db, fetchWatchList, isAuthenticated } from '../services/firebase'
 import { fetchCoinFront } from '../services/services'
+import { NotificationManager } from 'react-notifications'
 
 
 export const checkUser = () => (dispatch) => {
@@ -8,12 +9,11 @@ export const checkUser = () => (dispatch) => {
     if (user) {
       dispatch(loginSuccess(user))
       dispatch(fetchWatchedCoins(user))
-      // dispatch(listenToWatchLists(user))
     } 
   })
 }
 
-//----------------------------- Create User Actions ------------------------//
+//----------------------------- Create User Actions ---------------------//
 
 export const createUser = (email, password) => async (dispatch) => {
   auth.createUserWithEmailandPassword(email, password).then((user) => {
@@ -64,7 +64,6 @@ export const loginUser = (email, password) => (dispatch ) => {
       auth.signInWithEmailAndPassword(email, password).then((user) => {
         dispatch(loginSuccess(user))
         dispatch(fetchWatchedCoins(user))
-      // dispatch(listenToWatchLists(user))
       }).catch(() => {
         dispatch(loginError())
       })
@@ -130,7 +129,10 @@ export const listenToWatchLists = (user) => (dispatch) => {
   })
 }
 
-export const addWatch = (watchList, coin, user) => {
+export const addWatch = (watchList, coin, user) => (dispatch) => {
+  if (!isAuthenticated()) {
+    return NotificationManager.warning('Login to do that', null, 2500)
+  }
   postWatchedCoin(watchList, coin, user)
   return {
     type: 'ADD_WATCH',
@@ -154,6 +156,12 @@ export const clearWatchList = () => {
 
 export const removeWatchListListener = (user) => {
   db.ref('watchlists/' + user.uid).off()
+}
+
+export const forbidden = () => {
+  return {
+    type: 'FORBIDDEN'
+  }
 }
 
 //----------------------------- Portfolio Actions ------------------------//

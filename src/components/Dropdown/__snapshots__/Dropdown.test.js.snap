@@ -6,13 +6,13 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
     coins={
-      Array [
-        "array",
-        "of",
-        "coins",
-      ]
+        Array [
+            "array",
+            "of",
+            "coins",
+          ]
     }
-  />,
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -29,15 +29,15 @@ ShallowWrapper {
         <option>
            
            
-        </option>,
+</option>,
         <option>
            
            
-        </option>,
+</option>,
         <option>
            
            
-        </option>,
+</option>,
       ],
       "className": "dropdown",
     },
@@ -113,15 +113,15 @@ ShallowWrapper {
           <option>
              
              
-          </option>,
+</option>,
           <option>
              
              
-          </option>,
+</option>,
           <option>
              
              
-          </option>,
+</option>,
         ],
         "className": "dropdown",
       },

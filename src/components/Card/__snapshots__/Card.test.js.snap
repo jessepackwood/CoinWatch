@@ -6,11 +6,11 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
     coin={
-      Object {
-        "long": "Bitcoin",
-      }
+        Object {
+            "long": "Bitcoin",
+          }
     }
-  />,
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -26,39 +26,39 @@ ShallowWrapper {
       "children": Array [
         <h3
           className="coin-name"
-        >
+>
           <span
-            className="number"
+                    className="number"
           >
-            .
+                    .
           </span>
           Bitcoin
           <span
-            className="short"
+                    className="short"
           >
-            (
-            )
+                    (
+                    )
           </span>
-        </h3>,
+</h3>,
         <span
           className="price"
-        >
+>
           USD $
-        </span>,
+</span>,
         <span
           className="negative dayChange"
-        >
+>
           %
           <span
-            className="hour"
+                    className="hour"
           >
-            (24H)
+                    (24H)
           </span>
-        </span>,
+</span>,
         <span
           className=" btn-fav"
           onClick={[Function]}
-        />,
+/>,
       ],
       "className": "card",
     },
@@ -72,16 +72,16 @@ ShallowWrapper {
           "children": Array [
             <span
               className="number"
-            >
+>
               .
-            </span>,
+</span>,
             "Bitcoin",
             <span
               className="short"
-            >
+>
               (
               )
-            </span>,
+</span>,
           ],
           "className": "coin-name",
         },
@@ -157,9 +157,9 @@ ShallowWrapper {
             "%",
             <span
               className="hour"
-            >
+>
               (24H)
-            </span>,
+</span>,
           ],
           "className": "negative dayChange",
         },
@@ -206,39 +206,39 @@ ShallowWrapper {
         "children": Array [
           <h3
             className="coin-name"
-          >
+>
             <span
-              className="number"
+                        className="number"
             >
-              .
+                        .
             </span>
             Bitcoin
             <span
-              className="short"
+                        className="short"
             >
-              (
-              )
+                        (
+                        )
             </span>
-          </h3>,
+</h3>,
           <span
             className="price"
-          >
+>
             USD $
-          </span>,
+</span>,
           <span
             className="negative dayChange"
-          >
+>
             %
             <span
-              className="hour"
+                        className="hour"
             >
-              (24H)
+                        (24H)
             </span>
-          </span>,
+</span>,
           <span
             className=" btn-fav"
             onClick={[Function]}
-          />,
+/>,
         ],
         "className": "card",
       },
@@ -252,16 +252,16 @@ ShallowWrapper {
             "children": Array [
               <span
                 className="number"
-              >
+>
                 .
-              </span>,
+</span>,
               "Bitcoin",
               <span
                 className="short"
-              >
+>
                 (
                 )
-              </span>,
+</span>,
             ],
             "className": "coin-name",
           },
@@ -337,9 +337,9 @@ ShallowWrapper {
               "%",
               <span
                 className="hour"
-              >
+>
                 (24H)
-              </span>,
+</span>,
             ],
             "className": "negative dayChange",
           },
