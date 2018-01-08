@@ -1,13 +1,12 @@
-
-
 .portfolio-title-wrapper {
 	display: flex;
 	background: #FDFFFC;
-	padding: 20px;
+	padding: 20px 20px 0;
 }
 
 .portfolio-title {
 	font-size: 24pt;
+	margin-left: 10px;
 	text-align: center;
 	color: #274156;
 }
@@ -20,7 +19,7 @@
 }
 
 .portfolio-list-wrapper {
-	padding: 20px;
+	padding: 0 20px;
 }
 
 .portfolio-add-coin {
@@ -28,20 +27,30 @@
 	height: 35px;
 	width: 130px;
 	font-size: 18pt;
+	padding: 5px;
 }
 
 .portfolio-add-btn {
 	margin: 0 0 10px 20px;
 	width: 40px;
 	height: 40px;
-	// border-radius: 20px;
 	background-image: url('../../assets/rounded-add-blue.svg');
 	background-size: contain;
 	background-repeat: no-repeat;
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 .coin-title {
 	font-size: 18pt;
+	margin-left: 10px;
+}
+
+.empty-portfolio-title {
+	margin: 10px;
+	text-align: center;
+	color: #274156;
 }
 
 .portfolio-coin {

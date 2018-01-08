@@ -1,12 +1,13 @@
 @import '../../variable.scss';
 
-// .login {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   background: #434343;
-// }
+.login-form {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: $blue;
+}
 
 // .email-input, .password-input {
 //   height: 25px;
@@ -20,27 +21,27 @@
 //   margin: 10px;
 // }
 
-.login-form {
-  background: $blue;
-  border-radius: 20px;
-  // color: white;
-  display: flex;
-  height: auto;
-  width: 400px;
-  position: fixed;
-  top: calc(50% - 150px);
-  left: calc(50% - 200px);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  // z-index: 1;
-}
+// .login-form {
+//   background: $blue;
+//   border-radius: 20px;
+//   // color: white;
+//   display: flex;
+//   height: auto;
+//   width: 400px;
+//   position: fixed;
+//   top: calc(50% - 150px);
+//   left: calc(50% - 200px);
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   // z-index: 1;
+// }
 
 .input-field,
 .btn-submit {
   margin-top: 20px;
-  height: 30px;
-  width: 75%;
+  height: 35px;
+  width: 300px;
   font-size: 14pt;
 
 }
@@ -49,10 +50,20 @@
   margin-bottom: 30px;
   color: #fff;
   background-color: $blue;
-  border: none;
+  border: 1px solid #fff;
+  outline: none;
+  &:hover {
+    cursor: pointer;
+    border: 1px solid $green;
+  }
 }
 
 .modal-title {
   margin-top: 20px;
   font-size: 16pt;
+}
+
+.error-message {
+  margin-top: 20px;
+  color: #fff;
 }

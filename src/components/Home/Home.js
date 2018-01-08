@@ -2,29 +2,25 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Header from '../Header/Header'
 import Search from '../Search/Search'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import './Home.css'
 import MarketCapCard from '../MarketCapCard/MarketCapCard'
 
 class Home extends Component {
   constructor(props) {
     super()
-    console.log(props)
     this.state = {
       coinsToDisplay: [],
-      sortOrder: 'ascending',
+      sortOrder: 'Highest',
       viewAll: false
     }
   }
-
-
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.searchInput !== '') {
       return this.setState({coinsToDisplay: this.searchedCoinsToDisplay() })
     }
     this.setState({coinsToDisplay: nextProps.coins.slice(0, 100)})
-
   }
 
   handleView = () => {
@@ -36,17 +32,25 @@ class Home extends Component {
   }
 
   handleSortClick = () => {
-    if (this.state.sortOrder === 'ascending') {
-      this.setState({sortOrder: 'descending', coinsToDisplay: this.props.coins.sort((a, b) => {
+    if (this.state.sortOrder === 'Highest') {
+      this.setState({sortOrder: 'Lowest', coinsToDisplay: this.props.coins.sort((a, b) => {
         return b.cap24hrChange - a.cap24hrChange
       }).slice(0, 100)
       })
     } else {
-      this.setState({sortOrder: 'ascending', coinsToDisplay: this.props.coins.sort((a, b) => {
+      this.setState({sortOrder: 'Highest', coinsToDisplay: this.props.coins.sort((a, b) => {
         return a.cap24hrChange - b.cap24hrChange
       }).slice(0, 100)
       })
     }
+  }
+
+  setToMarketCap = () => {
+    console.log('set to market cap')
+    this.setState({coinsToDisplay: this.props.coins.sort((a, b) => {
+      return b.mktcap - a.mktcap
+      })
+    })
   }
 
   searchedCoinsToDisplay = () => {
@@ -67,9 +71,14 @@ class Home extends Component {
         <Header />
         <Search />
         <div className='home-page'>
-          <h3>Top 100 Currencies by market cap</h3>
-          <button onClick={this.handleView} > {this.state.viewAll ? 'Top 100' : 'View All'} </button>
-          <button onClick={this.handleSortClick} >{`Sort: ${this.state.sortOrder}`}</button>
+          <div className='subtitle-wrapper'>
+            <h3 className='home-page-subtitle'>Top 100 Currencies by market cap</h3>
+            <div className='filter-btn-wrapper'>
+              <button className='filter-btn' onClick={this.handleView} > {this.state.viewAll ? 'Top 100' : 'View All'} </button>
+              <button className='filter-btn' onClick={this.handleSortClick} >{`Sort: ${this.state.sortOrder}`}</button>
+              <button className='filter-btn' onClick={this.setToMarketCap} >Market Cap</button>
+            </div>
+          </div>
           {mappedCoins}
         </div>
       </div>

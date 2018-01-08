@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import * as actions from '../../actions'
-import Form from '../../components/Form/Form'
 import PropTypes from 'prop-types'
 import { Provider } from 'react-redux';
 
@@ -32,6 +31,9 @@ export class Login extends Component {
           <Redirect to='/home' />
         }
         <div className='login-form'>
+          <Link to='/home'>
+            <h1 className='app-title login-title'>Coin Watch</h1>
+          </Link>
           <input 
             type='text'
             name='email'
@@ -49,7 +51,7 @@ export class Login extends Component {
             onChange={this.handleInputChange} 
           />
           {!!this.props.error && 
-            <p>{this.props.error}</p>
+            <p className='error-message'>{this.props.error}</p>
           }
           { !this.props.showRegister && 
           <input type='submit' value='Login' className='btn-submit' onClick={this.handleLoginSubmit} />

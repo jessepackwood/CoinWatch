@@ -23,7 +23,7 @@ export const MarketCapCard = ({
   }
 
   return (
-    <div className='card'>
+    <Card>
       <h3 className='coin-name'>
         <span className='number'>{number}.</span>
         {long}
@@ -38,7 +38,7 @@ export const MarketCapCard = ({
         onClick={() => handleWatchList(watchList, coin)}
       >
       </span>
-    </div>
+    </Card>
   )
 }
 

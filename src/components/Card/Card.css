@@ -16,6 +16,8 @@
   font-family: "Abel", sans-serif;
   margin: 0 10px;
   width: 350px; }
+  .coin-name.port-coin-name {
+    width: 200px; }
 
 .short {
   margin-left: 5px;
@@ -24,11 +26,15 @@
 .price {
   color: white;
   font-size: 20pt;
-  margin-left: auto; }
+  margin: 0 auto;
+  width: 200px; }
+  .price.port-price {
+    text-align: right;
+    margin: 0; }
 
 .dayChange {
-  text-align: center;
-  margin-left: auto;
+  text-align: right;
+  margin-right: 15px;
   font-size: 20pt;
   width: 200px; }
 
@@ -42,6 +48,12 @@
   margin-left: 10px;
   color: white; }
 
+.amount {
+  font-size: 20pt;
+  margin: 0 auto;
+  color: #f2bb30;
+  width: 200px; }
+
 .btn-fav {
   width: 35px;
   height: 35px;
@@ -51,3 +63,8 @@
   .btn-fav.minus {
     background-image: url("../../assets/round-minus.svg");
     background-repeat: no-repeat; }
+  .btn-fav:hover {
+    cursor: pointer; }
+
+.port-btn {
+  margin-left: 10px; }

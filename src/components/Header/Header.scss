@@ -11,6 +11,10 @@
   font-family: $title-font;
   font-size: 30pt;
   margin: none;
+  width: 300px;
+  &.login-title {
+    text-align: center;
+  }
 }
 
 ul {
@@ -25,7 +29,7 @@ li {
 }
 
 .portfolio-link {
-  margin-right: 10px;
+  margin: 0 18px 0 2px;
 }
 
 .login-btn {
@@ -33,22 +37,20 @@ li {
   right: 100px;
   margin-right: 10px;
   background: none;
+  color: #fff;
+  &.email {
+    color: $orange;
+  }
 }
+
 .sign-out, .sign-up {
   position: absolute;
   right: 40px;
 }
-.header-link,
-.home-link {
+.header-link {
   margin-bottom: 10px;
   color: #fff;
+  &:hover {
+    color: $green;
+  }
 }
-
-// .line-graph-header {
-
-//   height: 75px;
-//   position: fixed;
-//   top: 25px;
-//   left: 40%;
-//   // margin-bottom: 100px;
-// }
