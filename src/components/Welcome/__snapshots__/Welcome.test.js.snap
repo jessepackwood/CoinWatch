@@ -20,35 +20,35 @@ ShallowWrapper {
       "children": Array [
         <div
           className="welcome-text"
-        >
+>
           <div>
-            <h1
-              className="welcome-title"
-            >
-              Coin Watch
-            </h1>
-            <p>
-              Track your profits and only watch the coins you care about.
-            </p>
+                    <h1
+                              className="welcome-title"
+                    >
+                              Coin Watch
+                    </h1>
+                    <p>
+                              Track your profits and only watch the coins you care about.
+                    </p>
           </div>
           <div>
-            <Link
-              replace={false}
-              to="/login"
-            >
-              <button
-                className="start-button"
-              >
-                Get started
-              </button>
-            </Link>
+                    <Link
+                              replace={false}
+                              to="/login"
+                    >
+                              <button
+                                        className="start-button"
+                              >
+                                        Get started
+                              </button>
+                    </Link>
           </div>
-        </div>,
+</div>,
         <img
           alt="line graph"
           className="line-graph"
           src="thin-line.svg"
-        />,
+/>,
       ],
       "className": "welcome",
     },
@@ -62,26 +62,26 @@ ShallowWrapper {
           "children": Array [
             <div>
               <h1
-                className="welcome-title"
+                            className="welcome-title"
               >
-                Coin Watch
+                            Coin Watch
               </h1>
               <p>
-                Track your profits and only watch the coins you care about.
+                            Track your profits and only watch the coins you care about.
               </p>
-            </div>,
+</div>,
             <div>
               <Link
-                replace={false}
-                to="/login"
+                            replace={false}
+                            to="/login"
               >
-                <button
-                  className="start-button"
-                >
-                  Get started
-                </button>
+                            <button
+                                          className="start-button"
+                            >
+                                          Get started
+                            </button>
               </Link>
-            </div>,
+</div>,
           ],
           "className": "welcome-text",
         },
@@ -95,12 +95,12 @@ ShallowWrapper {
               "children": Array [
                 <h1
                   className="welcome-title"
-                >
+>
                   Coin Watch
-                </h1>,
+</h1>,
                 <p>
                   Track your profits and only watch the coins you care about.
-                </p>,
+</p>,
               ],
             },
             "ref": null,
@@ -139,13 +139,13 @@ ShallowWrapper {
               "children": <Link
                 replace={false}
                 to="/login"
-              >
+>
                 <button
-                  className="start-button"
+                                className="start-button"
                 >
-                  Get started
+                                Get started
                 </button>
-              </Link>,
+</Link>,
             },
             "ref": null,
             "rendered": Object {
@@ -155,9 +155,9 @@ ShallowWrapper {
               "props": Object {
                 "children": <button
                   className="start-button"
-                >
+>
                   Get started
-                </button>,
+</button>,
                 "replace": false,
                 "to": "/login",
               },
@@ -206,35 +206,35 @@ ShallowWrapper {
         "children": Array [
           <div
             className="welcome-text"
-          >
+>
             <div>
-              <h1
-                className="welcome-title"
-              >
-                Coin Watch
-              </h1>
-              <p>
-                Track your profits and only watch the coins you care about.
-              </p>
+                        <h1
+                                    className="welcome-title"
+                        >
+                                    Coin Watch
+                        </h1>
+                        <p>
+                                    Track your profits and only watch the coins you care about.
+                        </p>
             </div>
             <div>
-              <Link
-                replace={false}
-                to="/login"
-              >
-                <button
-                  className="start-button"
-                >
-                  Get started
-                </button>
-              </Link>
+                        <Link
+                                    replace={false}
+                                    to="/login"
+                        >
+                                    <button
+                                                className="start-button"
+                                    >
+                                                Get started
+                                    </button>
+                        </Link>
             </div>
-          </div>,
+</div>,
           <img
             alt="line graph"
             className="line-graph"
             src="thin-line.svg"
-          />,
+/>,
         ],
         "className": "welcome",
       },
@@ -248,26 +248,26 @@ ShallowWrapper {
             "children": Array [
               <div>
                 <h1
-                  className="welcome-title"
+                                className="welcome-title"
                 >
-                  Coin Watch
+                                Coin Watch
                 </h1>
                 <p>
-                  Track your profits and only watch the coins you care about.
+                                Track your profits and only watch the coins you care about.
                 </p>
-              </div>,
+</div>,
               <div>
                 <Link
-                  replace={false}
-                  to="/login"
+                                replace={false}
+                                to="/login"
                 >
-                  <button
-                    className="start-button"
-                  >
-                    Get started
-                  </button>
+                                <button
+                                                className="start-button"
+                                >
+                                                Get started
+                                </button>
                 </Link>
-              </div>,
+</div>,
             ],
             "className": "welcome-text",
           },
@@ -281,12 +281,12 @@ ShallowWrapper {
                 "children": Array [
                   <h1
                     className="welcome-title"
-                  >
+>
                     Coin Watch
-                  </h1>,
+</h1>,
                   <p>
                     Track your profits and only watch the coins you care about.
-                  </p>,
+</p>,
                 ],
               },
               "ref": null,
@@ -325,13 +325,13 @@ ShallowWrapper {
                 "children": <Link
                   replace={false}
                   to="/login"
-                >
+>
                   <button
-                    className="start-button"
+                                    className="start-button"
                   >
-                    Get started
+                                    Get started
                   </button>
-                </Link>,
+</Link>,
               },
               "ref": null,
               "rendered": Object {
@@ -341,9 +341,9 @@ ShallowWrapper {
                 "props": Object {
                   "children": <button
                     className="start-button"
-                  >
+>
                     Get started
-                  </button>,
+</button>,
                   "replace": false,
                   "to": "/login",
                 },

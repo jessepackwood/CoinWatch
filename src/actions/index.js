@@ -1,6 +1,7 @@
 import firebase from 'firebase'
 import { auth, db, fetchWatchList, isAuthenticated } from '../services/firebase'
 import { fetchCoinFront } from '../services/services'
+import { NotificationManager } from 'react-notifications'
 
 
 export const checkUser = () => (dispatch) => {
@@ -130,9 +131,8 @@ export const listenToWatchLists = (user) => (dispatch) => {
 
 export const addWatch = (watchList, coin, user) => (dispatch) => {
   if (!isAuthenticated()) {
-    return dispatch(forbidden())
+    return NotificationManager.warning('Login to do that', null, 2500)
   }
-
   postWatchedCoin(watchList, coin, user)
   return {
     type: 'ADD_WATCH',

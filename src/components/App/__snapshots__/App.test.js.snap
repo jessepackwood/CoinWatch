@@ -5,14 +5,8 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <App
-    checkUser={
-      [MockFunction] {
-        "calls": Array [
-          Array [],
-        ],
-      }
-    }
-  />,
+    checkUser={[Function]}
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
