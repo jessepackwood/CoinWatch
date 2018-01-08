@@ -30,5 +30,10 @@ export const fetchWatchList = async (user) => {
   return watchList
 }
 
+export const fetchPortfolio = async (user) => {
+  const portfolio = db.ref('portfolios/' + user.uid).once('value')
+  return portfolio
+}
+
 
 export default firebase;
