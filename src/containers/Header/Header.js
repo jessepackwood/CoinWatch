@@ -26,6 +26,18 @@ export class Header extends Component {
           }
           { !!this.props.user.loggedIn && 
             <ul>
+              <Link to='/home'>
+                <li className='header-link'>Home</li>
+              </Link>
+              <span className='pipe'>|</span>
+              <Link to='/portfolio'>
+                <li className='header-link portfolio-link'>Portfolio</li>
+              </Link>
+              <span className='pipe'>|</span>
+              <Link to='/watchlist'>
+                <li className='header-link'>WatchList</li>
+              </Link>
+              <span className='pipe'>|</span>
               <li className='login-btn email'>
                 {this.props.user.email}
               </li>
@@ -33,7 +45,6 @@ export class Header extends Component {
                 className='sign-out header-link'
                 onClick={()=> this.props.signOut(this.props.user)}
               >
-                Sign Out
               </li>
             </ul>
           }
@@ -42,17 +53,6 @@ export class Header extends Component {
         <Link to='/home'>
           <h1 className='app-title'>Coin Watch</h1>
         </Link>
-
-        { !!this.props.user.loggedIn && 
-        <nav>
-          <Link to='/portfolio'>
-            <span className='header-link portfolio-link'>Portfolio</span>
-          </Link>
-          <Link to='/watchlist'>
-            <span className='header-link'>WatchList</span>
-          </Link>
-        </nav>
-        }
 
       </div>
     )   
