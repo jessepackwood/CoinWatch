@@ -5,6 +5,7 @@ import Search from '../Search/Search'
 import PropTypes from 'prop-types'
 import './Home.css'
 import MarketCapCard from '../MarketCapCard/MarketCapCard'
+import { PulseLoader } from 'react-spinners'
 
 class Home extends Component {
   constructor() {
@@ -77,6 +78,15 @@ class Home extends Component {
       <div>
         <Header />
         <Search />
+        {this.props.coins.length === 0 && 
+          <div className='spinner'>
+            <PulseLoader 
+              color={'orange'}
+              size={25}
+            />
+          </div>
+        }
+        {this.props.coins.length > 0 && 
         <div className='home-page'>
           <div className='subtitle-wrapper'>
             <h3 className='home-page-subtitle'>
@@ -105,6 +115,7 @@ class Home extends Component {
           </div>
           {mappedCoins}
         </div>
+        } 
       </div>
     )
   }

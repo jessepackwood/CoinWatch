@@ -27,3 +27,9 @@
 .subtitle-wrapper {
   display: flex;
   justify-content: space-between; }
+
+.spinner {
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
