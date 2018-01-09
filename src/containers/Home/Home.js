@@ -36,15 +36,17 @@ class Home extends Component {
 
   handleSortClick = () => {
     if (this.state.sortOrder === 'Highest') {
+      const highDayChangeCoins = this.props.coins
       this.setState({
         sortOrder: 'Lowest', 
-        coinsToDisplay: this.props.coins.sort((first, second) => {
+        coinsToDisplay: highDayChangeCoins.sort((first, second) => {
           return second.cap24hrChange - first.cap24hrChange
         }).slice(0, 100)
       })
     } else {
+      const lowDayChangeCoins = this.props.coins
       this.setState({sortOrder: 'Highest', 
-        coinsToDisplay: this.props.coins.sort((first, second) => {
+        coinsToDisplay: lowDayChangeCoins.sort((first, second) => {
           return first.cap24hrChange - second.cap24hrChange
         }).slice(0, 100)
       })
@@ -52,9 +54,10 @@ class Home extends Component {
   }
 
   setToMarketCap = () => {
-    this.setState({coinsToDisplay: this.props.coins.sort((first, second) => {
+    const marketCapCoins = this.props.coins
+    this.setState({coinsToDisplay: marketCapCoins.sort((first, second) => {
       return second.mktcap - first.mktcap
-    })
+      }).slice(0, 100)
     })
   }
 
