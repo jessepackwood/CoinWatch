@@ -20,11 +20,11 @@
 }
 
 .filter-btn {
-  height: 20px;
+  height: 25px;
   width: 90px;
-  margin: 5px;
+  margin: 0 5px;
   border-radius: 5px;
-  border-color: $blue;
+  border: 3px solid $blue;
 }
 
 .filter-btn-wrapper {
