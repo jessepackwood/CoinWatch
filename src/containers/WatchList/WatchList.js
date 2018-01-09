@@ -2,7 +2,7 @@ import React from 'react'
 import MarketCapCard from '../../containers/MarketCapCard/MarketCapCard'
 import { connect } from 'react-redux'
 import Header from '../Header/Header'
-import plus  from '../../assets/rounded-add-blue.svg'
+import plus  from '../../assets/rounded-add-button.svg'
 import PropTypes from 'prop-types';
 import './WatchList.css'
 
@@ -22,7 +22,7 @@ const WatchList = ({watchList}) => {
 
       { !!watchedCoins.length && 
       <div className='watch-list'>
-        <h3>Watch List</h3>
+        <h3 className='watchlist-subtitle'>Watch List</h3>
         {watchedCoins}
       </div>
       }

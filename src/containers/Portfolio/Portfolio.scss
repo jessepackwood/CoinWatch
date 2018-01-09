@@ -1,6 +1,12 @@
+@import '../../variable.scss';
+
+.portfolio {
+	height: calc(100vh - 110px);
+}
+
 .portfolio-title-wrapper {
 	display: flex;
-	background: #FDFFFC;
+	background: $background;
 	padding: 20px 20px 0;
 }
 
@@ -8,7 +14,7 @@
 	font-size: 24pt;
 	margin-left: 10px;
 	text-align: center;
-	color: #274156;
+	color: white;
 }
 
 .portfolio-input-wrapper {
@@ -34,7 +40,7 @@
 	margin: 0 0 10px 20px;
 	width: 40px;
 	height: 40px;
-	background-image: url('../../assets/rounded-add-blue.svg');
+	background-image: url('../../assets/rounded-add-button.svg');
 	background-size: contain;
 	background-repeat: no-repeat;
 	&:hover {
@@ -45,15 +51,20 @@
 .coin-title {
 	font-size: 18pt;
 	margin-left: 10px;
+	color: #fff;
 }
 
 .empty-portfolio-title {
-	margin: 10px;
-	text-align: center;
-	color: #274156;
+	font-size: 18pt;
+	margin: 20px;
+	color: white;
 }
 
 .portfolio-coin {
 	display: block;
 	border-bottom: 1px solid black;
+}
+
+.active {
+	color: orange;
 }

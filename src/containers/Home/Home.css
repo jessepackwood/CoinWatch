@@ -4,7 +4,9 @@
 
 .home-page-subtitle {
   display: inline-block;
-  margin-left: 10px; }
+  font-size: 18pt;
+  margin-left: 10px;
+  color: #f2bb30; }
 
 .home-title {
   text-align: center; }
@@ -18,8 +20,12 @@
   height: 25px;
   width: 90px;
   margin: 0 5px;
-  border-radius: 5px;
-  border: 3px solid #274156; }
+  border-radius: 3px; }
+  .filter-btn:hover {
+    background: #244968;
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid #9af765; }
 
 .filter-btn-wrapper {
   margin-left: auto; }
@@ -29,7 +35,7 @@
   justify-content: space-between; }
 
 .spinner {
-  margin-top: 200px;
+  height: calc(100vh - 110px);
   display: flex;
   justify-content: center;
   align-items: center; }

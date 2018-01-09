@@ -5,7 +5,7 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: #274156; }
+  background: #244968; }
 
 .input-field,
 .btn-submit {
@@ -17,7 +17,7 @@
 .btn-submit {
   margin-bottom: 30px;
   color: #fff;
-  background-color: #274156;
+  background-color: #244968;
   border: 1px solid #fff;
   outline: none; }
   .btn-submit:hover {

@@ -1,16 +1,17 @@
 @import '../../variable.scss';
 
 .header {
-	background: #274156;
+	background: $blue;
 	height: 110px;
-  padding: 20px;
+  // padding: 10px;
 }
 
 .app-title {
   color: #fff;
   font-family: $title-font;
-  font-size: 30pt;
-  margin: none;
+  font-size: 32pt;
+  margin: 0 0 0 30px;
+  padding-top: 30px;
   width: 300px;
   &.login-title {
     text-align: center;
@@ -19,38 +20,78 @@
 
 ul {
   display: flex;
+  align-items: center;
+  position: absolute;
+  right: 10px;
+  border: 0 1px 1px solid white;
+  border-radius: 5px;
 }
 
 li {
   &:hover {
     cursor: pointer;
   }
+  padding: 0 5px;
   list-style: none;
 }
 
 .portfolio-link {
-  margin: 0 18px 0 2px;
+  // margin: 0 18px 0 2px;
 }
 
 .login-btn {
-  position: absolute;
+  // position: absolute;
   right: 100px;
-  margin-right: 10px;
+  // margin-right: 10px;
   background: none;
+  margin-top: 10px;
+
   color: #fff;
   &.email {
-    color: $orange;
+    // position: relative;
+    margin-top: 0;
+    color: #c9c9c9;
+    &:hover {
+      cursor: default;
+    }
   }
 }
 
-.sign-out, .sign-up {
-  position: absolute;
-  right: 40px;
+.sign-out {
+  background-image: url('../../assets/tick-inside-circle.svg');
+  background-size: cover;
+
+  height: 14px;
+  width:14px;
+  margin-left: 5px;
+  &:hover {
+    background-image: url('../../assets/tick-inside-circle-red.svg');
+  }
 }
+
+.sign-up {
+  margin: 10px 0 0 5px;
+}
+
 .header-link {
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
+  font-size: 12pt;
   color: #fff;
   &:hover {
     color: $green;
   }
 }
+
+.pipe {
+  color: #fff;
+  font-size: 16pt;
+  font-weight: lighter;
+  margin: 0 5px;
+}
+
+.active {
+  li {
+  color: $orange;
+  }
+}
+

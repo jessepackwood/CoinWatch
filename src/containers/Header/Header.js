@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Header.css'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { fetchCoins, fetchWatchedCoins, signOutUser} from '../../actions'
 import PropTypes from 'prop-types'
 
@@ -26,6 +26,18 @@ export class Header extends Component {
           }
           { !!this.props.user.loggedIn && 
             <ul>
+              <NavLink to='/home'>
+                <li className='header-link'>Home</li>
+              </NavLink>
+              <span className='pipe'>|</span>
+              <NavLink to='/portfolio'>
+                <li className='header-link portfolio-link'>Portfolio</li>
+              </NavLink>
+              <span className='pipe'>|</span>
+              <NavLink to='/watchlist'>
+                <li className='header-link'>WatchList</li>
+              </NavLink>
+              <span className='pipe'>|</span>
               <li className='login-btn email'>
                 {this.props.user.email}
               </li>
@@ -33,26 +45,14 @@ export class Header extends Component {
                 className='sign-out header-link'
                 onClick={()=> this.props.signOut(this.props.user)}
               >
-                Sign Out
               </li>
             </ul>
           }
         </nav>
 
         <Link to='/home'>
-          <h1 className='app-title'>Coin Watch</h1>
+          <p className='app-title'>Coin Watch</p>
         </Link>
-
-        { !!this.props.user.loggedIn && 
-        <nav>
-          <Link to='/portfolio'>
-            <span className='header-link portfolio-link'>Portfolio</span>
-          </Link>
-          <Link to='/watchlist'>
-            <span className='header-link'>WatchList</span>
-          </Link>
-        </nav>
-        }
 
       </div>
     )   

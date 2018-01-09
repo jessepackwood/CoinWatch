@@ -4,8 +4,8 @@
 	margin: 15px auto;
 	display: flex;
 	padding: 10px;
-	border-radius: 15px;
-	background: #274156;
+	border-radius: 6px;
+	background: $blue;
 }
 .number {
 	margin-right: 5px;
@@ -73,11 +73,15 @@
 	background-size: contain;
 	background-repeat: no-repeat;
 	&.minus {
+		&:hover {
+			background-image: url('../../assets/tick-inside-circle-red.svg')
+		}
 	background-image: url('../../assets/tick-inside-circle.svg');
 	background-repeat: no-repeat;
 	}
 	&:hover {
 		cursor: pointer;
+		background-image: url('../../assets/rounded-add-green.svg')
 	}
 }
 
