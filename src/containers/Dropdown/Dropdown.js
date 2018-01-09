@@ -13,7 +13,9 @@ export const Dropdown = ({coins, onNameChange}) => {
       className='dropdown' 
       onChange={event => onNameChange(event.target.value)}
     >
-      {coinNames}
+      <optgroup>
+        {coinNames}
+      </optgroup>
     </select>
   )
 }

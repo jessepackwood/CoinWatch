@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import '../Card/Card.css'
+import '../../components/Card/Card.css'
 import * as actions from '../../actions'
 
 export const PortfolioCard = ({ 

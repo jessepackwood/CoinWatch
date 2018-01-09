@@ -1,7 +1,7 @@
 import React from 'react'
-import MarketCapCard from '../../components/MarketCapCard/MarketCapCard'
+import MarketCapCard from '../../containers/MarketCapCard/MarketCapCard'
 import { connect } from 'react-redux'
-import Header from '../../components/Header/Header'
+import Header from '../Header/Header'
 import plus  from '../../assets/rounded-add-blue.svg'
 import PropTypes from 'prop-types';
 import './WatchList.css'
