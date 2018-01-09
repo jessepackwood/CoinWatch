@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import lineGraph from '../../assets/thin-line.svg'
+import Footer from '../Footer/Footer'
 import './Welcome.css'
 
 const Welcome = () => {
@@ -18,6 +19,7 @@ const Welcome = () => {
         </div>
       </div>
       <img src={lineGraph} className='line-graph' alt='line graph' />
+      <Footer />
     </div>
   )
 }
