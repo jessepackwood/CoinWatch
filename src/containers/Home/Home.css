@@ -15,11 +15,11 @@
   font-size: 20pt; }
 
 .filter-btn {
-  height: 20px;
+  height: 25px;
   width: 90px;
-  margin: 5px;
+  margin: 0 5px;
   border-radius: 5px;
-  border-color: #274156; }
+  border: 3px solid #274156; }
 
 .filter-btn-wrapper {
   margin-left: auto; }
@@ -27,3 +27,9 @@
 .subtitle-wrapper {
   display: flex;
   justify-content: space-between; }
+
+.spinner {
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
