@@ -56,7 +56,8 @@ class Portfolio extends Component {
         <div className='portfolio'>
           <div className='portfolio-title-wrapper'>
             <h3 className='portfolio-title'>
-              Portfolio Total: ${Math.round(portfolioTotal)}
+              Portfolio Total: 
+              <span className='grand-total'>${Math.round(portfolioTotal)}</span>
             </h3>
             <div className='portfolio-input-wrapper'>
               <input 
@@ -76,14 +77,13 @@ class Portfolio extends Component {
           </div>
           { !!this.props.portfolio.length && 
           <div className='portfolio-list-wrapper'>
-            <h4 className='coin-title'>Current Holdings</h4>
+            <h3 className='coin-title'>Current Holdings</h3>
             <div className='portfolio-list'>
               {portfolioItems}
             </div>
           </div>
           }
-          {
-            !this.props.portfolio.length &&
+          {!this.props.portfolio.length &&
             <div>
               <h4 className='empty-portfolio-title'>
               Choose a coin and an amount to add coins to your portfolio.

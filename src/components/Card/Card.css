@@ -3,8 +3,8 @@
   margin: 15px auto;
   display: flex;
   padding: 10px;
-  border-radius: 15px;
-  background: #274156; }
+  border-radius: 6px;
+  background: #244968; }
 
 .number {
   margin-right: 5px;
@@ -63,8 +63,11 @@
   .btn-fav.minus {
     background-image: url("../../assets/tick-inside-circle.svg");
     background-repeat: no-repeat; }
+    .btn-fav.minus:hover {
+      background-image: url("../../assets/tick-inside-circle-red.svg"); }
   .btn-fav:hover {
-    cursor: pointer; }
+    cursor: pointer;
+    background-image: url("../../assets/rounded-add-green.svg"); }
 
 .port-btn {
   margin-left: 10px; }

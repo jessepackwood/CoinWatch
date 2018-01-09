@@ -1,7 +1,7 @@
 @import '../../variable.scss';
 
 .header {
-	background: #274156;
+	background: $blue;
 	height: 110px;
   // padding: 10px;
 }
@@ -9,9 +9,9 @@
 .app-title {
   color: #fff;
   font-family: $title-font;
-  font-size: 30pt;
+  font-size: 32pt;
   margin: 0 0 0 30px;
-  padding-top: 25px;
+  padding-top: 30px;
   width: 300px;
   &.login-title {
     text-align: center;
@@ -50,7 +50,7 @@ li {
   &.email {
     // position: relative;
     margin-top: 0;
-    color: $orange;
+    color: #c9c9c9;
     &:hover {
       cursor: default;
     }
@@ -87,5 +87,11 @@ li {
   font-size: 16pt;
   font-weight: lighter;
   margin: 0 5px;
+}
+
+.active {
+  li {
+  color: $orange;
+  }
 }
 
