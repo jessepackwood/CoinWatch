@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Switch, Redirect} from 'react-router-dom';
 import Login from '../../containers/Login/Login'
-import Home from '../Home/Home'
+import Home from '../../containers/Home/Home'
 import Welcome from '../Welcome/Welcome'
 import WatchList from '../../containers/WatchList/WatchList'
-import Portfolio from '../../components/Portfolio/Portfolio'
+import Portfolio from '../../containers/Portfolio/Portfolio'
 import PropTypes from 'prop-types'
 import { isAuthenticated } from '../../services/firebase'
 

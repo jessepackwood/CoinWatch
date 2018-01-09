@@ -6,4 +6,8 @@
 
 select {
   font-size: 18pt;
-  background: #fff; }
+  background: #fff;
+  max-height: 400px; }
+
+optgroup {
+  max-height: 400px; }

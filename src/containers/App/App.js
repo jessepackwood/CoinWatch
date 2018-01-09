@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'
-import Routes from '../Routes/Routes'
+import Routes from '../../components/Routes/Routes'
 import PropTypes from 'prop-types';
 import { NotificationContainer } from 'react-notifications'
 import 'react-notifications/lib/notifications.css'
