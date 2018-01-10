@@ -4,16 +4,17 @@
 	margin: 15px auto;
 	display: flex;
 	padding: 10px;
-	border-radius: 6px;
+	// border-radius: 6px;
+	border-bottom: 1px solid white;
 	background: $background;
 }
 .number {
 	margin-right: 5px;
-	color: $orange;
+	color: #fff;
 }
 .coin-name {
 	font-size: 22pt;
-	color: #fff;
+	color: $orange;
 	font-family: $title-font;
 	margin: 0 10px;
 	width: 350px;

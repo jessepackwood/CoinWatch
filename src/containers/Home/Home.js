@@ -7,7 +7,7 @@ import './Home.css'
 import MarketCapCard from '../MarketCapCard/MarketCapCard'
 import { PulseLoader } from 'react-spinners'
 
-class Home extends Component {
+export class Home extends Component {
   constructor() {
     super()
     this.state = {
@@ -97,7 +97,7 @@ class Home extends Component {
             </h3>
             <div className='filter-btn-wrapper'>
               <button 
-                className='filter-btn' 
+                className='filter-btn view-button' 
                 onClick={this.handleView} 
               > 
                 {this.state.viewAll ? 'Top 100' : 'View All'} 
@@ -124,7 +124,7 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   coins: state.coins,
   searchInput: state.searchInput.value
 })

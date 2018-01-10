@@ -1,3 +1,529 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home tests should match the snapshot 1`] = `[Function]`;
+exports[`Home tests should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Home
+    coins={
+        Array [
+            Object {
+              "cap24hrChange": 4,
+              "long": "bit",
+              "mktcap": 100,
+            },
+            Object {
+              "cap24hrChange": 1,
+              "long": "iot",
+              "mktcap": 200,
+            },
+          ]
+    }
+    searchInput=""
+    store={
+        Object {
+            "coins": Array [
+              "bit",
+            ],
+            "searchInput": "",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Connect(Header) />,
+        <Connect(Component) />,
+        false,
+        <div
+          className="home-page"
+>
+          <div
+                    className="subtitle-wrapper"
+          >
+                    <h3
+                              className="home-page-subtitle"
+                    >
+                              Top 100 Currencies by market cap
+                    </h3>
+                    <div
+                              className="filter-btn-wrapper"
+                    >
+                              <button
+                                        className="filter-btn view-button"
+                                        onClick={[Function]}
+                              >
+                                        View All
+                              </button>
+                              <button
+                                        className="filter-btn"
+                                        onClick={[Function]}
+                              >
+                                        Sort: Highest
+                              </button>
+                              <button
+                                        className="filter-btn"
+                                        onClick={[Function]}
+                              >
+                                        Market Cap
+                              </button>
+                    </div>
+          </div>
+</div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="subtitle-wrapper"
+>
+              <h3
+                            className="home-page-subtitle"
+              >
+                            Top 100 Currencies by market cap
+              </h3>
+              <div
+                            className="filter-btn-wrapper"
+              >
+                            <button
+                                          className="filter-btn view-button"
+                                          onClick={[Function]}
+                            >
+                                          View All
+                            </button>
+                            <button
+                                          className="filter-btn"
+                                          onClick={[Function]}
+                            >
+                                          Sort: Highest
+                            </button>
+                            <button
+                                          className="filter-btn"
+                                          onClick={[Function]}
+                            >
+                                          Market Cap
+                            </button>
+              </div>
+</div>,
+            Array [],
+          ],
+          "className": "home-page",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h3
+                  className="home-page-subtitle"
+>
+                  Top 100 Currencies by market cap
+</h3>,
+                <div
+                  className="filter-btn-wrapper"
+>
+                  <button
+                                    className="filter-btn view-button"
+                                    onClick={[Function]}
+                  >
+                                    View All
+                  </button>
+                  <button
+                                    className="filter-btn"
+                                    onClick={[Function]}
+                  >
+                                    Sort: Highest
+                  </button>
+                  <button
+                                    className="filter-btn"
+                                    onClick={[Function]}
+                  >
+                                    Market Cap
+                  </button>
+</div>,
+              ],
+              "className": "subtitle-wrapper",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Top 100 Currencies by market cap",
+                  "className": "home-page-subtitle",
+                },
+                "ref": null,
+                "rendered": "Top 100 Currencies by market cap",
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <button
+                      className="filter-btn view-button"
+                      onClick={[Function]}
+>
+                      View All
+</button>,
+                    <button
+                      className="filter-btn"
+                      onClick={[Function]}
+>
+                      Sort: Highest
+</button>,
+                    <button
+                      className="filter-btn"
+                      onClick={[Function]}
+>
+                      Market Cap
+</button>,
+                  ],
+                  "className": "filter-btn-wrapper",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "View All",
+                      "className": "filter-btn view-button",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": "View All",
+                    "type": "button",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Sort: Highest",
+                      "className": "filter-btn",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": "Sort: Highest",
+                    "type": "button",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Market Cap",
+                      "className": "filter-btn",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": "Market Cap",
+                    "type": "button",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Connect(Header) />,
+          <Connect(Component) />,
+          false,
+          <div
+            className="home-page"
+>
+            <div
+                        className="subtitle-wrapper"
+            >
+                        <h3
+                                    className="home-page-subtitle"
+                        >
+                                    Top 100 Currencies by market cap
+                        </h3>
+                        <div
+                                    className="filter-btn-wrapper"
+                        >
+                                    <button
+                                                className="filter-btn view-button"
+                                                onClick={[Function]}
+                                    >
+                                                View All
+                                    </button>
+                                    <button
+                                                className="filter-btn"
+                                                onClick={[Function]}
+                                    >
+                                                Sort: Highest
+                                    </button>
+                                    <button
+                                                className="filter-btn"
+                                                onClick={[Function]}
+                                    >
+                                                Market Cap
+                                    </button>
+                        </div>
+            </div>
+</div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="subtitle-wrapper"
+>
+                <h3
+                                className="home-page-subtitle"
+                >
+                                Top 100 Currencies by market cap
+                </h3>
+                <div
+                                className="filter-btn-wrapper"
+                >
+                                <button
+                                                className="filter-btn view-button"
+                                                onClick={[Function]}
+                                >
+                                                View All
+                                </button>
+                                <button
+                                                className="filter-btn"
+                                                onClick={[Function]}
+                                >
+                                                Sort: Highest
+                                </button>
+                                <button
+                                                className="filter-btn"
+                                                onClick={[Function]}
+                                >
+                                                Market Cap
+                                </button>
+                </div>
+</div>,
+              Array [],
+            ],
+            "className": "home-page",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h3
+                    className="home-page-subtitle"
+>
+                    Top 100 Currencies by market cap
+</h3>,
+                  <div
+                    className="filter-btn-wrapper"
+>
+                    <button
+                                        className="filter-btn view-button"
+                                        onClick={[Function]}
+                    >
+                                        View All
+                    </button>
+                    <button
+                                        className="filter-btn"
+                                        onClick={[Function]}
+                    >
+                                        Sort: Highest
+                    </button>
+                    <button
+                                        className="filter-btn"
+                                        onClick={[Function]}
+                    >
+                                        Market Cap
+                    </button>
+</div>,
+                ],
+                "className": "subtitle-wrapper",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Top 100 Currencies by market cap",
+                    "className": "home-page-subtitle",
+                  },
+                  "ref": null,
+                  "rendered": "Top 100 Currencies by market cap",
+                  "type": "h3",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <button
+                        className="filter-btn view-button"
+                        onClick={[Function]}
+>
+                        View All
+</button>,
+                      <button
+                        className="filter-btn"
+                        onClick={[Function]}
+>
+                        Sort: Highest
+</button>,
+                      <button
+                        className="filter-btn"
+                        onClick={[Function]}
+>
+                        Market Cap
+</button>,
+                    ],
+                    "className": "filter-btn-wrapper",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "View All",
+                        "className": "filter-btn view-button",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": "View All",
+                      "type": "button",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Sort: Highest",
+                        "className": "filter-btn",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": "Sort: Highest",
+                      "type": "button",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Market Cap",
+                        "className": "filter-btn",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": "Market Cap",
+                      "type": "button",
+                    },
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

@@ -43,7 +43,31 @@ ShallowWrapper {
         <span
           className="price"
 >
-          USD $
+          <span
+                    className="usd"
+          >
+                    USD
+          </span>
+          <NumberFormat
+                    allowNegative={true}
+                    decimalSeparator="."
+                    displayType="text"
+                    fixedDecimalScale={false}
+                    getInputRef={[Function]}
+                    isAllowed={[Function]}
+                    isNumericString={false}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseUp={[Function]}
+                    onValueChange={[Function]}
+                    prefix="$"
+                    suffix=""
+                    thousandSeparator={true}
+                    type="text"
+                    value={undefined}
+          />
 </span>,
         <span
           className="negative dayChange"
@@ -135,15 +159,76 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            "USD $",
-            undefined,
+            <span
+              className="usd"
+>
+              USD
+</span>,
+            <NumberFormat
+              allowNegative={true}
+              decimalSeparator="."
+              displayType="text"
+              fixedDecimalScale={false}
+              getInputRef={[Function]}
+              isAllowed={[Function]}
+              isNumericString={false}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseUp={[Function]}
+              onValueChange={[Function]}
+              prefix="$"
+              suffix=""
+              thousandSeparator={true}
+              type="text"
+              value={undefined}
+/>,
           ],
           "className": "price",
         },
         "ref": null,
         "rendered": Array [
-          "USD $",
-          undefined,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "USD",
+              "className": "usd",
+            },
+            "ref": null,
+            "rendered": "USD",
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "allowNegative": true,
+              "decimalSeparator": ".",
+              "displayType": "text",
+              "fixedDecimalScale": false,
+              "getInputRef": [Function],
+              "isAllowed": [Function],
+              "isNumericString": false,
+              "onBlur": [Function],
+              "onChange": [Function],
+              "onFocus": [Function],
+              "onKeyDown": [Function],
+              "onMouseUp": [Function],
+              "onValueChange": [Function],
+              "prefix": "$",
+              "suffix": "",
+              "thousandSeparator": true,
+              "type": "text",
+              "value": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
         ],
         "type": "span",
       },
@@ -223,7 +308,31 @@ ShallowWrapper {
           <span
             className="price"
 >
-            USD $
+            <span
+                        className="usd"
+            >
+                        USD
+            </span>
+            <NumberFormat
+                        allowNegative={true}
+                        decimalSeparator="."
+                        displayType="text"
+                        fixedDecimalScale={false}
+                        getInputRef={[Function]}
+                        isAllowed={[Function]}
+                        isNumericString={false}
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseUp={[Function]}
+                        onValueChange={[Function]}
+                        prefix="$"
+                        suffix=""
+                        thousandSeparator={true}
+                        type="text"
+                        value={undefined}
+            />
 </span>,
           <span
             className="negative dayChange"
@@ -315,15 +424,76 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "USD $",
-              undefined,
+              <span
+                className="usd"
+>
+                USD
+</span>,
+              <NumberFormat
+                allowNegative={true}
+                decimalSeparator="."
+                displayType="text"
+                fixedDecimalScale={false}
+                getInputRef={[Function]}
+                isAllowed={[Function]}
+                isNumericString={false}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseUp={[Function]}
+                onValueChange={[Function]}
+                prefix="$"
+                suffix=""
+                thousandSeparator={true}
+                type="text"
+                value={undefined}
+/>,
             ],
             "className": "price",
           },
           "ref": null,
           "rendered": Array [
-            "USD $",
-            undefined,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "USD",
+                "className": "usd",
+              },
+              "ref": null,
+              "rendered": "USD",
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "allowNegative": true,
+                "decimalSeparator": ".",
+                "displayType": "text",
+                "fixedDecimalScale": false,
+                "getInputRef": [Function],
+                "isAllowed": [Function],
+                "isNumericString": false,
+                "onBlur": [Function],
+                "onChange": [Function],
+                "onFocus": [Function],
+                "onKeyDown": [Function],
+                "onMouseUp": [Function],
+                "onValueChange": [Function],
+                "prefix": "$",
+                "suffix": "",
+                "thousandSeparator": true,
+                "type": "text",
+                "value": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
           ],
           "type": "span",
         },
