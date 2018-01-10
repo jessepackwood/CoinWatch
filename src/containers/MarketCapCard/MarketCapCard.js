@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import '../../components/Card/Card.css'
 import * as actions from '../../actions'
+import NumberFormat from 'react-number-format'
 
 export const MarketCapCard = ({ 
   coin, number, watchList, addCoinToWatch, removeCoinFromWatch, user
@@ -29,8 +30,11 @@ export const MarketCapCard = ({
         {long}
         <span className='short'>({short})</span>
       </h3>
-      <span className='price'>USD ${price}</span>
-      
+      <span className='price'>
+        <span className='usd'>USD</span>
+        <NumberFormat value={price} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+      </span>
+
       <span className={`${addColor} dayChange`}>{cap24hrChange}% 
         <span className='hour'>(24H)</span>
       </span>

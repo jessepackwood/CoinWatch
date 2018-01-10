@@ -6,6 +6,7 @@ import Header from '../Header/Header'
 import PortfolioCard from '../PortfolioCard/PortfolioCard'
 import PropTypes from 'prop-types'
 import './Portfolio.css'
+import NumberFormat from 'react-number-format'
 
 class Portfolio extends Component {
   constructor() {
@@ -57,7 +58,9 @@ class Portfolio extends Component {
           <div className='portfolio-title-wrapper'>
             <h3 className='portfolio-title'>
               Portfolio Total: 
-              <span className='grand-total'>${Math.round(portfolioTotal)}</span>
+              <span className='grand-total'>
+                <NumberFormat value={Math.round(portfolioTotal)} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+              </span>
             </h3>
             <div className='portfolio-input-wrapper'>
               <input 

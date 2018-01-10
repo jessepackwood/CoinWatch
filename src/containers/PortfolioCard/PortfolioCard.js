@@ -3,19 +3,24 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import '../../components/Card/Card.css'
 import * as actions from '../../actions'
+import NumberFormat from 'react-number-format'
 
-export const PortfolioCard = ({ 
-  portfolioCoin, coin, portfolio, removeCoinFromPortfolio, user 
-}) => {
+export const PortfolioCard = 
+  ({ 
+    portfolioCoin, coin, portfolio, removeCoinFromPortfolio, user 
+  }) => {
+
+  const portfolioPrice = Math.round(portfolioCoin.amount * coin.price)
+
   return (
     <div className='card'>
       <h3 className='coin-name port-coin-name'>
         {portfolioCoin.name}
       </h3>
       <p className='amount'>Amount: {portfolioCoin.amount} </p>
-      <p className='port-price price'>
-        ${Math.round(portfolioCoin.amount * coin.price)}
-      </p>
+      <div className='port-price price'>
+        <NumberFormat value={portfolioPrice} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+      </div>
       <span 
         className={'port-btn btn-fav minus'} 
         onClick={
