@@ -3,10 +3,11 @@
   padding: 30px; }
 
 .home-page-subtitle {
+  font-family: "Abel", sans-serif;
   display: inline-block;
   font-size: 18pt;
   margin-left: 10px;
-  color: #f2bb30; }
+  color: #fff; }
 
 .home-title {
   text-align: center; }

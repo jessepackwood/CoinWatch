@@ -30,6 +30,7 @@ export const MarketCapCard = ({
         <span className='short'>({short})</span>
       </h3>
       <span className='price'>USD ${price}</span>
+      
       <span className={`${addColor} dayChange`}>{cap24hrChange}% 
         <span className='hour'>(24H)</span>
       </span>
