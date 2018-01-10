@@ -28,9 +28,11 @@
   margin: 0 5px;
   border-radius: 3px;
   outline: none;
+  background: $background;
+  border: 2px solid orange;
+  color: #fff;
   &:hover {
-    background: $blue;
-    color: #fff;
+    // color: $green;
     cursor: pointer;
     border: 2px solid $green;
   }

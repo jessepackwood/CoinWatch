@@ -59,7 +59,11 @@ class Portfolio extends Component {
             <h3 className='portfolio-title'>
               Portfolio Total: 
               <span className='grand-total'>
-                <NumberFormat value={Math.round(portfolioTotal)} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+                <NumberFormat 
+                  value={Math.round(portfolioTotal)}
+                  displayType={'text'}
+                  thousandSeparator={true} prefix={'$'} 
+                />
               </span>
             </h3>
             <div className='portfolio-input-wrapper'>

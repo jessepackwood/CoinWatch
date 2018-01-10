@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Abel");
 .header {
-  background: #244968;
-  height: 110px; }
+  background: #262B2D;
+  height: 110px;
+  width: 95%;
+  margin: 0 auto;
+  border-bottom: 2px solid white; }
 
 .app-title {
   color: #fff;

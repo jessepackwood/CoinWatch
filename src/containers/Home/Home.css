@@ -22,10 +22,11 @@
   width: 90px;
   margin: 0 5px;
   border-radius: 3px;
-  outline: none; }
+  outline: none;
+  background: #262B2D;
+  border: 2px solid orange;
+  color: #fff; }
   .filter-btn:hover {
-    background: #244968;
-    color: #fff;
     cursor: pointer;
     border: 2px solid #9af765; }
 

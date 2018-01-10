@@ -1,7 +1,7 @@
 @import '../../variable.scss';
 
 .welcome {
-	background: $blue;
+	background: $background;
 	height: 100vh;
 	width: 100vw;
 	display: flex;
@@ -11,7 +11,7 @@
 	display: flex;
 	color: #fff;
 	position: absolute;
-	padding: 120px;
+	padding: 100px 120px;
 	align-items: center;
 }
 .welcome-title {
@@ -21,6 +21,7 @@
 
 .line-graph {
 	padding-top: 380px;
+	padding-bottom: 20px;
 	width: 100%;
 	max-height: 100%;
 }

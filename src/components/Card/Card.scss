@@ -5,7 +5,7 @@
 	display: flex;
 	padding: 10px;
 	border-radius: 6px;
-	background: $blue;
+	background: $background;
 }
 .number {
 	margin-right: 5px;
@@ -19,6 +19,7 @@
 	width: 350px;
 	&.port-coin-name {
 		width: 200px;
+		color: $orange;
 	}
 }
 
@@ -33,7 +34,6 @@
 	margin: 0 auto;
 	width: 200px;
 	&.port-price {
-	text-align: right;
 	margin: 0;
 	}
 }
@@ -61,8 +61,7 @@
 .amount {
 	font-size: 20pt;
 	margin: 0 auto;
-	color: #f2bb30;
-	// text-align: center;
+	color: #fff;
 	width: 200px;
 }
 

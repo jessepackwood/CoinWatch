@@ -4,7 +4,6 @@
 
 .portfolio-title-wrapper {
   display: flex;
-  background: #262B2D;
   padding: 20px 20px 0; }
 
 .portfolio-title {
@@ -48,7 +47,8 @@
 .empty-portfolio-title {
   font-size: 18pt;
   margin: 20px;
-  color: white; }
+  color: white;
+  text-align: center; }
 
 .portfolio-coin {
   display: block;

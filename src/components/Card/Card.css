@@ -4,7 +4,7 @@
   display: flex;
   padding: 10px;
   border-radius: 6px;
-  background: #244968; }
+  background: #262B2D; }
 
 .number {
   margin-right: 5px;
@@ -17,7 +17,8 @@
   margin: 0 10px;
   width: 350px; }
   .coin-name.port-coin-name {
-    width: 200px; }
+    width: 200px;
+    color: #f2bb30; }
 
 .short {
   margin-left: 5px;
@@ -29,7 +30,6 @@
   margin: 0 auto;
   width: 200px; }
   .price.port-price {
-    text-align: right;
     margin: 0; }
 
 .dayChange {
@@ -51,7 +51,7 @@
 .amount {
   font-size: 20pt;
   margin: 0 auto;
-  color: #f2bb30;
+  color: #fff;
   width: 200px; }
 
 .btn-fav {
