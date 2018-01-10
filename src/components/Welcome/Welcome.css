@@ -34,3 +34,6 @@
   .start-button:hover {
     border: 12px solid #9af765;
     cursor: pointer; }
+
+.welcome-subtitle {
+  color: #f2bb30; }

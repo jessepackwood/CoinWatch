@@ -37,7 +37,8 @@
   background-size: contain;
   background-repeat: no-repeat; }
   .portfolio-add-btn:hover {
-    cursor: pointer; }
+    cursor: pointer;
+    background-image: url("../../assets/rounded-add-green.svg"); }
 
 .coin-title {
   font-size: 18pt;
