@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Abel");
 .home-page {
   padding: 30px;
-  height: calc(100vh - 110px); }
+  min-height: calc(100vh - 110px); }
 
 .home-page-subtitle {
   font-family: "Abel", sans-serif;

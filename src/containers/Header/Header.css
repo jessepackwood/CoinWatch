@@ -66,4 +66,7 @@ li {
   margin: 0 5px; }
 
 .active li {
+  color: #9af765; }
+
+.coin-in-title {
   color: #f2bb30; }

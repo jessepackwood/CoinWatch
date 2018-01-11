@@ -3,7 +3,8 @@
   background: #262B2D;
   height: 100vh;
   width: 100vw;
-  display: flex; }
+  display: flex;
+  justify-content: center; }
 
 .welcome-text {
   display: flex;
@@ -37,4 +38,4 @@
     cursor: pointer; }
 
 .welcome-subtitle {
-  color: #f2bb30; }
+  color: #9af765; }

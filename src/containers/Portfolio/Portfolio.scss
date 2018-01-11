@@ -1,20 +1,21 @@
 @import '../../variable.scss';
 
 .portfolio {
-	height: calc(100vh - 110px);
+	min-height: calc(100vh - 110px);
+	height: auto;
 }
 
 .portfolio-title-wrapper {
 	display: flex;
-	// background: $blue;
 	padding: 20px 20px 0;
 }
 
 .portfolio-title {
 	font-size: 24pt;
 	margin-left: 10px;
-	text-align: center;
+	// text-align: center;
 	color: white;
+	width: 450px;
 }
 
 .portfolio-input-wrapper {

@@ -19,6 +19,7 @@ class Portfolio extends Component {
 
   componentDidMount() {
     this.props.fetchPortfolio(this.props.user)
+    this.amountInput.focus();
   }
 
   handleAmountChange = (value) => {
@@ -72,6 +73,7 @@ class Portfolio extends Component {
                 type='number' 
                 label='Number of coins'
                 placeholder='Amount'
+                ref={(input) => { this.amountInput = input; }} 
                 onChange={event => this.handleAmountChange(event.target.value)}
               />
               <Dropdown onNameChange={this.handleCoinNameChange}/>
@@ -84,7 +86,7 @@ class Portfolio extends Component {
           </div>
           { !!this.props.portfolio.length && 
           <div className='portfolio-list-wrapper'>
-            <h3 className='coin-title'>Current Holdings</h3>
+            <h3 className='coin-title'></h3>
             <div className='portfolio-list'>
               {portfolioItems}
             </div>

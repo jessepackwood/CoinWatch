@@ -1,11 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Abel");
+.app-title.login-title {
+  margin: 0; }
+
 .login-form {
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: #244968; }
+  background: #262B2D; }
+
+.input-field {
+  outline: #f2bb30; }
 
 .input-field,
 .btn-submit {
@@ -17,12 +23,12 @@
 .btn-submit {
   margin-bottom: 30px;
   color: #fff;
-  background-color: #244968;
-  border: 1px solid #fff;
+  background-color: #262B2D;
+  border: 2px solid #fff;
   outline: none; }
   .btn-submit:hover {
     cursor: pointer;
-    border: 1px solid #9af765; }
+    border: 2px solid #9af765; }
 
 .modal-title {
   margin-top: 20px;
@@ -31,3 +37,14 @@
 .error-message {
   margin-top: 20px;
   color: #fff; }
+
+.login-corner-button {
+  position: absolute;
+  padding: 5px;
+  color: #fff;
+  top: 30px;
+  right: 30px;
+  background: #262B2D;
+  border: 1px solid #9af765;
+  width: 70px;
+  outline: none; }

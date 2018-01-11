@@ -9,6 +9,10 @@ import './Login.css'
 
 export class Login extends Component {
 
+  componentDidMount() {
+    this.emailInput.focus();
+  }
+
   handleInputChange = (event) => {
     const {name, value} = event.target
     this.props.inputChange(name, value)
@@ -23,7 +27,6 @@ export class Login extends Component {
   }
 
   render() {
-    // console.log(showRegister)
     return (
       <div>
         { this.props.loggedIn && 
@@ -33,9 +36,20 @@ export class Login extends Component {
           <Link to='/home'>
             <h1 className='app-title login-title'>Coin Watch</h1>
           </Link>
+          { this.props.showRegister && 
+            <Link to='/login'>
+              <button className='login-corner-button'>Login</button>
+            </Link>
+          }
+          { !this.props.showRegister && 
+            <Link to='/Signup'>
+              <button className='login-corner-button'>Sign Up</button>
+            </Link>
+          }
           <input 
             type='text'
             name='email'
+            ref={(input) => { this.emailInput = input; }} 
             className='input-field'
             placeholder='Email'
             value={this.props.email || ''}
