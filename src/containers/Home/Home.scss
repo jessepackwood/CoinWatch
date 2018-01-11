@@ -2,6 +2,7 @@
 
 .home-page {
 	padding: 30px;
+  min-height: calc(100vh - 110px);
 }
 
 .home-page-subtitle {
@@ -28,9 +29,11 @@
   margin: 0 5px;
   border-radius: 3px;
   outline: none;
+  background: $background;
+  border: 1.5px solid $green;
+  color: #fff;
   &:hover {
-    background: $blue;
-    color: #fff;
+    color: $orange;
     cursor: pointer;
     border: 2px solid $green;
   }

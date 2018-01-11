@@ -1,9 +1,12 @@
 @import '../../variable.scss';
 
 .header {
-	background: $blue;
+	background: $background;
 	height: 110px;
   // padding: 10px;
+  width: 95%;
+  margin: 0 auto;
+  border-bottom: 2px solid white;
 }
 
 .app-title {
@@ -82,7 +85,11 @@ li {
 
 .active {
   li {
-  color: $orange;
+  color: $green;
   }
+}
+
+.coin-in-title {
+  color: $orange;
 }
 

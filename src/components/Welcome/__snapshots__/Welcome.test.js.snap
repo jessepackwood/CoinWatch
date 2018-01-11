@@ -27,7 +27,9 @@ ShallowWrapper {
                     >
                               Coin Watch
                     </h1>
-                    <p>
+                    <p
+                              className="welcome-subtitle"
+                    >
                               Track your profits and only watch the coins you care about.
                     </p>
           </div>
@@ -49,6 +51,7 @@ ShallowWrapper {
           className="line-graph"
           src="thin-line.svg"
 />,
+        <Footer />,
       ],
       "className": "welcome",
     },
@@ -66,7 +69,9 @@ ShallowWrapper {
               >
                             Coin Watch
               </h1>
-              <p>
+              <p
+                            className="welcome-subtitle"
+              >
                             Track your profits and only watch the coins you care about.
               </p>
 </div>,
@@ -98,7 +103,9 @@ ShallowWrapper {
 >
                   Coin Watch
 </h1>,
-                <p>
+                <p
+                  className="welcome-subtitle"
+>
                   Track your profits and only watch the coins you care about.
 </p>,
               ],
@@ -123,6 +130,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "Track your profits and only watch the coins you care about.",
+                  "className": "welcome-subtitle",
                 },
                 "ref": null,
                 "rendered": "Track your profits and only watch the coins you care about.",
@@ -194,6 +202,15 @@ ShallowWrapper {
         "rendered": null,
         "type": "img",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
     ],
     "type": "div",
   },
@@ -213,7 +230,9 @@ ShallowWrapper {
                         >
                                     Coin Watch
                         </h1>
-                        <p>
+                        <p
+                                    className="welcome-subtitle"
+                        >
                                     Track your profits and only watch the coins you care about.
                         </p>
             </div>
@@ -235,6 +254,7 @@ ShallowWrapper {
             className="line-graph"
             src="thin-line.svg"
 />,
+          <Footer />,
         ],
         "className": "welcome",
       },
@@ -252,7 +272,9 @@ ShallowWrapper {
                 >
                                 Coin Watch
                 </h1>
-                <p>
+                <p
+                                className="welcome-subtitle"
+                >
                                 Track your profits and only watch the coins you care about.
                 </p>
 </div>,
@@ -284,7 +306,9 @@ ShallowWrapper {
 >
                     Coin Watch
 </h1>,
-                  <p>
+                  <p
+                    className="welcome-subtitle"
+>
                     Track your profits and only watch the coins you care about.
 </p>,
                 ],
@@ -309,6 +333,7 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": "Track your profits and only watch the coins you care about.",
+                    "className": "welcome-subtitle",
                   },
                   "ref": null,
                   "rendered": "Track your profits and only watch the coins you care about.",
@@ -379,6 +404,15 @@ ShallowWrapper {
           "ref": null,
           "rendered": null,
           "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
         },
       ],
       "type": "div",

@@ -51,7 +51,7 @@ export class Header extends Component {
         </nav>
 
         <Link to='/home'>
-          <p className='app-title'>Coin Watch</p>
+          <p className='app-title'><span className='coin-in-title'>Coin</span> Watch</p>
         </Link>
 
       </div>

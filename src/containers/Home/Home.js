@@ -7,13 +7,14 @@ import './Home.css'
 import MarketCapCard from '../MarketCapCard/MarketCapCard'
 import { PulseLoader } from 'react-spinners'
 
-class Home extends Component {
+export class Home extends Component {
   constructor() {
     super()
     this.state = {
       coinsToDisplay: [],
       sortOrder: 'Highest',
-      viewAll: false
+      viewAll: false,
+      subtitle: 'Top 100 coins by market cap'
     }
   }
 
@@ -26,10 +27,10 @@ class Home extends Component {
 
   handleView = () => {
     if (!this.state.viewAll) {
-      this.setState({viewAll: true, coinsToDisplay: this.props.coins})
+      this.setState({viewAll: true, subtitle: 'All coins listed by market cap', coinsToDisplay: this.props.coins})
     } else {
       this.setState({
-        viewAll: false, coinsToDisplay: this.props.coins.slice(0, 100)
+        viewAll: false, subtitle: 'Top 100 coins by market cap', coinsToDisplay: this.props.coins.slice(0, 100)
       })
     }
   }
@@ -39,13 +40,16 @@ class Home extends Component {
       const highDayChangeCoins = this.props.coins
       this.setState({
         sortOrder: 'Lowest', 
+        subtitle: 'Highest performing coins today',
         coinsToDisplay: highDayChangeCoins.sort((first, second) => {
           return second.cap24hrChange - first.cap24hrChange
         }).slice(0, 100)
       })
     } else {
       const lowDayChangeCoins = this.props.coins
-      this.setState({sortOrder: 'Highest', 
+      this.setState({
+        sortOrder: 'Highest',
+        subtitle: 'Lowest performing coins today',
         coinsToDisplay: lowDayChangeCoins.sort((first, second) => {
           return first.cap24hrChange - second.cap24hrChange
         }).slice(0, 100)
@@ -55,7 +59,9 @@ class Home extends Component {
 
   setToMarketCap = () => {
     const marketCapCoins = this.props.coins
-    this.setState({coinsToDisplay: marketCapCoins.sort((first, second) => {
+    this.setState({
+      subtitle: 'Top 100 coins by market cap',
+      coinsToDisplay: marketCapCoins.sort((first, second) => {
       return second.mktcap - first.mktcap
       }).slice(0, 100)
     })
@@ -89,15 +95,15 @@ class Home extends Component {
             />
           </div>
         }
-        {this.props.coins.length > 0 && 
+        {this.props.coins.length > 0 &&
         <div className='home-page'>
           <div className='subtitle-wrapper'>
             <h3 className='home-page-subtitle'>
-            Top 100 Currencies by market cap
+            {this.state.subtitle}
             </h3>
             <div className='filter-btn-wrapper'>
               <button 
-                className='filter-btn' 
+                className='filter-btn view-button' 
                 onClick={this.handleView} 
               > 
                 {this.state.viewAll ? 'Top 100' : 'View All'} 
@@ -124,7 +130,7 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   coins: state.coins,
   searchInput: state.searchInput.value
 })

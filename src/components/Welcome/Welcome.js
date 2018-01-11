@@ -9,7 +9,7 @@ const Welcome = () => {
     <div className='welcome'>
       <div className='welcome-text'>
         <div>
-          <h1 className='welcome-title'>Coin Watch</h1>
+          <h1 className='welcome-title'><span className='coin-in-title'>Coin</span> Watch</h1>
           <p className='welcome-subtitle'>Track your profits and only watch the coins you care about.</p>
         </div>
         <div>

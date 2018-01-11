@@ -81,6 +81,7 @@ export const signOutUser = (user) => (dispatch) => {
   auth.signOut().then(()=> {
     dispatch(signOutSuccess())
     dispatch(clearWatchList())
+    dispatch(clearSearchInput())
     removeWatchListListener(user)
   })
 }
@@ -226,6 +227,13 @@ export const searchInputChange = (searchInput) => {
   return {
     type: 'SEARCH_CHANGE',
     searchInput
+  }
+}
+
+export const clearSearchInput = () => {
+  return {
+    type: 'SEARCH_CLEAR',
+    searchInput: ''
   }
 }
 

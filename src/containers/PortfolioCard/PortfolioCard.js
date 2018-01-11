@@ -18,8 +18,23 @@ export const PortfolioCard =
         {portfolioCoin.name}
       </h3>
       <p className='amount'>Amount: {portfolioCoin.amount} </p>
+      <div className='price'>
+        <span className='usd'>USD</span>
+        <NumberFormat 
+          value={coin.price}
+          displayType={'text'}
+          thousandSeparator={true}
+          prefix={'$'} 
+        />
+      </div>
       <div className='port-price price'>
-        <NumberFormat value={portfolioPrice} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+        <span className='usd'>Total</span>
+        <NumberFormat 
+          value={portfolioPrice}
+          displayType={'text'}
+          thousandSeparator={true}
+          prefix={'$'} 
+        />
       </div>
       <span 
         className={'port-btn btn-fav minus'} 
