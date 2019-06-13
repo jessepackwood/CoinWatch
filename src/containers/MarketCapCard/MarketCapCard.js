@@ -9,7 +9,8 @@ export const MarketCapCard = ({
   coin, number, watchList, addCoinToWatch, removeCoinFromWatch, user
 }) => {
 
-  const {long, short, price, cap24hrChange } = coin
+  const {long, short, cap24hrChange } = coin
+  let { price } = coin
   const addColor =  cap24hrChange > 0 ? 'positive' : 'negative'
   const changeSign = watchList && 
     watchList.some( element => element.short === coin.short) ? 'minus' : ''
@@ -23,26 +24,37 @@ export const MarketCapCard = ({
     }
   }
 
+  const formatPrice = (price) => {
+    return price > 50 ? Math.round(price) : price.toFixed(4);
+  }
+
   return (
     <div className='card'>
-      <h3 className='coin-name'>
-        <span className='number'>{number}.</span>
-        {long}
-        <span className='short'>({short})</span>
-      </h3>
-      <span className='price'>
-        <span className='usd'>USD</span>
-        <NumberFormat value={price} displayType={'text'} thousandSeparator={true} prefix={'$'} />
-      </span>
+      <div className='card-block-name'>
+        <h3 className='coin-name'>
+          <span className='number'>{number}.</span>
+          {long}
+          <span className='short'>({short})</span>
+        </h3>
 
-      <span className={`${addColor} dayChange`}>{cap24hrChange}% 
-        <span className='hour'>(24H)</span>
-      </span>
-      <span 
-        className={`${changeSign} btn-fav`} 
-        onClick={() => handleWatchList(watchList, coin)}
-      >
-      </span>
+        <div className='price'>
+          <span className='dollar-sign'>$</span><NumberFormat value={ formatPrice(price) } displayType={'text'} thousandSeparator={true} />
+        </div>
+      </div>
+
+      <div className='card-block-btn'>
+        <div className={`${addColor} dayChange`}>
+          <div className='hour-change'>{cap24hrChange}% </div>
+          <div className='hour'>(24H)</div>
+        </div>
+
+        <div 
+          className={`${changeSign} btn-fav`} 
+          onClick={() => handleWatchList(watchList, coin)}
+        >
+        </div>
+      </div>
+
     </div>
   )
 }

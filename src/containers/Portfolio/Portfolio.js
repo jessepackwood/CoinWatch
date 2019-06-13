@@ -41,8 +41,7 @@ class Portfolio extends Component {
 
   render() {
     const portfolioTotal = this.props.portfolio.reduce((total, portCoin) => {
-      debugger
-      return total += portCoin.amount * 
+      return total += portCoin.amount *
       this.props.coins.find((coin) => coin.long === portCoin.name).price
     }, 0)
 
