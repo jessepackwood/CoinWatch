@@ -14,7 +14,7 @@ export class Home extends Component {
       coinsToDisplay: [],
       sortOrder: 'Highest',
       viewAll: false,
-      subtitle: 'Top 100 coins by market cap'
+      subtitle: 'Top 100 coins by market cap (USD)'
     }
   }
 
@@ -27,10 +27,10 @@ export class Home extends Component {
 
   handleView = () => {
     if (!this.state.viewAll) {
-      this.setState({viewAll: true, subtitle: 'All coins listed by market cap', coinsToDisplay: this.props.coins})
+      this.setState({viewAll: true, subtitle: 'All coins listed by market cap (USD)', coinsToDisplay: this.props.coins})
     } else {
       this.setState({
-        viewAll: false, subtitle: 'Top 100 coins by market cap', coinsToDisplay: this.props.coins.slice(0, 100)
+        viewAll: false, subtitle: 'Top 100 coins by market cap (USD)', coinsToDisplay: this.props.coins.slice(0, 100)
       })
     }
   }
@@ -60,9 +60,9 @@ export class Home extends Component {
   setToMarketCap = () => {
     const marketCapCoins = this.props.coins
     this.setState({
-      subtitle: 'Top 100 coins by market cap',
+      subtitle: 'Top 100 coins by market cap (USD)',
       coinsToDisplay: marketCapCoins.sort((first, second) => {
-      return second.mktcap - first.mktcap
+        return second.mktcap - first.mktcap
       }).slice(0, 100)
     })
   }
@@ -99,7 +99,7 @@ export class Home extends Component {
         <div className='home-page'>
           <div className='subtitle-wrapper'>
             <h3 className='home-page-subtitle'>
-            {this.state.subtitle}
+              {this.state.subtitle}
             </h3>
             <div className='filter-btn-wrapper'>
               <button 
