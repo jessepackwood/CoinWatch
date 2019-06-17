@@ -15,3 +15,13 @@ select {
 optgroup {
   max-height: 400px;
 }
+
+@media screen and (max-width: 750px) {
+	.dropdown {
+		width: 130px;
+	}
+
+	.select {
+		font-size: 16pt;
+	}
+}
