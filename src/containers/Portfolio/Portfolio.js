@@ -58,7 +58,7 @@ class Portfolio extends Component {
         <div className='portfolio'>
           <div className='portfolio-title-wrapper'>
             <h3 className='portfolio-title'>
-              Portfolio Total: 
+              Portfolio <span className='portfolio-total-mobile'>Total:</span>
               <span className='grand-total'>
                 <NumberFormat 
                   value={Math.round(portfolioTotal)}
@@ -68,20 +68,24 @@ class Portfolio extends Component {
               </span>
             </h3>
             <div className='portfolio-input-wrapper'>
-              <input 
-                className='portfolio-add-coin' 
-                type='number' 
-                label='Number of coins'
-                placeholder='Amount'
-                ref={(input) => { this.amountInput = input; }} 
-                onChange={event => this.handleAmountChange(event.target.value)}
-              />
-              <Dropdown onNameChange={this.handleCoinNameChange}/>
+              <div className='portfolio-input'>
+                <input 
+                  className='portfolio-add-coin' 
+                  type='number' 
+                  label='Number of coins'
+                  placeholder='Amount'
+                  ref={(input) => { this.amountInput = input; }} 
+                  onChange={event => this.handleAmountChange(event.target.value)}
+                />
+              
+                <Dropdown onNameChange={this.handleCoinNameChange}/>
+              </div>
               <span 
                 className='portfolio-add-btn' 
                 onClick={this.handleSubmit} 
               >
               </span>
+              
             </div>
           </div>
           { !!this.props.portfolio.length && 
