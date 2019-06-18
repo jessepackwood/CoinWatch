@@ -21,7 +21,7 @@
   }
 }
 
-ul {
+.header-nav {
   display: flex;
   align-items: center;
   position: absolute;
@@ -93,3 +93,25 @@ li {
   color: $orange;
 }
 
+@media screen and (max-width: 600px) {
+  .header {
+    height: 90px;
+  }
+  .header-nav {
+    top: 14px;
+  }
+
+  .app-title {
+    margin-left: 0;
+    font-size: 20pt;
+  }
+  .pipe {
+    display: none;
+  }
+  .home-link {
+    display: none;
+  }
+  .email {
+    display: none;
+  }
+}

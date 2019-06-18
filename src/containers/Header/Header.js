@@ -15,7 +15,7 @@ export class Header extends Component {
       <div className='header'>
         <nav>
           { !this.props.user.loggedIn && 
-            <ul>
+            <ul className='header-nav'>
               <Link to='/login'>
                 <li className='login-btn header-link'>Login</li>
               </Link>
@@ -25,9 +25,9 @@ export class Header extends Component {
             </ul>
           }
           { !!this.props.user.loggedIn && 
-            <ul>
+            <ul className='header-nav'>
               <NavLink to='/home'>
-                <li className='header-link'>Home</li>
+                <li className='header-link home-link'>Home</li>
               </NavLink>
               <span className='pipe'>|</span>
               <NavLink to='/portfolio'>
@@ -41,6 +41,7 @@ export class Header extends Component {
               <li className='login-btn email'>
                 {this.props.user.email}
               </li>
+              <li className='mobile-sign-out'> </li>
               <li 
                 className='sign-out header-link'
                 onClick={()=> this.props.signOut(this.props.user)}
@@ -51,7 +52,7 @@ export class Header extends Component {
         </nav>
 
         <Link to='/home'>
-          <p className='app-title'><span className='coin-in-title'>Coin</span> Watch</p>
+          <h1 className='app-title'><span className='coin-in-title'>Coin</span> Watch</h1>
         </Link>
 
       </div>
