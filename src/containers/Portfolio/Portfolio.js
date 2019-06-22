@@ -90,7 +90,6 @@ class Portfolio extends Component {
           </div>
           { !!this.props.portfolio.length && 
           <div className='portfolio-list-wrapper'>
-            <h3 className='coin-title'></h3>
             <div className='portfolio-list'>
               {portfolioItems}
             </div>

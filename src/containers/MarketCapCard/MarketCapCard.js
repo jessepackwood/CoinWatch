@@ -45,7 +45,7 @@ export const MarketCapCard = ({
       <div className='card-block-btn'>
         <div className={`${addColor} dayChange`}>
           <div className='hour-change'>{cap24hrChange}% </div>
-          <div className='hour'>(24H)</div>
+          
         </div>
 
         <div 

@@ -60,11 +60,10 @@
 	color: white;
 }
 
-.amount {
+.portfolio-amount {
 	font-size: 20pt;
 	margin: 0 auto;
 	color: #fff;
-	width: 200px;
 }
 
 .btn-fav {
@@ -84,6 +83,10 @@
 		cursor: pointer;
 		background-image: url('../../assets/rounded-add-green.svg')
 	}
+}
+
+.port-btn-container {
+	width: 10%;
 }
 
 .port-btn {
@@ -122,25 +125,46 @@
 	padding-bottom: 20px;
 }
 
+.port-price-container {
+	margin-left: auto;
+	display: flex;
+	flex-direction: row;
+	width: 40%;
+}
+
+.port-price.price {
+	justify-content: center;
+}
+
+.coin-name-container {
+	display: flex;
+}
+
+@media screen and (max-width: 1025px) {
+	// .portfolio-amount {
+	// 	width: 150px;
+	// }
+}
+
 @media screen and (max-width: 670px) {
 	.coin-name,
 	.price,
 	.dayChange {
 		font-size: 18pt;
 	}
+	.coin-name-container {
+		display: block;
+	}
 }
 
 @media screen and (max-width: 600px) {
-
 	.card {
 		justify-content: start;
 	}
-
 	.card-block-name {
 		width: 50%;
 		flex-direction: column;
 	}
-
 	.card-block-btn {
 		width: 50%;
 		flex-direction: column;
@@ -150,8 +174,13 @@
 	.coin-name {
 		margin: 0;
 	}
+	.coin-name.port-coin-name {
+		width: 150px;
+	}
 	.price {
-		margin: 15px 0 0 0;
+		margin: 15px 0 0 20px;;
+		width: auto;
+		text-align: left;
 	}
 	.dayChange {
 		margin: 0;
@@ -160,9 +189,30 @@
 	.btn-fav {
 		width: 30px;
 		height: 30px;
+		margin-top: 10px;
 	}
 	.hour {
 		font-size: 14px;
+	}
+	.portfolio-amount {
+		font-size: 16pt;
+		width: 150px
+	}
+
+	.port-price-container {
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.port-price.price {
+		width: auto;
+		font-size: 16pt;
+	}
+	.port-btn.btn-fav {
+		width: 25px;
+		height: 25px;
+	}
+	.short {
+		display: none;
 	}
 }
 
