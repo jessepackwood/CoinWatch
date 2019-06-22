@@ -55,3 +55,16 @@
   align-items: center;
   background: $background;
 }
+
+@media screen and (max-width: 600px) {
+  .filter-btn-wrapper {
+		display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 90px;
+  }
+  
+  .home-page-subtitle {
+    padding-top: 10px;
+  }
+}

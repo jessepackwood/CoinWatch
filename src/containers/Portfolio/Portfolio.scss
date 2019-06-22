@@ -75,3 +75,31 @@
 .grand-total {
 	margin-left: 10px;
 }
+
+@media screen and (max-width: 750px) {
+	.portfolio-title {
+		font-size: 20pt;
+	}
+	.portfolio-input {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.portfolio-add-coin {
+		margin-bottom: 5px;
+	}
+	.portfolio-total-mobile {
+		display: none;
+	}
+
+}
+
+@media screen and (max-width: 414px) {
+	.portfolio-title {
+		font-size: 18pt;
+		padding-top: 10px;
+	}
+	.portfolio-add-btn {
+		margin: 20px 0 0 0;
+	}
+}

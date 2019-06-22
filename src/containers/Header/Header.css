@@ -16,7 +16,7 @@
   .app-title.login-title {
     text-align: center; }
 
-ul {
+.header-nav {
   display: flex;
   align-items: center;
   position: absolute;
@@ -70,3 +70,18 @@ li {
 
 .coin-in-title {
   color: #f2bb30; }
+
+@media screen and (max-width: 600px) {
+  .header {
+    height: 90px; }
+  .header-nav {
+    top: 14px; }
+  .app-title {
+    margin-left: 0;
+    font-size: 20pt; }
+  .pipe {
+    display: none; }
+  .home-link {
+    display: none; }
+  .email {
+    display: none; } }

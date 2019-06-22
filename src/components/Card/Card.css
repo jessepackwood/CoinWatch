@@ -28,7 +28,8 @@
   color: white;
   font-size: 20pt;
   margin: 0 auto;
-  width: 200px; }
+  width: 200px;
+  text-align: center; }
   .price.port-price {
     margin: 0; }
 
@@ -48,11 +49,10 @@
   margin-left: 10px;
   color: white; }
 
-.amount {
+.portfolio-amount {
   font-size: 20pt;
   margin: 0 auto;
-  color: #fff;
-  width: 200px; }
+  color: #fff; }
 
 .btn-fav {
   width: 35px;
@@ -69,8 +69,97 @@
     cursor: pointer;
     background-image: url("../../assets/rounded-add-green.svg"); }
 
+.port-btn-container {
+  width: 10%; }
+
 .port-btn {
   margin-left: 10px; }
 
+.dollar-sign {
+  color: #f5d132;
+  margin-right: 2px; }
+
 .usd {
-  margin-right: 3px; }
+  margin-right: 5px; }
+
+.card-block-name {
+  display: flex;
+  width: 62%; }
+
+.card-block-btn {
+  display: flex;
+  justify-content: flex-end;
+  width: 38%; }
+
+.hour-change {
+  display: inline-block; }
+
+.hour {
+  font-size: 16px;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  padding-bottom: 20px; }
+
+.port-price-container {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  width: 40%; }
+
+.port-price.price {
+  justify-content: center; }
+
+.coin-name-container {
+  display: flex; }
+
+@media screen and (max-width: 670px) {
+  .coin-name,
+  .price,
+  .dayChange {
+    font-size: 18pt; }
+  .coin-name-container {
+    display: block; } }
+
+@media screen and (max-width: 600px) {
+  .card {
+    justify-content: start; }
+  .card-block-name {
+    width: 50%;
+    flex-direction: column; }
+  .card-block-btn {
+    width: 50%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end; }
+  .coin-name {
+    margin: 0; }
+  .coin-name.port-coin-name {
+    width: 150px; }
+  .price {
+    margin: 15px 0 0 20px;
+    width: auto;
+    text-align: left; }
+  .dayChange {
+    margin: 0;
+    width: auto; }
+  .btn-fav {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px; }
+  .hour {
+    font-size: 14px; }
+  .portfolio-amount {
+    font-size: 16pt;
+    width: 150px; }
+  .port-price-container {
+    flex-direction: column;
+    justify-content: space-between; }
+  .port-price.price {
+    width: auto;
+    font-size: 16pt; }
+  .port-btn.btn-fav {
+    width: 25px;
+    height: 25px; }
+  .short {
+    display: none; } }
