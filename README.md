@@ -1,4 +1,4 @@
-![Logo of the project](./images/logo.sample.png)
+
 
 # Coin watch
 > A simple crypto tracking app and portfolio
