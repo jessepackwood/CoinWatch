@@ -20,7 +20,7 @@ const Routes = () => {
           exact path='/login' render={props => <Login {...props} />} 
         />
         <Route 
-          exact path='/Signup' 
+          exact path='/signup' 
           render={props => <Login {...props} showRegister /> } 
         />
         <Route 

@@ -16,10 +16,8 @@ const store = createStore(rootReducer, devTools, applyMiddleware(thunk, logger))
 // const store = createStore(rootReducer, devTools, applyMiddleware(thunk));
 const route = (
   <Provider store = {store}>
-    <BrowserRouter
-      basename ="/CoinWatch"
-    >
-    	<App />
+    <BrowserRouter basename ="/CoinWatch">
+      <App />
     </BrowserRouter>
   </Provider>
 );
