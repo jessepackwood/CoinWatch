@@ -1,4 +1,4 @@
-const firebase = require('firebase/app')
+import firebase from 'firebase/app'
 
 const config = {
   apiKey: "AIzaSyCHgy97VQoJIEuV-P2WC8G-RNtY6FY8raY",
