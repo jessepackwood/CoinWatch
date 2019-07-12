@@ -1,6 +1,6 @@
 import firebase from 'firebase/app'
 import 'firebase/auth'
-import 'firebase/firestore'
+import 'firebase/database'
 
 const config = {
   apiKey: "AIzaSyCHgy97VQoJIEuV-P2WC8G-RNtY6FY8raY",
@@ -15,7 +15,7 @@ firebase.initializeApp(config);
 
 
 export const auth = firebase.auth();
-export const db = firebase.firestore();
+export const db = firebase.database();
 
 export const isAuthenticated = () => {
   return !!auth.currentUser
