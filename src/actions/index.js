@@ -60,6 +60,7 @@ export const loginSuccess = (user) => {
 }
 
 export const loginError = () => {
+  NotificationManager.warning('Your username or password is not valid', null, 2500)
   return {
     type: 'LOGIN_ERROR'
   }
@@ -128,7 +129,7 @@ export const postWatchedCoin = (watchList, coin, user) => {
 
 export const removeWatchedCoin = (watchList, coin, user) => {
   db.ref('watchlists/' + user.uid).set(watchList.filter(
-    (element) => element.short !== coin.short))
+    (element) => element.symbol !== coin.symbol))
 }
 
 export const listenToWatchLists = (user) => (dispatch) => {
@@ -139,7 +140,7 @@ export const listenToWatchLists = (user) => (dispatch) => {
 
 export const addWatch = (watchList, coin, user)  => {
   if (!isAuthenticated()) {
-    NotificationManager.warning('Login to watch coins', null, 2500)
+    NotificationManager.warning('Login to add coins to your watch list', null, 2500)
     return {
       type: 'FORBIDDEN'
     }
