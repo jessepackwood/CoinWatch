@@ -112,6 +112,7 @@ export const setCoins = (coins) => {
 
 export const fetchWatchedCoins = (user) => async (dispatch) => {
   fetchWatchList(user).then((snap)=> {
+    console.log(snap)
     dispatch(setWatchedCoins(snap.val()))
   });
 }
@@ -207,6 +208,7 @@ export const addPortCoin = (
       portfolio.filter( coin => matchedCoin.name !== coin.name)
     filteredPortfolio.push(matchedCoin)
   }
+  NotificationManager.success(`Added ${amountOfCoin} ${coinName} to your portfolio`, null, 2500)  
   postPortfolio(filteredPortfolio, user)
   dispatch(setUserPortfolio(filteredPortfolio))
 }
@@ -218,6 +220,7 @@ export const postPortfolio = (portfolio, user) => {
 export const removePortCoin = (portfolio, portCoinName, user) => dispatch => {
   let filteredPortfolio = portfolio.slice(0)
   filteredPortfolio = portfolio.filter( coin => coin.name !== portCoinName)
+  NotificationManager.success(`Removed ${portCoinName} from your portfolio`, null, 2500)  
   postPortfolio(filteredPortfolio, user)
   dispatch(setUserPortfolio(filteredPortfolio))
 }
