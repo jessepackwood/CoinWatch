@@ -18,6 +18,10 @@ export class Home extends Component {
     }
   }
 
+  componentDidMount(props) {
+    this.setState({coinsToDisplay: this.props.coins})
+  }
+
   componentDidUpdate(prevProps) {
     if (prevProps.coins.length !== this.props.coins.length) {
       this.setState({coinsToDisplay: this.props.coins.slice(0, 100)})
