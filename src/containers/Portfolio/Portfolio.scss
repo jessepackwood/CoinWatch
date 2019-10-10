@@ -93,6 +93,12 @@
 	}
 
 }
+@media screen and (max-width: 600px) {
+	.portfolio {
+		min-height: calc(100vh - 90px);
+		height: auto;
+	}
+}
 
 @media screen and (max-width: 414px) {
 	.portfolio-title {

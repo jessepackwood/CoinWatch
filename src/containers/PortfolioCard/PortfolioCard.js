@@ -9,7 +9,6 @@ export const PortfolioCard =
   ({ 
     portfolioCoin, coin, portfolio, removeCoinFromPortfolio, user 
   }) => {
-    console.log(coin)
     const portfolioTotal = Math.round(portfolioCoin.amount * coin.priceUsd)
 
     return (
