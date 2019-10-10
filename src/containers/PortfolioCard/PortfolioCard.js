@@ -42,13 +42,13 @@ export const PortfolioCard =
           </div>
         </div>
         <div>
-        <div 
-          className={'port-btn btn-fav minus'} 
-          onClick={
-            () => removeCoinFromPortfolio(portfolio, portfolioCoin.name, user)
-          }
-        >
-        </div>
+          <div 
+            className={'port-btn btn-fav minus'} 
+            onClick={
+              () => removeCoinFromPortfolio(portfolio, portfolioCoin.name, user)
+            }
+          >
+          </div>
         </div>
       </div>
     )
