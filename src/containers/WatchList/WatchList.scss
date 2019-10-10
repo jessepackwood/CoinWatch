@@ -26,3 +26,9 @@
 	margin-left: 10px;
 	color: #fff;
 }
+
+@media screen and (max-width: 600px) {
+	.watch-list {
+		min-height: calc(100vh - 90px);
+	}
+}

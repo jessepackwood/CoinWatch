@@ -11,7 +11,7 @@ const WatchList = ({watchList}) => {
   const watchedCoins = watchList && watchList.map( (coin, index) => {
     return <MarketCapCard 
       coin={coin}
-      key={`Card: ${coin.short}`}
+      key={`Card: ${coin.symbol}`}
       number={`${index + 1}`}
     />
   })
