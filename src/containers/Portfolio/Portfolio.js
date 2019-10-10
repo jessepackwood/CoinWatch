@@ -42,14 +42,14 @@ class Portfolio extends Component {
   render() {
     const portfolioTotal = this.props.portfolio.reduce((total, portCoin) => {
       return total += portCoin.amount *
-      this.props.coins.find((coin) => coin.long === portCoin.name).price
+      this.props.coins.find((coin) => coin.name === portCoin.name).priceUsd
     }, 0)
 
     const portfolioItems = this.props.portfolio.map((portfolioCoin, index) => {
       return <PortfolioCard
         key={index}
         portfolioCoin={portfolioCoin}
-        coin={this.props.coins.find( coin => coin.long === portfolioCoin.name )}
+        coin={this.props.coins.find( coin => coin.name === portfolioCoin.name )}
       />
     })
     return (

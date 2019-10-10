@@ -9,21 +9,21 @@ export const PortfolioCard =
   ({ 
     portfolioCoin, coin, portfolio, removeCoinFromPortfolio, user 
   }) => {
-
-    const portfolioTotal = Math.round(portfolioCoin.amount * coin.price)
+    console.log(coin)
+    const portfolioTotal = Math.round(portfolioCoin.amount * coin.priceUsd)
 
     return (
       <div className='card'>
         <div className='coin-name-container'>
           <h3 className='coin-name port-coin-name'>
-            {coin.short}
+            {coin.symbol}
           </h3>
           <p className='portfolio-amount'>{portfolioCoin.amount} </p>
         </div>
         <div className='port-price-container'>
           <div className='port-price price'>
             <NumberFormat 
-              value={coin.price.toFixed(3)}
+              value={parseFloat(coin.priceUsd).toFixed(3)}
               displayType={'text'}
               thousandSeparator={true}
               prefix={'$'} 

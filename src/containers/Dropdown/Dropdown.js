@@ -5,7 +5,7 @@ import './Dropdown.css'
 
 export const Dropdown = ({coins, onNameChange}) => {
   const coinNames = coins.map( (coin, index) => {
-    return <option key={`Dropdown - ${index}`} > {coin.long} </option>
+    return <option key={`Dropdown - ${index}`} > {coin.name} </option>
   })
 
   return (
