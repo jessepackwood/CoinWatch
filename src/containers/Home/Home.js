@@ -18,11 +18,13 @@ export class Home extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.searchInput !== '') {
-      return this.setState({coinsToDisplay: this.searchedCoinsToDisplay(nextProps.searchInput) })
+  componentDidUpdate(prevProps) {
+    if (prevProps.coins.length !== this.props.coins.length) {
+      this.setState({coinsToDisplay: this.props.coins.slice(0, 100)})
     }
-    this.setState({coinsToDisplay: nextProps.coins.slice(0, 100)})
+    if (prevProps.searchInput !== this.props.searchInput) {
+      return this.setState({coinsToDisplay: this.searchedCoinsToDisplay(this.props.searchInput) })
+    }
   }
 
   handleView = () => {
@@ -42,7 +44,7 @@ export class Home extends Component {
         sortOrder: 'Lowest', 
         subtitle: 'Highest performing coins today',
         coinsToDisplay: highDayChangeCoins.sort((first, second) => {
-          return second.cap24hrChange - first.cap24hrChange
+          return second.changePercent24Hr - first.changePercent24Hr
         }).slice(0, 100)
       })
     } else {
@@ -51,7 +53,7 @@ export class Home extends Component {
         sortOrder: 'Highest',
         subtitle: 'Lowest performing coins today',
         coinsToDisplay: lowDayChangeCoins.sort((first, second) => {
-          return first.cap24hrChange - second.cap24hrChange
+          return first.changePercent24Hr - second.changePercent24Hr
         }).slice(0, 100)
       })
     }
@@ -62,14 +64,14 @@ export class Home extends Component {
     this.setState({
       subtitle: 'Top 100 coins by market cap (USD)',
       coinsToDisplay: marketCapCoins.sort((first, second) => {
-        return second.mktcap - first.mktcap
+        return second.marketCapUsd - first.marketCapUsd
       }).slice(0, 100)
     })
   }
 
   searchedCoinsToDisplay = (searchInput) => {
     return this.props.coins.filter( 
-      coin => coin.long.toLowerCase()
+      coin => coin.name.toLowerCase()
         .includes(searchInput.toLowerCase())
     )
   }
