@@ -112,7 +112,6 @@ export const setCoins = (coins) => {
 
 export const fetchWatchedCoins = (user) => async (dispatch) => {
   fetchWatchList(user).then((snap)=> {
-    console.log(snap)
     dispatch(setWatchedCoins(snap.val()))
   });
 }

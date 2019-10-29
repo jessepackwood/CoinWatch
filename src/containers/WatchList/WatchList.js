@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import './WatchList.css'
 
 const WatchList = ({watchList}) => {
-
+  
   const watchedCoins = watchList && watchList.map( (coin, index) => {
     return <MarketCapCard 
       coin={coin}
