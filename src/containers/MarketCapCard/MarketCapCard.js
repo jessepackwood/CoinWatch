@@ -8,7 +8,6 @@ import NumberFormat from 'react-number-format'
 export const MarketCapCard = ({ 
   coin, number, watchList, addCoinToWatch, removeCoinFromWatch, user
 }) => {
-
   const {name, symbol, changePercent24Hr } = coin
   let { priceUsd } = coin
   const addColor =  changePercent24Hr > 0 ? 'positive' : 'negative'
@@ -31,6 +30,7 @@ export const MarketCapCard = ({
   return (
     <div className='card'>
       <div className='card-block-name'>
+        
         <h3 className='coin-name'>
           <span className='number'>{number}.</span>
           {name}

@@ -6,11 +6,11 @@ import plus  from '../../assets/rounded-add-button.svg'
 import PropTypes from 'prop-types';
 import './WatchList.css'
 
-const WatchList = ({watchList}) => {
+const WatchList = ({watchList, coins}) => {
   
   const watchedCoins = watchList && watchList.map( (coin, index) => {
     return <MarketCapCard 
-      coin={coin}
+      coin={coins.find(watchedCoin => coin.name === watchedCoin.name)}
       key={`Card: ${coin.symbol}`}
       number={`${index + 1}`}
     />
@@ -39,9 +39,15 @@ const WatchList = ({watchList}) => {
   )
 }
 
-export const mapStateToProps = state => ({watchList: state.watchList})
+export const mapStateToProps = state => {
+  return {
+    watchList: state.watchList,
+    coins: state.coins
+  }
+}
 
 WatchList.propTypes = {
+  coins: PropTypes.array,
   watchList: PropTypes.array
 }
 
